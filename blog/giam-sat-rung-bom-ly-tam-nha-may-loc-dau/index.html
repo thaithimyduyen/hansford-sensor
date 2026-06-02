@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -165,8 +169,18 @@
   <tr><td>Cánh bơm hỏng (Vane pass)</td><td>Rung ở tần số (số cánh × RPM)</td><td>Vane pass frequency</td></tr>
 </table>
 
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/cam-bien-rung-gan-tren-bom-ly-tam.webp" alt="Cảm biến rung gắn trên bơm ly tâm công nghiệp - Hansford Sensor Vietnam chính hãng" width="1200" height="auto" loading="lazy">
+  <figcaption>Cảm biến rung lắp đặt trực tiếp trên thân bơm ly tâm — vị trí đo tối ưu tại bearing housing</figcaption>
+</figure>
 <h2>Tiêu chuẩn ISO 10816-7 cho bơm ly tâm</h2>
 <p>ISO 10816-7 là phần dành riêng cho bơm ly tâm (rotodynamic pumps including pump units). Phân loại theo loại gá (stiff mounting/flexible mounting) và dải tốc độ. Ngưỡng điển hình cho bơm loại I (vận tốc thấp, nền cứng):</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/nha-may-loc-dau-hoa-dau-giam-sat-rung.webp" alt="Nhà máy lọc dầu hóa dầu - ứng dụng giám sát rung bơm và máy nén Hansford Sensors" width="1200" height="auto" loading="lazy">
+  <figcaption>Nhà máy lọc dầu — hàng trăm bơm ly tâm vận hành liên tục cần hệ thống giám sát rung</figcaption>
+</figure>
 <table class="info-table">
   <thead><tr><th>Vùng</th><th>Vận tốc rung (mm/s RMS)</th></tr></thead>
   <tr><td>A (bình thường)</td><td>0 – 2.3</td></tr>
@@ -180,6 +194,11 @@
 
 <h2>Giải pháp Hansford Sensors cho bơm lọc dầu</h2>
 <p>Tùy vị trí bơm:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/phong-bom-cong-nghiep-motor-giam-sat-rung.webp" alt="Phòng bơm công nghiệp với motor và bơm ly tâm - giám sát rung để phát hiện lỗi sớm" width="1200" height="auto" loading="lazy">
+  <figcaption>Phòng bơm công nghiệp — motor và bơm hoạt động song song, mỗi cụm cần ít nhất 2 điểm đo rung</figcaption>
+</figure>
 <ul>
   <li><strong>Bơm trong vùng an toàn (safe area):</strong> HS-420 (4-20mA) — đấu thẳng vào DCS/PLC sẵn có của nhà máy, đặt ngưỡng cảnh báo và trip tự động theo ISO 10816-7.</li>
   <li><strong>Bơm trong khu vực Zone 1/Zone 2 (ATEX):</strong> HS-421I — transmitter 4-20mA an toàn nội tại, kết hợp với safety barrier trước khi vào DCS.</li>
@@ -211,12 +230,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter rung 4-20mA cho bơm</a>
-  <a href="/products/hs-421i-intrinsically-safe-accelerometer/">HS-421I – Transmitter 4-20mA ATEX cho bơm O&amp;G</a>
-  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 vs ISO 20816: tiêu chuẩn rung bơm</a>
-  <a href="/blog/atex-zone-1-zone-2-cam-bien-rung-an-toan-noi-tai/">ATEX Zone 1 Zone 2: chọn cảm biến đúng chuẩn</a>
-  <a href="/categories/process-control-lps-4-20ma/">Danh mục: Kiểm soát quy trình LPS 4-20mA</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
+  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Phát hiện lỗi ổ bi bơm ly tâm</a>
+  <a href="/blog/api-670-tieu-chuan-bao-ve-may-moc-dau-khi/">API 670: bảo vệ bơm critical service</a>
+  <a href="/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/">Chọn cảm biến 4-20mA cho bơm</a>
+  <a href="/industries/oil-gas-industry/">Xem ứng dụng ngành dầu khí →</a>
 </div>
 
 </div>

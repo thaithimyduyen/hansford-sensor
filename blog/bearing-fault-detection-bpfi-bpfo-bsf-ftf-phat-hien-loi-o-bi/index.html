@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>Bốn giai đoạn hỏng ổ bi</h2>
 <p>Ổ bi không hỏng đột ngột. Quá trình xuống cấp trải qua 4 giai đoạn rõ ràng, mỗi giai đoạn có đặc điểm rung khác nhau:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/giam-sat-tinh-trang-o-bi-cam-bien-rung.webp" alt="Giám sát tình trạng ổ bi bằng cảm biến rung Hansford Sensors - phát hiện lỗi outer race, inner race" width="1200" height="auto" loading="lazy">
+  <figcaption>Cảm biến rung phát hiện lỗi ổ bi: outer race spall được nhận diện qua phổ tần số đặc trưng BPFO</figcaption>
+</figure>
 <table class="info-table">
   <thead><tr><th>Giai đoạn</th><th>Thời gian còn lại (ước tính)</th><th>Dấu hiệu rung</th><th>Đại lượng phát hiện tốt nhất</th></tr></thead>
   <tr><td><strong>1 — Khởi đầu</strong></td><td>80–100% tuổi thọ còn lại</td><td>Tần số cao &gt; 1 kHz tăng nhẹ, noise floor tăng</td><td>HFD (High Frequency Detection), Spike Energy</td></tr>
@@ -178,6 +187,11 @@
 
 <h2>Ví dụ tính BPFO cho ổ bi 6205</h2>
 <p>Ổ bi 6205 (thông dụng nhất trong motor nhỏ và trung bình): N = 9 viên, d = 7.94 mm, D = 38.5 mm, α ≈ 0°. Motor chạy 1500 RPM:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/phat-hien-loi-o-bi-vibration-sensor-bearing.webp" alt="Sơ đồ phát hiện lỗi ổ bi công nghiệp bằng cảm biến rung - Hansford Sensor Vietnam" width="1200" height="auto" loading="lazy">
+  <figcaption>Sơ đồ cấu tạo ổ bi và vị trí lắp đặt cảm biến rung để phát hiện lỗi spalling</figcaption>
+</figure>
 <ul>
   <li><strong>BPFO = (9/2) × (1500/60) × (1 − 7.94/38.5) = 4.5 × 25 × 0.793 = 89.2 Hz</strong></li>
   <li>BPFI = (9/2) × 25 × (1 + 7.94/38.5) = 4.5 × 25 × 1.207 = 135.8 Hz</li>
@@ -218,12 +232,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series – IEPE accelerometer dải tần rộng</a>
-  <a href="/products/hs-100s-series-oil-resistant-submersible-cable-pur-industrial-accelerometer/">HS-150 Series – Premium IEPE IP68 dải tần cao</a>
-  <a href="/blog/phan-tich-fft-rung-dong-doc-pho-tan-so-chan-doan-loi/">Phân tích FFT rung động: đọc phổ tần số</a>
-  <a href="/blog/imbalance-misalignment-looseness-chan-doan-rung-dong/">Imbalance vs Misalignment vs Looseness</a>
-  <a href="/blog/rms-peak-crest-factor-do-rung-dong-may-moc/">RMS vs Peak vs Crest Factor trong đo rung động</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
+  <a href="/blog/imbalance-misalignment-looseness-chan-doan-rung-dong/">Imbalance vs Misalignment vs Looseness: chẩn đoán rung động</a>
+  <a href="/blog/rms-peak-crest-factor-do-rung-dong-may-moc/">RMS, Peak, Crest Factor — hiểu đúng thông số đo rung</a>
+  <a href="/blog/phan-tich-fft-rung-dong-doc-pho-tan-so-chan-doan-loi/">Phân tích FFT rung động: đọc phổ tần số chẩn đoán lỗi</a>
+  <a href="/categories/industrial-accelerometers/">Xem cảm biến gia tốc Hansford Sensors →</a>
 </div>
 
 </div>

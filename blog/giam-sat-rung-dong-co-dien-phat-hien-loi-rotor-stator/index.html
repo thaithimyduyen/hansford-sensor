@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -166,6 +170,11 @@
   <tr><td>Điều hòa bậc cao</td><td>100 Hz, 200 Hz, 300 Hz...</td><td>Lỏng stator, resonance khung máy</td></tr>
 </table>
 
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/phong-bom-cong-nghiep-motor-giam-sat-rung.webp" alt="Động cơ điện công nghiệp trong phòng bơm - giám sát rung phát hiện lỗi rotor stator" width="1200" height="auto" loading="lazy">
+  <figcaption>Motor điện công nghiệp — giám sát rung giúp phân biệt lỗi cơ học (bearing, imbalance) và lỗi điện từ (rotor bar, eccentricity)</figcaption>
+</figure>
 <h2>Lệch tâm điện từ (Electromagnetic Eccentricity) — Phân biệt với imbalance cơ học</h2>
 <p>Lệch tâm điện từ xảy ra khi khe hở giữa rotor và stator không đều (dynamic eccentricity). Tạo ra lực kéo điện từ không cân bằng — rung tại <strong>2 × f_line = 100 Hz</strong> (lưới 50 Hz). Phân biệt với imbalance:</p>
 <ul>
@@ -176,6 +185,11 @@
 
 <h2>Ảnh hưởng của biến tần VFD đến đo rung</h2>
 <p>Motor chạy biến tần VFD tạo ra điều kiện đo rung phức tạp hơn:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/he-thong-iot-giam-sat-rung-dong-tu-xa.webp" alt="Hệ thống IoT giám sát rung động cơ điện từ xa qua cloud - Hansford Sensor Vietnam" width="1200" height="auto" loading="lazy">
+  <figcaption>Hệ thống giám sát rung IoT: sensor → data acquisition → cloud → dashboard giám sát từ xa</figcaption>
+</figure>
 <ul>
   <li>Tần số cơ bản thay đổi theo setpoint VFD — 1x RPM không cố định</li>
   <li>Harmonic từ VFD (switching frequency thường 2–16 kHz) tạo noise điện trong cáp cảm biến</li>
@@ -211,12 +225,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA cho giám sát motor</a>
-  <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series – IEPE cho phân tích FFT motor</a>
-  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Bearing Fault Detection: BPFI BPFO trong motor</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
   <a href="/blog/imbalance-misalignment-looseness-chan-doan-rung-dong/">Imbalance vs Misalignment: chẩn đoán motor</a>
-  <a href="/blog/chon-cap-cam-bien-rung-fep-hffr-pur-braided/">Chọn cáp cảm biến: Braided chống EMI VFD</a>
+  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Phát hiện lỗi ổ bi motor điện</a>
+  <a href="/blog/chon-cap-cam-bien-rung-fep-hffr-pur-braided/">Chọn cáp braided chống EMI cho VFD</a>
+  <a href="/categories/industrial-accelerometers/">Xem cảm biến gia tốc HS-100 Series →</a>
 </div>
 
 </div>

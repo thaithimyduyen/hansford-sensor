@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>Cảm biến rung 4-20mA là gì?</h2>
 <p>Cảm biến rung 4-20mA (4-20mA vibration transmitter) là thiết bị tích hợp một phần tử gia tốc áp điện cùng mạch xử lý tín hiệu bên trong, cho ra trực tiếp <strong>dòng điện 4-20mA tỷ lệ với mức rung tổng</strong> (thường là vận tốc rung RMS, đơn vị mm/s). Khác với cảm biến IEPE chỉ xuất tín hiệu điện áp AC cần bộ điều hòa tín hiệu riêng, transmitter 4-20mA đã "đóng gói" toàn bộ phần xử lý — tín hiệu ra cắm thẳng vào card đầu vào analog (AI) của PLC/DCS.</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/hansford-sensors-san-pham-cam-bien-rung-chinh-hang.webp" alt="Dòng sản phẩm cảm biến rung 4-20mA Hansford Sensors chính hãng - HS-420, HS-421I, HS-429" width="1200" height="auto" loading="lazy">
+  <figcaption>Dòng sản phẩm Hansford Sensors: accelerometer, 4-20mA transmitter và condition indicator</figcaption>
+</figure>
 <p>Tín hiệu dòng 4-20mA là chuẩn công nghiệp lâu đời vì ba lý do: chống nhiễu tốt trên đường cáp dài, không suy hao theo điện trở dây, và bản thân mức 4mA (thay vì 0mA) giúp phát hiện đứt dây/hỏng cảm biến ngay lập tức.</p>
 
 <h2>Vì sao 4-20mA phù hợp với PLC/DCS?</h2>
@@ -177,6 +186,11 @@
   <tr><td>Ứng dụng điển hình</td><td>Bơm, quạt, motor trong nhà máy thông thường</td><td>Bơm/máy nén trong dầu khí, hóa chất, khu vực có khí dễ cháy</td></tr>
   <tr><td>Yêu cầu kèm theo</td><td>Nguồn 24VDC + card AI</td><td>Nguồn 24VDC + <strong>barrier an toàn / isolator Ex</strong> + card AI</td></tr>
 </table>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/cam-bien-rung-gan-tren-bom-ly-tam.webp" alt="Cảm biến rung 4-20mA lắp đặt thực tế trên bơm ly tâm công nghiệp" width="1200" height="auto" loading="lazy">
+  <figcaption>Cảm biến rung 4-20mA lắp đặt trực tiếp trên thân bơm — kết nối PLC/DCS dễ dàng</figcaption>
+</figure>
 <div class="callout"><strong>Lưu ý kỹ thuật:</strong> HS-421I là thiết bị an toàn nội tại nên bắt buộc đi qua <strong>safety barrier / galvanic isolator</strong> đạt chuẩn trước khi vào PLC. Thông số chính xác (dải đo, băng tần, tham số entity Ex) cần đối chiếu datasheet model cụ thể khi thiết kế vòng loop.</div>
 
 <h2>Cách chọn đúng trong 3 bước</h2>

@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -162,6 +166,11 @@
   <tr><td><strong>Peak</strong></td><td>Biên độ lớn nhất trong cửa sổ thời gian. Đại diện cho giá trị cực đại tức thời.</td><td>max|x(t)|</td><td>mm/s, g, µm</td></tr>
   <tr><td><strong>Crest Factor (CF)</strong></td><td>Tỷ lệ Peak/RMS. Không có đơn vị. Đo mức độ xung trong tín hiệu.</td><td>Peak / RMS</td><td>Không đơn vị</td></tr>
 </table>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/rms-peak-crest-factor-do-rung-dong.webp" alt="Giải thích RMS, Peak và Crest Factor trong đo rung động máy móc công nghiệp - Hansford Sensor Vietnam" width="1200" height="auto" loading="lazy">
+  <figcaption>Ba thông số đo rung quan trọng: RMS (giá trị hiệu dụng), Peak (biên độ đỉnh) và Crest Factor (tỷ số Peak/RMS)</figcaption>
+</figure>
 <p>Đối với sóng sin lý tưởng (máy cân bằng tốt): RMS = Peak / √2 ≈ 0.707 × Peak, do đó CF = √2 ≈ 1.41. Trong thực tế máy móc, CF bình thường khoảng 2.5–3.5.</p>
 
 <h2>Khi nào dùng RMS?</h2>
@@ -175,6 +184,11 @@
 
 <h2>Khi nào dùng Peak?</h2>
 <p>Peak phù hợp hơn khi:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/dashboard-giam-sat-rung-dong-nha-may.webp" alt="Dashboard giám sát rung động nhà máy hiển thị RMS, alarm và tình trạng sức khỏe thiết bị" width="1200" height="auto" loading="lazy">
+  <figcaption>Hệ thống giám sát trực tuyến hiển thị các thông số RMS, trend và alarm cho từng thiết bị</figcaption>
+</figure>
 <ul>
   <li><strong>Đánh giá ứng suất cơ học</strong> — giá trị lực cực đại tác động lên liên kết, bu-lông</li>
   <li><strong>Máy va đập (impact machine)</strong> — máy đóng, ép, rèn — có xung lớn nhưng RMS thấp</li>
@@ -225,12 +239,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA đo RMS mm/s</a>
-  <a href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo rung cầm tay RMS + Peak</a>
-  <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series – IEPE cho đo Crest Factor</a>
-  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Bearing Fault Detection: BPFI, BPFO, BSF, FTF</a>
-  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 vs ISO 20816: tiêu chuẩn rung động</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
+  <a href="/blog/phan-tich-fft-rung-dong-doc-pho-tan-so-chan-doan-loi/">Phân tích FFT: đọc phổ tần số chẩn đoán lỗi</a>
+  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 / ISO 20816: tiêu chuẩn đánh giá mức rung</a>
+  <a href="/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/">Thiết lập ngưỡng alarm/trip rung động</a>
+  <a href="/categories/vibration-meter-kits/">Xem thiết bị đo rung cầm tay Hansford →</a>
 </div>
 
 </div>

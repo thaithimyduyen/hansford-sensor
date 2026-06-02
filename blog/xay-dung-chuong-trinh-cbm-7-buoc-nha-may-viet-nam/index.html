@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>Bước 1 — Xếp hạng thiết bị theo mức độ quan trọng (Asset Criticality Ranking)</h2>
 <p>Không giám sát tất cả — tập trung vào 20% thiết bị gây 80% thiệt hại khi hỏng. Đánh giá theo ma trận:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/dashboard-giam-sat-rung-dong-nha-may.webp" alt="Dashboard giám sát rung CBM condition based maintenance tại nhà máy Việt Nam" width="1200" height="auto" loading="lazy">
+  <figcaption>Dashboard CBM: tổng quan sức khỏe thiết bị, vibration trend và hệ thống alarm tự động</figcaption>
+</figure>
 <table class="info-table">
   <thead><tr><th>Tiêu chí</th><th>Điểm 1</th><th>Điểm 2</th><th>Điểm 3</th></tr></thead>
   <tr><td>Ảnh hưởng khi hỏng</td><td>Máy phụ, có thể bỏ qua</td><td>Dây chuyền giảm tốc độ</td><td>Dừng toàn bộ sản xuất</td></tr>
@@ -177,6 +186,11 @@
 
 <h2>Bước 3 — Chọn thông số và thiết bị đo</h2>
 <p>Hầu hết máy quay: <strong>rung động (mm/s RMS)</strong> là thông số CBM tốt nhất, bổ sung nhiệt độ ổ bi nếu cần. Lựa chọn thiết bị:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/phong-dieu-khien-giam-sat-rung-dong-nha-may.webp" alt="Phòng điều khiển CBM giám sát rung động toàn nhà máy - Hansford Sensor chính hãng" width="1200" height="auto" loading="lazy">
+  <figcaption>Trung tâm giám sát CBM — đội kỹ thuật theo dõi vibration trend và lên kế hoạch bảo trì</figcaption>
+</figure>
 <ul>
   <li><strong>Tier 1, ưu tiên cao:</strong> HS-420 cảm biến cố định 4-20mA → alarm/trip trên PLC</li>
   <li><strong>Tier 1, số lượng nhiều:</strong> HS-620 walk-around hàng tuần + ghi sổ/phần mềm trend</li>
@@ -230,12 +244,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter cố định cho CBM</a>
-  <a href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo rung walk-around CBM</a>
-  <a href="/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/">Predictive Maintenance: giới thiệu và bắt đầu</a>
-  <a href="/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/">Thiết lập ngưỡng Alarm và Trip setpoints</a>
-  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 vs ISO 20816: ngưỡng tiêu chuẩn</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
+  <a href="/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/">Predictive Maintenance: hệ thống giám sát rung</a>
+  <a href="/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/">Thiết lập ngưỡng alarm/trip cho CBM</a>
+  <a href="/blog/rms-peak-crest-factor-do-rung-dong-may-moc/">RMS, Peak, Crest Factor: thông số CBM</a>
+  <a href="/categories/vibration-systems-switches/">Xem hệ thống đo rung Hansford Sensors →</a>
 </div>
 
 </div>

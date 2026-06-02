@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>Vì sao không đấu IEPE thẳng vào PLC?</h2>
 <p>Cảm biến IEPE (Integrated Electronics Piezo-Electric) hoạt động theo nguyên lý: cần được <strong>cấp nguồn dòng không đổi</strong> (thường 2-4 mA, điện áp tuân thủ ~18-30V); tín hiệu ra là <strong>điện áp AC nhỏ "cưỡi" trên một mức DC bias</strong> (khoảng 10-12V). Trong khi đó, card đầu vào analog của PLC chỉ đọc chuẩn <strong>4-20mA hoặc 0-10V</strong>, không cấp được nguồn dòng IEPE và không tách được thành phần DC bias.</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/he-thong-iot-giam-sat-rung-dong-tu-xa.webp" alt="Kết nối cảm biến rung IEPE với PLC Siemens Allen-Bradley - hệ thống giám sát rung" width="1200" height="auto" loading="lazy">
+  <figcaption>Sơ đồ kết nối: cảm biến IEPE → signal conditioner → AI module PLC → HMI/SCADA</figcaption>
+</figure>
 <p>Vì vậy giữa cảm biến và PLC cần một <strong>bộ điều hòa/chuyển đổi tín hiệu (signal conditioner / vibration module)</strong> để: (1) cấp nguồn dòng cho IEPE, (2) tách DC bias, (3) tính toán giá trị rung tổng và xuất ra 4-20mA hoặc 0-10V cho PLC.</p>
 
 <h2>Sơ đồ kết nối tổng thể</h2>

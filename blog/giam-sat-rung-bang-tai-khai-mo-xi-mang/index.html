@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -165,8 +169,18 @@
   <tr><td><strong>Idler rollers</strong></td><td>Kẹt bearing, không quay</td><td>Mài mòn băng + nguy cơ cháy</td><td>Hàng ngày (walk-around)</td></tr>
 </table>
 
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/bang-tai-khai-thac-mo-giam-sat-rung.webp" alt="Băng tải khai thác mỏ với hệ thống giám sát rung - Hansford Sensor Vietnam" width="1200" height="auto" loading="lazy">
+  <figcaption>Băng tải vận chuyển khoáng sản trong mỏ lộ thiên — pully và motor truyền động cần giám sát rung liên tục</figcaption>
+</figure>
 <h2>Chiến lược giám sát theo mức độ quan trọng</h2>
 <p>Không phải tất cả điểm trên băng tải đều cần cảm biến cố định. Chiến lược thực tế:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/bang-tai-mo-lo-thien-pully-dong-co.webp" alt="Hệ thống pully truyền động băng tải mỏ lộ thiên - giám sát rung ổ bi và động cơ" width="1200" height="auto" loading="lazy">
+  <figcaption>Cụm pully truyền động băng tải tại mỏ lộ thiên — điểm nóng hỏng ổ bi cần giám sát</figcaption>
+</figure>
 <ul>
   <li><strong>Drive motor và gearbox (tải trọng lớn nhất):</strong> Cảm biến HS-420 gắn cố định, đấu về PLC/SCADA. Đây là thiết bị quan trọng nhất — hỏng = dừng toàn dây chuyền.</li>
   <li><strong>Drive và tension pulley:</strong> HS-420 gắn cố định hoặc HS-620 kiểm tra hàng tuần</li>
@@ -183,6 +197,11 @@
 
 <h2>Cấu hình hệ thống giám sát cho băng tải chính</h2>
 <p>Với băng tải chính (conveyor chính dài &gt; 500 m, tải &gt; 500 tấn/giờ), cấu hình tối thiểu khuyến nghị:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/xi-mang-bim-son-nha-may-san-xuat.webp" alt="Nhà máy Xi Măng Bỉm Sơn - ứng dụng cảm biến rung giám sát máy nghiền, quạt, băng tải" width="1200" height="auto" loading="lazy">
+  <figcaption>Nhà máy xi măng tại Việt Nam — nơi băng tải, máy nghiền và quạt vận hành liên tục 24/7</figcaption>
+</figure>
 <ul>
   <li>2 × HS-420 tại motor (DE và NDE bearing) → alarm 6 mm/s, trip 10 mm/s</li>
   <li>2 × HS-420 tại gearbox output bearing → alarm 4.5 mm/s, trip 7 mm/s</li>
@@ -215,12 +234,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA cho motor và gearbox</a>
-  <a href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo rung cầm tay walk-around</a>
-  <a href="/categories/vibration-systems-switches/">Danh mục: Hệ thống và module rung</a>
-  <a href="/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/">Predictive Maintenance: xây hệ thống giám sát rung</a>
-  <a href="/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/">Thiết lập ngưỡng Alarm và Trip setpoints</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
+  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Phát hiện lỗi ổ bi pully băng tải</a>
+  <a href="/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/">Chọn cảm biến 4-20mA cho giám sát băng tải</a>
+  <a href="/blog/cap-bao-ve-ip67-ip68-cam-bien-cong-nghiep/">Cấp bảo vệ IP67/IP68 cho môi trường mỏ/xi măng</a>
+  <a href="/industries/mining-and-quarrying-industry/">Xem ứng dụng ngành khai thác mỏ →</a>
 </div>
 
 </div>

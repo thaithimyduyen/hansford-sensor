@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -163,6 +167,11 @@
   <tr><td><strong>Statistical (mean + nσ)</strong></td><td>Đã có dữ liệu lịch sử dài (&gt; 3 tháng)</td><td>Tự động thích nghi, ít false alarm nhất</td><td>Cần hệ thống historian, phức tạp hơn</td></tr>
 </table>
 
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/dashboard-giam-sat-rung-dong-nha-may.webp" alt="Dashboard cài đặt ngưỡng alarm và trip rung động - giám sát thiết bị công nghiệp" width="1200" height="auto" loading="lazy">
+  <figcaption>Hệ thống giám sát với các mức alarm: Normal → Warning → Critical → Trip</figcaption>
+</figure>
 <h2>Phương pháp 1: ISO 10816 — Áp dụng ngay không cần baseline</h2>
 <p>Ngưỡng điển hình từ ISO 10816-3 cho máy công nghiệp 15 kW – 15 MW (Group 1 — nền cứng):</p>
 <table class="info-table">

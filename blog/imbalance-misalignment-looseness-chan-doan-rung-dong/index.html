@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>1. Mất cân bằng (Imbalance) — Pattern "1x dominant"</h2>
 <p>Mất cân bằng xảy ra khi tâm khối lượng của rotor không trùng với trục quay. Tạo ra lực ly tâm quay cùng tần số với tốc độ quay (1x RPM). Đặc điểm nhận biết:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/mat-can-bang-lech-truc-shaft-imbalance-misalignment.webp" alt="So sánh mất cân bằng và lệch trục trên máy quay - orbit tròn vs hình số 8 - Hansford Sensor chính hãng" width="1200" height="auto" loading="lazy">
+  <figcaption>So sánh quỹ đạo rung (orbit): mất cân bằng tạo orbit tròn 1X, lệch trục tạo orbit hình số 8</figcaption>
+</figure>
 <ul>
   <li><strong>Peak 1x RPM chiếm ưu thế</strong> rõ ràng so với các tần số khác</li>
   <li><strong>Hướng radial (xuyên tâm)</strong> — cả vertical và horizontal đều cao</li>
@@ -178,6 +187,11 @@
 
 <h2>3. Lỏng cơ học (Mechanical Looseness) — "Nhiều harmonics + subharmonic"</h2>
 <p>Mechanical looseness xuất hiện khi bu-lông nền lỏng, ổ bi lỏng trong gối đỡ, hoặc rotor lỏng trên trục. Đặc điểm:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/orbit-pattern-rung-dong-mat-can-bang-lech-truc.webp" alt="Vibration orbit patterns trong máy quay công nghiệp - chẩn đoán imbalance và misalignment" width="1200" height="auto" loading="lazy">
+  <figcaption>Orbit patterns chi tiết: circular orbit (1X) và figure-eight orbit (2X) trong phân tích rung động</figcaption>
+</figure>
 <ul>
   <li><strong>Nhiều harmonics bội của 1x RPM</strong>: 1x, 2x, 3x, 4x... đều có biên độ</li>
   <li><strong>Subharmonic 0.5x RPM</strong> — dấu hiệu đặc trưng, xuất hiện khi lỏng cơ học</li>
@@ -221,12 +235,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-173-premium-triaxial-accelerometer/">HS-173 – Triaxial accelerometer đo 3 trục đồng thời</a>
-  <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series – IEPE cho phân tích FFT</a>
-  <a href="/blog/phan-tich-fft-rung-dong-doc-pho-tan-so-chan-doan-loi/">Phân tích FFT rung động: đọc phổ tần số</a>
-  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Bearing Fault Detection: BPFI, BPFO — phát hiện lỗi ổ bi</a>
-  <a href="/blog/cam-bien-gia-toc-3-truc-triaxial-hs-173-giam-sat-may-moc/">Cảm biến gia tốc 3 trục HS-173</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
+  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Phát hiện lỗi ổ bi: BPFI, BPFO, BSF, FTF</a>
+  <a href="/blog/giam-sat-rung-dong-co-dien-phat-hien-loi-rotor-stator/">Giám sát rung động cơ điện: lỗi rotor, stator</a>
+  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 / ISO 20816: tiêu chuẩn rung động máy</a>
+  <a href="/categories/industrial-accelerometers/">Xem cảm biến gia tốc Hansford Sensors →</a>
 </div>
 
 </div>

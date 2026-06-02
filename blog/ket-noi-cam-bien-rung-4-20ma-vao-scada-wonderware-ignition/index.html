@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>Kiến trúc hệ thống — Từ cảm biến đến SCADA</h2>
 <p>Chuỗi tín hiệu đầy đủ: <strong>HS-420 (4-20mA) → Card AI PLC → Tag PLC → OPC Server → SCADA Tag → Historian → Trend display</strong></p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/he-thong-iot-giam-sat-rung-dong-tu-xa.webp" alt="Kết nối cảm biến rung 4-20mA vào SCADA Wonderware Ignition - hệ thống giám sát IoT" width="1200" height="auto" loading="lazy">
+  <figcaption>Kiến trúc hệ thống: cảm biến 4-20mA → AI module PLC → SCADA/Ignition → dashboard giám sát</figcaption>
+</figure>
 <table class="info-table">
   <thead><tr><th>Layer</th><th>Thiết bị/Phần mềm</th><th>Nhiệm vụ</th></tr></thead>
   <tr><td>Field</td><td>HS-420 transmitter</td><td>Đo rung, xuất 4-20mA tỷ lệ với mm/s RMS</td></tr>
@@ -173,6 +182,11 @@
 
 <h2>Cấu hình tag trong Wonderware InTouch</h2>
 <p>Trong Wonderware InTouch (nay là AVEVA InTouch), mỗi điểm đo rung là một Analog Input tag:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/dashboard-giam-sat-rung-dong-nha-may.webp" alt="Dashboard SCADA giám sát rung động từ cảm biến 4-20mA Hansford Sensors" width="1200" height="auto" loading="lazy">
+  <figcaption>Giao diện SCADA hiển thị vibration trend, alarm và tình trạng thiết bị real-time</figcaption>
+</figure>
 <ul>
   <li><strong>Tag name:</strong> Ví dụ <code>PUMP_01_VIBRATION_NDE</code> (quy ước đặt tên theo thiết bị + vị trí)</li>
   <li><strong>I/O Device:</strong> Chọn OPC server đang kết nối PLC</li>

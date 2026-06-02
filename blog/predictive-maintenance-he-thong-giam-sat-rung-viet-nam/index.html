@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -163,12 +167,22 @@
   <tr><td><strong>Predictive / CbM</strong></td><td>Theo dõi tình trạng thực tế</td><td>Thấp nhất — chỉ sửa khi cần</td><td>Đầu tư thiết bị, cần đào tạo nhân sự</td></tr>
 </table>
 
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/he-thong-iot-giam-sat-rung-dong-tu-xa.webp" alt="Hệ thống giám sát rung IoT cho bảo trì dự đoán predictive maintenance - Hansford Sensor Vietnam" width="1200" height="auto" loading="lazy">
+  <figcaption>Kiến trúc hệ thống bảo trì dự đoán: cảm biến rung → bộ thu thập → truyền không dây → dashboard phân tích</figcaption>
+</figure>
 <h2>Tại sao rung động là chỉ số PdM tốt nhất?</h2>
 <p>Rung động (vibration) là phương pháp CbM phổ biến nhất cho máy quay (motor, bơm, quạt, máy nén, hộp số) vì: xuất hiện sớm trước khi lỗi nhìn thấy được, đặc tính phổ tần số mang thông tin chẩn đoán rõ ràng (unbalance, misalignment, bearing fault, resonance), và thiết bị đo ngày càng rẻ và dễ tích hợp.</p>
 <p>Các chỉ số rung theo dõi: vận tốc rung RMS (mm/s) theo ISO 10816 để đánh giá tình trạng tổng thể, và phân tích phổ FFT để chẩn đoán nguyên nhân cụ thể.</p>
 
 <h2>Mô hình hệ thống CbM cơ bản cho nhà máy Việt Nam</h2>
 <p>Không cần đầu tư hệ thống CMS phức tạp ngay từ đầu. Mô hình đơn giản và hiệu quả:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/phong-dieu-khien-giam-sat-rung-dong-nha-may.webp" alt="Phòng điều khiển trung tâm hệ thống giám sát rung predictive maintenance nhà máy" width="1200" height="auto" loading="lazy">
+  <figcaption>Phòng điều khiển giám sát rung: alarm status, vibration trend và đánh giá sức khỏe thiết bị real-time</figcaption>
+</figure>
 <ul>
   <li><strong>Cảm biến:</strong> HS-420 (4-20mA) hoặc HS-100 (IEPE) gắn cố định tại bearing housing các máy quan trọng nhất (critical assets)</li>
   <li><strong>Xử lý tín hiệu:</strong> HS-420 vào trực tiếp card AI của PLC/SCADA đang có; HS-100 qua module HS-550/HS-551</li>
@@ -211,12 +225,11 @@
 </div>
 
 <div class="internal-links">
-  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
-  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter rung 4-20mA tích hợp PLC</a>
-  <a href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo rung cầm tay walk-around</a>
-  <a href="/categories/vibration-systems-switches/">Danh mục: Hệ thống và module đo rung</a>
-  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 vs ISO 20816: tiêu chuẩn đánh giá rung</a>
-  <a href="/blog/giam-sat-rung-bom-ly-tam-nha-may-loc-dau/">Giám sát rung bơm ly tâm trong nhà máy lọc dầu</a>
+  <h4><i class="ti ti-link"></i> Bài viết & sản phẩm liên quan</h4>
+  <a href="/blog/xay-dung-chuong-trinh-cbm-7-buoc-nha-may-viet-nam/">Xây dựng chương trình CBM 7 bước cho nhà máy</a>
+  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816/20816: tiêu chuẩn đánh giá rung</a>
+  <a href="/blog/ket-noi-cam-bien-rung-4-20ma-vao-scada-wonderware-ignition/">Kết nối 4-20mA vào SCADA</a>
+  <a href="/categories/process-control-lps-4-20ma/">Xem cảm biến 4-20mA Hansford Sensors →</a>
 </div>
 
 </div>

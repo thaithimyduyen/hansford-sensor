@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>FFT là gì và hoạt động như thế nào?</h2>
 <p>Cảm biến IEPE xuất tín hiệu gia tốc theo thời gian (waveform). FFT là thuật toán toán học phân tích waveform này thành các thành phần tần số riêng lẻ. Kết quả là một đồ thị với trục X là tần số (Hz), trục Y là biên độ (g, mm/s, hay µm). Mỗi đỉnh (peak) trên đồ thị tương ứng với một nguồn rung có tần số xác định.</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/dashboard-giam-sat-rung-dong-nha-may.webp" alt="Phần mềm phân tích FFT rung động hiển thị phổ tần số - giám sát thiết bị công nghiệp" width="1200" height="auto" loading="lazy">
+  <figcaption>Giao diện phân tích rung động: phổ tần số FFT giúp xác định chính xác nguyên nhân gây rung</figcaption>
+</figure>
 <p>Hai thông số cấu hình quan trọng khi thực hiện FFT:</p>
 <table class="info-table">
   <thead><tr><th>Thông số</th><th>Ý nghĩa</th><th>Ảnh hưởng</th></tr></thead>
@@ -179,6 +188,11 @@
 
 <h2>Đọc phổ từng bước — Ví dụ thực tế</h2>
 <p>Motor điện 4-pole, 50 Hz → tốc độ danh nghĩa 1500 RPM = 25 Hz. Sau khi đo FFT tại ổ bi DE:</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/hop-so-cong-nghiep-vi-tri-lap-cam-bien-rung.webp" alt="Hộp số công nghiệp với các vị trí đo rung - ứng dụng phân tích FFT chẩn đoán lỗi" width="1200" height="auto" loading="lazy">
+  <figcaption>Vị trí gắn cảm biến trên hộp số để thu thập dữ liệu phân tích FFT</figcaption>
+</figure>
 <ul>
   <li><strong>Peak tại 25 Hz (1x):</strong> Bình thường nếu thấp. Nếu đột ngột tăng → mất cân bằng rotor</li>
   <li><strong>Peak tại 50 Hz (2x):</strong> Tăng đáng kể → nghi lệch tâm góc hoặc song song</li>

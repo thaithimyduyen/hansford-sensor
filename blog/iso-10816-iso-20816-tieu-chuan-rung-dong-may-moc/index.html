@@ -76,6 +76,10 @@
       .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
       .internal-links a:last-child { border-bottom: none; }
       .internal-links a:hover { color: #0f2040; }
+      .blog-img { margin: 1.5rem 0; border-radius: 10px; overflow: hidden; }
+      .blog-img img { width: 100%; height: auto; display: block; border-radius: 10px; }
+      .blog-img figcaption { font-size: .78rem; color: #64748b; text-align: center; padding: .5rem .5rem 0; font-style: italic; }
+
     </style>
     <script type="application/ld+json">
 {
@@ -157,6 +161,11 @@
 
 <h2>ISO 10816 — Tiêu chuẩn đo tại thân máy (non-rotating parts)</h2>
 <p>ISO 10816 đo <strong>vận tốc rung RMS (mm/s)</strong> tại vỏ máy, ổ đỡ và thân không quay (bearing housing, machine casing). Đây là cách đo dễ thực hiện nhất với cảm biến gắn ngoài, không cần tiếp cận trục quay.</p>
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/phong-bom-cong-nghiep-motor-giam-sat-rung.webp" alt="Phòng bơm công nghiệp - áp dụng tiêu chuẩn ISO 10816 ISO 20816 đánh giá rung động" width="1200" height="auto" loading="lazy">
+  <figcaption>Cụm motor-bơm công nghiệp — tiêu chuẩn ISO 10816/20816 quy định giới hạn rung cho từng nhóm máy</figcaption>
+</figure>
 <p>ISO 10816 gồm nhiều Part theo loại máy:</p>
 <table class="info-table">
   <thead><tr><th>Part</th><th>Loại máy</th></tr></thead>
@@ -184,6 +193,11 @@
   <tr><td>Displacement</td><td>µm hoặc mm</td><td>Shaft relative vibration (trục quay)</td></tr>
 </table>
 
+
+<figure class="blog-img">
+  <img src="/assets/images/blog/dashboard-giam-sat-rung-dong-nha-may.webp" alt="Hệ thống giám sát rung theo tiêu chuẩn ISO 10816 với alarm zone A B C D" width="1200" height="auto" loading="lazy">
+  <figcaption>Dashboard giám sát với alarm zone theo ISO 10816: Good (A) → Acceptable (B) → Warning (C) → Danger (D)</figcaption>
+</figure>
 <h2>Áp dụng thực tế tại Việt Nam</h2>
 <p>Các dự án EPC, nhà máy điện (EVN, BOT) và O&G (PVN, PTSC) thường tham chiếu ISO 10816 hoặc ISO 20816 trong tài liệu kỹ thuật và vận hành. Kỹ sư bảo trì cần:</p>
 <ol>
