@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Kết nối cảm biến rung 4-20mA vào SCADA Wonderware Ignition | Hansford</title>
+    <meta name="description" content="Hướng dẫn đưa tín hiệu cảm biến rung HS-420 4-20mA vào SCADA Wonderware InTouch, iFIX và Ignition: tag cấu hình, scaling, alarm, trending thực tế." />
+    <meta name="keywords" content="cảm biến rung SCADA Wonderware Ignition, kết nối 4-20mA SCADA, vibration sensor SCADA integration vietnam, HS-420 SCADA" />
+    <link rel="canonical" href="https://hansford.vn/blog/ket-noi-cam-bien-rung-4-20ma-vao-scada-wonderware-ignition/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Kết nối cảm biến rung 4-20mA vào SCADA Wonderware Ignition | Hansford" />
+    <meta property="og:description" content="Hướng dẫn đưa tín hiệu cảm biến rung HS-420 4-20mA vào SCADA Wonderware InTouch, iFIX và Ignition: tag cấu hình, scaling, alarm, trending thực tế." />
+    <meta property="og:url" content="https://hansford.vn/blog/ket-noi-cam-bien-rung-4-20ma-vao-scada-wonderware-ignition/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/hs-421-accelerometer-3-image-2.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Kết nối cảm biến rung 4-20mA vào SCADA: Hướng dẫn cấu hình Wonderware, iFIX và Ignition",
+      "description": "Hướng dẫn đưa tín hiệu cảm biến rung HS-420 4-20mA vào SCADA Wonderware InTouch, iFIX và Ignition: tag cấu hình, scaling, alarm, trending thực tế.",
+      "url": "https://hansford.vn/blog/ket-noi-cam-bien-rung-4-20ma-vao-scada-wonderware-ignition/",
+      "datePublished": "2026-07-07",
+      "dateModified": "2026-07-07",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/hs-421-accelerometer-3-image-2.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/ket-noi-cam-bien-rung-4-20ma-vao-scada-wonderware-ignition/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"How-To","item":"https://hansford.vn/blog/ket-noi-cam-bien-rung-4-20ma-vao-scada-wonderware-ignition/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Nếu nhà máy không có OPC server, đưa tín hiệu SCADA theo cách nào?","acceptedAnswer":{"@type":"Answer","text":"Nhiều SCADA hiện đại (Ignition, iFIX) hỗ trợ kết nối trực tiếp với PLC qua driver native (Siemens S7, EtherNet/IP...) không cần OPC riêng. Ngoài ra có thể dùng Modbus TCP nếu PLC hỗ trợ, hoặc đầu ra analog 4-20mA trực tiếp vào card AI của SCADA controller."}},
+        {"@type":"Question","name":"HS-421I (ATEX) có cấu hình SCADA khác HS-420 không?","acceptedAnswer":{"@type":"Answer","text":"Về phía SCADA hoàn toàn giống nhau — cả hai đều xuất 4-20mA tỷ lệ mm/s. Sự khác biệt chỉ ở phía field: HS-421I cần đi qua safety barrier trước khi vào card AI PLC, tín hiệu đến PLC vẫn là 4-20mA tiêu chuẩn."}},
+        {"@type":"Question","name":"Deadband lưu historian nên đặt bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Thông thường 0.2–0.5 mm/s cho bơm và quạt tiêu chuẩn. Deadband quá nhỏ ( 1 mm/s) có thể bỏ sót xu hướng tăng chậm. Điều chỉnh sau 1-2 tuần vận hành để cân bằng."}},
+        {"@type":"Question","name":"Alarm trong SCADA và alarm trong HS-SE (switching enclosure) khác nhau không?","acceptedAnswer":{"@type":"Answer","text":"Có mục đích khác nhau. HS-SE là relay cơ học kích hoạt ngay tại chỗ khi vượt ngưỡng — không cần PLC hay SCADA, phản ứng nhanh (ms). SCADA alarm xử lý logic phức tạp hơn, ghi log, gửi email/SMS — nhưng phụ thuộc vào toàn bộ chuỗi truyền thông."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › How-To
+    </div>
+    <span class="badge-cat">How-To</span>
+    <h1>Kết nối cảm biến rung 4-20mA vào SCADA: Hướng dẫn cấu hình Wonderware, iFIX và Ignition</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 7, 2026 · 8 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">PLC xử lý logic điều khiển; SCADA lưu trữ dữ liệu lịch sử, hiển thị xu hướng và gửi cảnh báo đến người giám sát. Đưa tín hiệu rung động từ cảm biến 4-20mA lên SCADA không chỉ là "thêm một tag" — nó tạo ra nền tảng cho bảo trì dự đoán (PdM) với đầy đủ dữ liệu lịch sử để phân tích xu hướng.</p>
+
+<h2>Kiến trúc hệ thống — Từ cảm biến đến SCADA</h2>
+<p>Chuỗi tín hiệu đầy đủ: <strong>HS-420 (4-20mA) → Card AI PLC → Tag PLC → OPC Server → SCADA Tag → Historian → Trend display</strong></p>
+<table class="info-table">
+  <thead><tr><th>Layer</th><th>Thiết bị/Phần mềm</th><th>Nhiệm vụ</th></tr></thead>
+  <tr><td>Field</td><td>HS-420 transmitter</td><td>Đo rung, xuất 4-20mA tỷ lệ với mm/s RMS</td></tr>
+  <tr><td>Control</td><td>PLC (Siemens S7, AB ControlLogix...)</td><td>Đọc AI, scale về mm/s, alarm logic</td></tr>
+  <tr><td>Communication</td><td>OPC-DA / OPC-UA server</td><td>Bridge giữa PLC và SCADA</td></tr>
+  <tr><td>Supervision</td><td>Wonderware / iFIX / Ignition</td><td>Hiển thị, trend, alarm management</td></tr>
+  <tr><td>History</td><td>Historian (Aveva / OSIsoft PI / Ignition)</td><td>Lưu trữ dữ liệu thời gian thực</td></tr>
+</table>
+
+<h2>Scaling 4-20mA về mm/s — Nguyên tắc cơ bản</h2>
+<p>HS-420 mặc định: 4 mA = 0 mm/s, 20 mA = 25 mm/s (có thể thay đổi theo yêu cầu). Tại PLC, scale giá trị raw ADC (thường 0–27648 với Siemens S7, hoặc 0–32767 với nhiều PLC khác) về mm/s bằng phép nội suy tuyến tính:</p>
+<p><code>mm_per_s = (raw_value - raw_at_4mA) / (raw_at_20mA - raw_at_4mA) × 25.0</code></p>
+<p>Kiểm tra nhanh: khi cảm biến ngắt hở mạch → tín hiệu về 0 mA (&lt; 4 mA) → PLC nhận biết lỗi (broken wire detection). Đây là ưu điểm lớn của 4-20mA so với 0-10V.</p>
+
+<h2>Cấu hình tag trong Wonderware InTouch</h2>
+<p>Trong Wonderware InTouch (nay là AVEVA InTouch), mỗi điểm đo rung là một Analog Input tag:</p>
+<ul>
+  <li><strong>Tag name:</strong> Ví dụ <code>PUMP_01_VIBRATION_NDE</code> (quy ước đặt tên theo thiết bị + vị trí)</li>
+  <li><strong>I/O Device:</strong> Chọn OPC server đang kết nối PLC</li>
+  <li><strong>Item name:</strong> Địa chỉ OPC tương ứng tag PLC (VD: <code>S7-300.DB1.DBD0</code>)</li>
+  <li><strong>Eng units:</strong> mm/s</li>
+  <li><strong>Min/Max EU:</strong> 0 / 25 (hoặc theo dải đã configure ở HS-420)</li>
+  <li><strong>Alarm Hi:</strong> Ngưỡng vùng C theo ISO 10816 của thiết bị cụ thể</li>
+  <li><strong>Alarm HiHi:</strong> Ngưỡng vùng D — thường dẫn đến trip bơm/motor</li>
+</ul>
+
+<h2>Ignition (Inductive Automation) — Cách tiếp cận hiện đại</h2>
+<p>Ignition dùng kiến trúc tag-based với OPC-UA native. Trong Tag Browser:</p>
+<ol>
+  <li>Tạo OPC-UA connection đến PLC (hoặc OPC server)</li>
+  <li>Tạo Memory Tag loại Float64 tên <code>Pump01_Vib_NDE_mms</code></li>
+  <li>Dùng Expression Tag để scale: <code>{[PLC]DB1/VibRaw} * 25.0 / 27648</code></li>
+  <li>Cấu hình Historical Tag để Historian lưu mỗi 1 giây (hoặc theo deadband)</li>
+  <li>Trong Vision hoặc Perspective tạo trend chart gắn với tag này</li>
+</ol>
+<div class="callout"><strong>Kinh nghiệm thực tế:</strong> Cài đặt deadband cho historian hợp lý (thường 0.1–0.5 mm/s) để tránh lưu quá nhiều điểm dữ liệu khi máy chạy ổn định. Lưu trữ liên tục không deadband có thể tốn 500 MB–1 GB mỗi tháng chỉ cho 20 điểm đo. Fast Group Engineering tư vấn cấu hình hoàn chỉnh từ HS-420 đến SCADA cho nhà máy tại Việt Nam — liên hệ <a href="mailto:sales@hansford.vn">sales@hansford.vn</a>.</div>
+
+<h2>Trending và phân tích xu hướng</h2>
+<p>Sau khi có dữ liệu lịch sử, kỹ sư bảo trì có thể xây dựng trend chart so sánh mức rung theo tuần/tháng. Dấu hiệu cần hành động: xu hướng tăng dần đều qua 4-6 tuần dù chưa vượt ngưỡng alarm. Máy bơm từ 2 mm/s tăng lên 3.5 mm/s trong 6 tuần — chưa đến zone C (4.5 mm/s) nhưng tốc độ tăng cho thấy cần kiểm tra sớm.</p>
+
+
+<p class="kw-note">Kỹ sư tại Việt Nam có thể mua <a href="/products/hs-420-accelerometer/">HS-420</a> và phụ kiện Hansford Sensors trực tiếp từ <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — nhập khẩu từ nhà máy UK, không qua trung gian, giao hàng trong ngày tại TPHCM và Vũng Tàu.</p>
+
+<div class="callout"><strong>Hỗ trợ kỹ thuật từ Fast Group Engineering:</strong> Ngoài việc cung cấp thiết bị, Fast Group Engineering hỗ trợ tư vấn cấu hình hệ thống, troubleshooting tại hiện trường và hướng dẫn tích hợp với PLC/DCS sẵn có của nhà máy. Phản hồi trong 24 giờ làm việc — gọi <a href="tel:+84938888958">0938 888 958</a> hoặc email <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Nếu nhà máy không có OPC server, đưa tín hiệu SCADA theo cách nào?</h3><p>Nhiều SCADA hiện đại (Ignition, iFIX) hỗ trợ kết nối trực tiếp với PLC qua driver native (Siemens S7, EtherNet/IP...) không cần OPC riêng. Ngoài ra có thể dùng Modbus TCP nếu PLC hỗ trợ, hoặc đầu ra analog 4-20mA trực tiếp vào card AI của SCADA controller.</p></div>
+  <div class="faq-item"><h3>HS-421I (ATEX) có cấu hình SCADA khác HS-420 không?</h3><p>Về phía SCADA hoàn toàn giống nhau — cả hai đều xuất 4-20mA tỷ lệ mm/s. Sự khác biệt chỉ ở phía field: HS-421I cần đi qua safety barrier trước khi vào card AI PLC, tín hiệu đến PLC vẫn là 4-20mA tiêu chuẩn.</p></div>
+  <div class="faq-item"><h3>Deadband lưu historian nên đặt bao nhiêu?</h3><p>Thông thường 0.2–0.5 mm/s cho bơm và quạt tiêu chuẩn. Deadband quá nhỏ (< 0.1 mm/s) lưu quá nhiều dữ liệu; deadband quá lớn (> 1 mm/s) có thể bỏ sót xu hướng tăng chậm. Điều chỉnh sau 1-2 tuần vận hành để cân bằng.</p></div>
+  <div class="faq-item"><h3>Alarm trong SCADA và alarm trong HS-SE (switching enclosure) khác nhau không?</h3><p>Có mục đích khác nhau. HS-SE là relay cơ học kích hoạt ngay tại chỗ khi vượt ngưỡng — không cần PLC hay SCADA, phản ứng nhanh (ms). SCADA alarm xử lý logic phức tạp hơn, ghi log, gửi email/SMS — nhưng phụ thuộc vào toàn bộ chuỗi truyền thông.</p></div>
+  <div class="faq-item"><h3>Mua cảm biến Hansford Sensors chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering – Fast Group Co., Ltd (MST: 0315555189) là nhà phân phối chính thức và duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Kho sẵn tại TPHCM (150/41 Nguyễn Cư Trinh, Q.1) và Vũng Tàu (41 Lê Văn Lộc). Giao hàng trong ngày tại TPHCM và Vũng Tàu, 2–3 ngày toàn quốc. Đầy đủ C/O Anh Quốc, C/Q, ATEX cert, hóa đơn VAT đỏ. Hotline: 0938 888 958 · Email: sales@hansford.vn</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA mm/s cho SCADA</a>
+  <a href="/products/hs-421i-intrinsically-safe-accelerometer/">HS-421I – 4-20mA ATEX cho nhà máy O&amp;G</a>
+  <a href="/blog/ket-noi-cam-bien-rung-iepe-plc-siemens-allen-bradley/">Kết nối IEPE với PLC Siemens/Allen-Bradley</a>
+  <a href="/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/">Thiết lập ngưỡng Alarm và Trip setpoints</a>
+  <a href="/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/">Predictive Maintenance: xây hệ thống giám sát rung</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

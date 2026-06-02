@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Giám sát rung băng tải khai mỏ xi măng – cảm biến Hansford | Hansford</title>
+    <meta name="description" content="Hướng dẫn giám sát rung động băng tải khai mỏ và xi măng: lỗi idler bearing, drive motor, hệ thống giám sát liên tục với HS-420 và HS-100 tại Việt Nam." />
+    <meta name="keywords" content="giám sát rung băng tải khai mỏ, conveyor vibration monitoring xi măng, cảm biến rung băng tải công nghiệp, conveyor belt vibration vietnam" />
+    <link rel="canonical" href="https://hansford.vn/blog/giam-sat-rung-bang-tai-khai-mo-xi-mang/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Giám sát rung băng tải khai mỏ xi măng – cảm biến Hansford | Hansford" />
+    <meta property="og:description" content="Hướng dẫn giám sát rung động băng tải khai mỏ và xi măng: lỗi idler bearing, drive motor, hệ thống giám sát liên tục với HS-420 và HS-100 tại Việt Nam." />
+    <meta property="og:url" content="https://hansford.vn/blog/giam-sat-rung-bang-tai-khai-mo-xi-mang/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/Group-23480.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Giám sát rung động băng tải công nghiệp trong ngành khai thác mỏ và xi măng tại Việt Nam",
+      "description": "Hướng dẫn giám sát rung động băng tải khai mỏ và xi măng: lỗi idler bearing, drive motor, hệ thống giám sát liên tục với HS-420 và HS-100 tại Việt Nam.",
+      "url": "https://hansford.vn/blog/giam-sat-rung-bang-tai-khai-mo-xi-mang/",
+      "datePublished": "2026-07-21",
+      "dateModified": "2026-07-21",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/Group-23480.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/giam-sat-rung-bang-tai-khai-mo-xi-mang/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"Industry","item":"https://hansford.vn/blog/giam-sat-rung-bang-tai-khai-mo-xi-mang/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Idler bearing kẹt có phát hiện được bằng cảm biến gắn ở motor không?","acceptedAnswer":{"@type":"Answer","text":"Không. Idler bearing kẹt tạo rung cục bộ, không truyền đủ đến motor housing để phát hiện. Phát hiện idler hỏng cần walk-around trực tiếp (nghe, cảm nhận nhiệt) hoặc cảm biến thermal/rung gắn ngay tại idler frame — phương pháp này tốn kém với số lượng idler lớn."}},
+        {"@type":"Question","name":"Ngưỡng rung nào nên đặt cho motor băng tải xi măng?","acceptedAnswer":{"@type":"Answer","text":"Motor từ 15–300 kW theo ISO 10816-3: Alert tại 4.5 mm/s (vùng B/C), Trip tại 7.1 mm/s (vùng C/D). Với motor lớn hơn hoặc tốc độ thay đổi, tra cụ thể bảng ISO 10816-3 theo công suất và loại nền."}},
+        {"@type":"Question","name":"Có thể giám sát không dây (wireless) để tránh kéo cáp dọc băng tải không?","acceptedAnswer":{"@type":"Answer","text":"Wireless vibration sensor ngày càng khả thi, đặc biệt cho điểm đo xa. Tuy nhiên với băng tải dài trong môi trường nhiều bụi và kim loại, wireless có thể gặp vấn đề nhiễu và mất kết nối. Cần đánh giá kỹ topology mạng wireless trước khi triển khai. Cho motor chính, cảm biến có dây (HS-420) vẫn đáng tin cậy nhất."}},
+        {"@type":"Question","name":"HS-420 có cần nguồn riêng hay lấy điện từ mạch 4-20mA?","acceptedAnswer":{"@type":"Answer","text":"HS-420 là thiết bị 2-wire loop-powered — lấy điện trực tiếp từ nguồn 24VDC của mạch vòng 4-20mA. Không cần nguồn riêng. Đây là ưu điểm lớn khi lắp đặt tại hiện trường: chỉ cần 2 sợi dây đấu vào card AI PLC là đủ."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › Industry
+    </div>
+    <span class="badge-cat">Industry</span>
+    <h1>Giám sát rung động băng tải công nghiệp trong ngành khai thác mỏ và xi măng tại Việt Nam</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 7, 2026 · 8 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Băng tải là xương sống của ngành khai thác mỏ và xi măng tại Việt Nam — từ mỏ đá vôi Hà Nam, Ninh Bình đến các nhà máy xi măng Hoàng Thạch, Bút Sơn, Nghi Sơn. Một băng tải dài 2 km với hàng trăm idler (con lăn) — nếu một idler bearing kẹt và bốc cháy, toàn bộ dây chuyền có thể dừng nhiều giờ. <strong>Giám sát rung động phòng ngừa</strong> cho băng tải là đầu tư thiết thực với ROI nhanh.</p>
+
+<h2>Các điểm hỏng hóc chính trên hệ thống băng tải</h2>
+<table class="info-table">
+  <thead><tr><th>Bộ phận</th><th>Lỗi phổ biến</th><th>Hậu quả</th><th>Tần suất kiểm tra</th></tr></thead>
+  <tr><td><strong>Drive motor</strong></td><td>Mòn ổ bi DE/NDE, mất cân bằng</td><td>Dừng băng tải đột ngột</td><td>Liên tục (online)</td></tr>
+  <tr><td><strong>Gearbox/Reducer</strong></td><td>Mòn bánh răng, lỏng trục</td><td>Dừng + hỏng hộp số</td><td>Liên tục (online)</td></tr>
+  <tr><td><strong>Drive pulley bearing</strong></td><td>Mòn ổ bi, lệch tâm</td><td>Băng tải lệch, rách</td><td>Hàng tuần (walk-around)</td></tr>
+  <tr><td><strong>Tension pulley bearing</strong></td><td>Mòn ổ bi</td><td>Mất độ căng băng</td><td>Hàng tuần</td></tr>
+  <tr><td><strong>Idler rollers</strong></td><td>Kẹt bearing, không quay</td><td>Mài mòn băng + nguy cơ cháy</td><td>Hàng ngày (walk-around)</td></tr>
+</table>
+
+<h2>Chiến lược giám sát theo mức độ quan trọng</h2>
+<p>Không phải tất cả điểm trên băng tải đều cần cảm biến cố định. Chiến lược thực tế:</p>
+<ul>
+  <li><strong>Drive motor và gearbox (tải trọng lớn nhất):</strong> Cảm biến HS-420 gắn cố định, đấu về PLC/SCADA. Đây là thiết bị quan trọng nhất — hỏng = dừng toàn dây chuyền.</li>
+  <li><strong>Drive và tension pulley:</strong> HS-420 gắn cố định hoặc HS-620 kiểm tra hàng tuần</li>
+  <li><strong>Idler rollers (hàng trăm điểm):</strong> Walk-around bằng HS-620 hàng ngày tại các khu vực quan trọng (cua, điểm tải nặng). Idler bị kẹt thường nghe thấy tiếng hoặc cảm nhận nhiệt trước khi tín hiệu rung tăng cao.</li>
+</ul>
+
+<h2>Môi trường đặc thù — Xi măng và khai mỏ</h2>
+<p>Hai môi trường khắc nghiệt nhất cho cảm biến:</p>
+<ul>
+  <li><strong>Xi măng:</strong> Bụi mịn xâm nhập mọi nơi, rung nền cao từ máy nghiền, nhiệt độ có thể đến 80–100°C gần lò quay. Cần cảm biến IP67 tối thiểu, cáp FEP hoặc HFFR.</li>
+  <li><strong>Khai mỏ:</strong> Va đập lớn khi đá rơi vào băng tải, bụi than/đá, ẩm cao. Cần cảm biến có shock limit cao (HS-100 có shock limit đến 5000g), IP67, cáp PUR chịu mài mòn.</li>
+</ul>
+<div class="callout"><strong>Ứng dụng tại Việt Nam:</strong> Fast Group Engineering — nhà phân phối chính hãng Hansford Sensors tại Việt Nam — đã cung cấp cảm biến rung cho nhiều nhà máy xi măng và khai thác khoáng sản. Kho sẵn TPHCM và Vũng Tàu, hỗ trợ kỹ thuật lắp đặt tại chỗ. Liên hệ <a href="tel:+84938888958">0938 888 958</a>.</div>
+
+<h2>Cấu hình hệ thống giám sát cho băng tải chính</h2>
+<p>Với băng tải chính (conveyor chính dài &gt; 500 m, tải &gt; 500 tấn/giờ), cấu hình tối thiểu khuyến nghị:</p>
+<ul>
+  <li>2 × HS-420 tại motor (DE và NDE bearing) → alarm 6 mm/s, trip 10 mm/s</li>
+  <li>2 × HS-420 tại gearbox output bearing → alarm 4.5 mm/s, trip 7 mm/s</li>
+  <li>1 × HS-420 tại drive pulley bearing → alarm 5 mm/s</li>
+  <li>Tất cả đấu về PLC SCADA với data logging</li>
+  <li>Bổ sung HS-620 cho walk-around hàng ngày tại toàn bộ belt system</li>
+</ul>
+
+
+<p class="kw-note">Tại Việt Nam, <a href="/products/hs-420-accelerometer/">HS-420</a> và toàn bộ dòng Hansford Sensors cho ứng dụng công nghiệp được cung cấp bởi <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — nhà phân phối chính hãng Hansford Sensors UK, sẵn kho TPHCM &amp; Vũng Tàu, đủ C/O và hồ sơ EPC/PMC.</p>
+
+<div class="callout"><strong>Kinh nghiệm cung ứng thực tế:</strong> Fast Group Engineering đã cung cấp cảm biến rung Hansford Sensors cho các đơn vị VSP (Vietsovpetro), PTSC, PV GAS, PVEP, EVN và EPC Contractor quốc tế — với đầy đủ hồ sơ C/O Anh Quốc · C/Q xuất xưởng · ATEX/IECEx cert · Hóa đơn VAT đỏ. Kho TPHCM (150/41 Nguyễn Cư Trinh, P. Cầu Ông Lãnh, Q.1, TP.HCM) và Vũng Tàu (41 Lê Văn Lộc, TP. Vũng Tàu, BR-VT) cho phép giao hàng trong ngày từ kho Vũng Tàu với các đơn gấp từ khu vực dầu khí và đóng tàu. Liên hệ: <a href="tel:+84938888958">0938 888 958</a> · <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Idler bearing kẹt có phát hiện được bằng cảm biến gắn ở motor không?</h3><p>Không. Idler bearing kẹt tạo rung cục bộ, không truyền đủ đến motor housing để phát hiện. Phát hiện idler hỏng cần walk-around trực tiếp (nghe, cảm nhận nhiệt) hoặc cảm biến thermal/rung gắn ngay tại idler frame — phương pháp này tốn kém với số lượng idler lớn.</p></div>
+  <div class="faq-item"><h3>Ngưỡng rung nào nên đặt cho motor băng tải xi măng?</h3><p>Motor từ 15–300 kW theo ISO 10816-3: Alert tại 4.5 mm/s (vùng B/C), Trip tại 7.1 mm/s (vùng C/D). Với motor lớn hơn hoặc tốc độ thay đổi, tra cụ thể bảng ISO 10816-3 theo công suất và loại nền.</p></div>
+  <div class="faq-item"><h3>Có thể giám sát không dây (wireless) để tránh kéo cáp dọc băng tải không?</h3><p>Wireless vibration sensor ngày càng khả thi, đặc biệt cho điểm đo xa. Tuy nhiên với băng tải dài trong môi trường nhiều bụi và kim loại, wireless có thể gặp vấn đề nhiễu và mất kết nối. Cần đánh giá kỹ topology mạng wireless trước khi triển khai. Cho motor chính, cảm biến có dây (HS-420) vẫn đáng tin cậy nhất.</p></div>
+  <div class="faq-item"><h3>HS-420 có cần nguồn riêng hay lấy điện từ mạch 4-20mA?</h3><p>HS-420 là thiết bị 2-wire loop-powered — lấy điện trực tiếp từ nguồn 24VDC của mạch vòng 4-20mA. Không cần nguồn riêng. Đây là ưu điểm lớn khi lắp đặt tại hiện trường: chỉ cần 2 sợi dây đấu vào card AI PLC là đủ.</p></div>
+  <div class="faq-item"><h3>Mua cảm biến Hansford Sensors chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering – Fast Group Co., Ltd (MST: 0315555189) là nhà phân phối chính thức và duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Kho sẵn tại TPHCM (150/41 Nguyễn Cư Trinh, Q.1) và Vũng Tàu (41 Lê Văn Lộc). Giao hàng trong ngày tại TPHCM và Vũng Tàu, 2–3 ngày toàn quốc. Đầy đủ C/O Anh Quốc, C/Q, ATEX cert, hóa đơn VAT đỏ. Hotline: 0938 888 958 · Email: sales@hansford.vn</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA cho motor và gearbox</a>
+  <a href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo rung cầm tay walk-around</a>
+  <a href="/categories/vibration-systems-switches/">Danh mục: Hệ thống và module rung</a>
+  <a href="/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/">Predictive Maintenance: xây hệ thống giám sát rung</a>
+  <a href="/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/">Thiết lập ngưỡng Alarm và Trip setpoints</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

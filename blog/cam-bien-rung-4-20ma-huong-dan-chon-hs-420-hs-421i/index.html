@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Cảm biến rung 4-20mA: chọn HS-420 hay HS-421I? | Hansford</title>
+    <meta name="description" content="Cảm biến rung 4-20mA là gì, vì sao phù hợp PLC/DCS, và cách chọn giữa HS-420 (vùng an toàn) và HS-421I (ATEX) cho nhà máy tại Việt Nam." />
+    <meta name="keywords" content="cảm biến rung 4-20mA, vibration transmitter PLC, 4-20mA accelerometer vietnam, HS-420, HS-421I" />
+    <link rel="canonical" href="https://hansford.vn/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Cảm biến rung 4-20mA: chọn HS-420 hay HS-421I? | Hansford" />
+    <meta property="og:description" content="Cảm biến rung 4-20mA là gì, vì sao phù hợp PLC/DCS, và cách chọn giữa HS-420 (vùng an toàn) và HS-421I (ATEX) cho nhà máy tại Việt Nam." />
+    <meta property="og:url" content="https://hansford.vn/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/hs-420-accelerometer-image-2.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Cảm biến rung 4-20mA là gì? Hướng dẫn chọn HS-420 / HS-421I cho hệ thống PLC/DCS",
+      "description": "Cảm biến rung 4-20mA là gì, vì sao phù hợp PLC/DCS, và cách chọn giữa HS-420 (vùng an toàn) và HS-421I (ATEX) cho nhà máy tại Việt Nam.",
+      "url": "https://hansford.vn/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/",
+      "datePublished": "2026-01-06",
+      "dateModified": "2026-06-02",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/hs-420-accelerometer-image-2.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"Sản phẩm","item":"https://hansford.vn/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Cảm biến rung 4-20mA khác gì cảm biến IEPE?","acceptedAnswer":{"@type":"Answer","text":"Cảm biến IEPE xuất tín hiệu điện áp AC và cần bộ điều hòa tín hiệu riêng để đọc; transmitter 4-20mA tích hợp sẵn mạch xử lý và xuất dòng 4-20mA cắm thẳng vào PLC/DCS, không cần phần cứng bổ sung."}},
+        {"@type":"Question","name":"Khi nào nên chọn HS-421I thay vì HS-420?","acceptedAnswer":{"@type":"Answer","text":"Chọn HS-421I khi cảm biến lắp trong khu vực phân loại nguy hiểm cháy nổ (Zone 1/Zone 2) như nhà máy dầu khí, hóa chất. HS-420 dùng cho vùng an toàn thông thường với chi phí thấp hơn."}},
+        {"@type":"Question","name":"HS-421I có cần thêm thiết bị gì khi đấu vào PLC không?","acceptedAnswer":{"@type":"Answer","text":"Có. Là thiết bị an toàn nội tại, HS-421I phải đi qua safety barrier hoặc galvanic isolator đạt chuẩn Ex trước khi tín hiệu vào card đầu vào analog của PLC."}},
+        {"@type":"Question","name":"Mua HS-420 / HS-421I chính hãng tại Việt Nam ở đâu?","acceptedAnswer":{"@type":"Answer","text":"Fast Group Engineering là nhà phân phối chính thức Hansford Sensors tại Việt Nam, có sẵn kho TPHCM và Vũng Tàu, cung cấp C/O, C/Q và VAT hóa đơn đỏ cho dự án."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › Sản phẩm
+    </div>
+    <span class="badge-cat">Sản phẩm</span>
+    <h1>Cảm biến rung 4-20mA là gì? Hướng dẫn chọn HS-420 / HS-421I cho hệ thống PLC/DCS</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 1, 2026 · 7 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Khi tích hợp giám sát rung động vào hệ thống điều khiển sẵn có, kỹ sư thường đứng trước lựa chọn: dùng cảm biến IEPE truyền thống hay cảm biến rung <strong>4-20mA</strong>? Với phần lớn ứng dụng giám sát liên tục đưa tín hiệu về PLC/DCS, dòng 4-20mA là phương án đơn giản và đáng tin cậy nhất. Bài viết giải thích nguyên lý và hướng dẫn chọn giữa hai model phổ biến nhất của Hansford Sensors: <strong>HS-420</strong> và <strong>HS-421I</strong>.</p>
+
+<h2>Cảm biến rung 4-20mA là gì?</h2>
+<p>Cảm biến rung 4-20mA (4-20mA vibration transmitter) là thiết bị tích hợp một phần tử gia tốc áp điện cùng mạch xử lý tín hiệu bên trong, cho ra trực tiếp <strong>dòng điện 4-20mA tỷ lệ với mức rung tổng</strong> (thường là vận tốc rung RMS, đơn vị mm/s). Khác với cảm biến IEPE chỉ xuất tín hiệu điện áp AC cần bộ điều hòa tín hiệu riêng, transmitter 4-20mA đã "đóng gói" toàn bộ phần xử lý — tín hiệu ra cắm thẳng vào card đầu vào analog (AI) của PLC/DCS.</p>
+<p>Tín hiệu dòng 4-20mA là chuẩn công nghiệp lâu đời vì ba lý do: chống nhiễu tốt trên đường cáp dài, không suy hao theo điện trở dây, và bản thân mức 4mA (thay vì 0mA) giúp phát hiện đứt dây/hỏng cảm biến ngay lập tức.</p>
+
+<h2>Vì sao 4-20mA phù hợp với PLC/DCS?</h2>
+<ul>
+  <li><strong>Không cần phần cứng bổ sung:</strong> không cần bộ điều hòa IEPE/ICP hay nguồn dòng không đổi — tiết kiệm chi phí tủ điều khiển.</li>
+  <li><strong>Cáp chạy xa:</strong> truyền ổn định hàng trăm mét, lý tưởng cho nhà máy có máy móc phân tán.</li>
+  <li><strong>Loop 2 dây, cấp nguồn 24VDC:</strong> đấu nối đơn giản, dùng chung tiêu chuẩn với hầu hết thiết bị đo lường khác trong nhà máy.</li>
+  <li><strong>Giám sát xu hướng &amp; báo động:</strong> PLC dễ dàng đặt ngưỡng cảnh báo (alert) và dừng máy (trip) theo ISO 10816/20816.</li>
+</ul>
+
+<h2>HS-420 vs HS-421I — So sánh nhanh</h2>
+<table class="info-table cmp">
+  <thead><tr><th>Tiêu chí</th><th>HS-420</th><th>HS-421I</th></tr></thead>
+  <tr><td>Loại</td><td>Transmitter rung 4-20mA, loop 2 dây</td><td>Transmitter rung 4-20mA <strong>an toàn nội tại (ATEX/IECEx)</strong></td></tr>
+  <tr><td>Khu vực lắp đặt</td><td>Vùng an toàn (safe area)</td><td>Khu vực nguy hiểm cháy nổ (Zone 1/Zone 2)</td></tr>
+  <tr><td>Đại lượng đo</td><td>Vận tốc rung RMS (mm/s)</td><td>Vận tốc rung RMS (mm/s)</td></tr>
+  <tr><td>Cấp bảo vệ</td><td>IP67</td><td>IP67 + chứng nhận Ex</td></tr>
+  <tr><td>Ứng dụng điển hình</td><td>Bơm, quạt, motor trong nhà máy thông thường</td><td>Bơm/máy nén trong dầu khí, hóa chất, khu vực có khí dễ cháy</td></tr>
+  <tr><td>Yêu cầu kèm theo</td><td>Nguồn 24VDC + card AI</td><td>Nguồn 24VDC + <strong>barrier an toàn / isolator Ex</strong> + card AI</td></tr>
+</table>
+<div class="callout"><strong>Lưu ý kỹ thuật:</strong> HS-421I là thiết bị an toàn nội tại nên bắt buộc đi qua <strong>safety barrier / galvanic isolator</strong> đạt chuẩn trước khi vào PLC. Thông số chính xác (dải đo, băng tần, tham số entity Ex) cần đối chiếu datasheet model cụ thể khi thiết kế vòng loop.</div>
+
+<h2>Cách chọn đúng trong 3 bước</h2>
+<ol>
+  <li><strong>Xác định khu vực:</strong> Máy nằm trong khu vực phân loại nguy hiểm (hazardous area) không? Nếu có → bắt buộc HS-421I. Nếu không → HS-420 là lựa chọn kinh tế hơn.</li>
+  <li><strong>Xác định đại lượng &amp; dải đo:</strong> Theo ISO 10816/20816, vận tốc rung RMS (mm/s) là đại lượng đánh giá tình trạng phổ biến nhất cho máy quay. Chọn dải đo phủ ngưỡng cảnh báo dự kiến của máy.</li>
+  <li><strong>Xác định tích hợp:</strong> Kiểm tra card AI của PLC/DCS, số kênh còn trống và nhu cầu cách ly tín hiệu để chuẩn bị barrier/isolator phù hợp.</li>
+</ol>
+
+<h2>Lắp đặt &amp; đấu nối cơ bản</h2>
+<p>Transmitter 4-20mA gắn trực tiếp lên thân máy bằng <strong>gudông (stud mount)</strong> để có dải tần đo tốt nhất. Vòng loop 2 dây: cực dương nối qua nguồn 24VDC, cực âm về chân analog input; với HS-421I chèn thêm barrier Ex giữa khu vực nguy hiểm và phòng điều khiển. Tránh đi cáp tín hiệu song song với cáp động lực để giảm nhiễu.</p>
+
+
+<p class="kw-note"><a href="/products/hs-420-accelerometer/">HS-420</a> hiện có sẵn tại Việt Nam — mua chính hãng Hansford Sensors qua <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a>, nhà nhập khẩu trực tiếp từ UK (kho TPHCM &amp; Vũng Tàu · <a href="tel:+84938888958">0938&nbsp;888&nbsp;958</a>).</p>
+
+<div class="callout"><strong>Mua chính hãng tại Việt Nam:</strong> Fast Group Engineering là nhà phân phối ủy quyền độc quyền Hansford Sensors tại Việt Nam (MST: 0315555189). Sẵn kho tại TPHCM và Vũng Tàu, báo giá trong 24 giờ làm việc, đầy đủ C/O Anh Quốc · C/Q xuất xưởng · ATEX/IECEx cert · Hóa đơn VAT đỏ. Hotline: <a href="tel:+84938888958">0938 888 958</a> · Email: <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Cảm biến rung 4-20mA khác gì cảm biến IEPE?</h3><p>Cảm biến IEPE xuất tín hiệu điện áp AC và cần bộ điều hòa tín hiệu riêng để đọc; transmitter 4-20mA tích hợp sẵn mạch xử lý và xuất dòng 4-20mA cắm thẳng vào PLC/DCS, không cần phần cứng bổ sung.</p></div>
+  <div class="faq-item"><h3>Khi nào nên chọn HS-421I thay vì HS-420?</h3><p>Chọn HS-421I khi cảm biến lắp trong khu vực phân loại nguy hiểm cháy nổ (Zone 1/Zone 2) như nhà máy dầu khí, hóa chất. HS-420 dùng cho vùng an toàn thông thường với chi phí thấp hơn.</p></div>
+  <div class="faq-item"><h3>HS-421I có cần thêm thiết bị gì khi đấu vào PLC không?</h3><p>Có. Là thiết bị an toàn nội tại, HS-421I phải đi qua safety barrier hoặc galvanic isolator đạt chuẩn Ex trước khi tín hiệu vào card đầu vào analog của PLC.</p></div>
+  <div class="faq-item"><h3>Mua HS-420 / HS-421I chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering là nhà phân phối chính thức Hansford Sensors tại Việt Nam, có sẵn kho TPHCM và Vũng Tàu, cung cấp C/O, C/Q và VAT hóa đơn đỏ cho dự án.</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter rung 4-20mA</a>
+  <a href="/products/hs-421i-intrinsically-safe-accelerometer/">HS-421I – Transmitter 4-20mA an toàn nội tại (ATEX)</a>
+  <a href="/categories/process-control-lps-4-20ma/">Danh mục: Kiểm soát quy trình LPS 4-20mA</a>
+  <a href="/blog/iepe-4-20ma-mems-so-sanh-cam-bien-rung/">So sánh IEPE vs 4-20mA vs MEMS – chọn loại nào?</a>
+  <a href="/blog/ket-noi-cam-bien-rung-iepe-plc-siemens-allen-bradley/">Kết nối cảm biến rung IEPE với PLC Siemens / Allen-Bradley</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

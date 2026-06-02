@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>IEPE vs 4-20mA vs MEMS: so sánh cảm biến rung | Hansford Sensors</title>
+    <meta name="description" content="So sánh toàn diện 3 loại cảm biến rung công nghiệp: IEPE, 4-20mA transmitter và MEMS accelerometer — ưu nhược điểm, chi phí và hướng dẫn chọn đúng cho từng ứng dụng." />
+    <meta name="keywords" content="IEPE 4-20mA MEMS so sánh, vibration sensor types comparison, chọn loại cảm biến rung, accelerometer comparison" />
+    <link rel="canonical" href="https://hansford.vn/blog/iepe-4-20ma-mems-so-sanh-cam-bien-rung/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="IEPE vs 4-20mA vs MEMS: so sánh cảm biến rung | Hansford Sensors" />
+    <meta property="og:description" content="So sánh toàn diện 3 loại cảm biến rung công nghiệp: IEPE, 4-20mA transmitter và MEMS accelerometer — ưu nhược điểm, chi phí và hướng dẫn chọn đúng cho từng ứng dụng." />
+    <meta property="og:url" content="https://hansford.vn/blog/iepe-4-20ma-mems-so-sanh-cam-bien-rung/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/Group-23480.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "IEPE vs 4-20mA vs MEMS: So sánh 3 loại cảm biến rung phổ biến — Chọn loại nào cho ứng dụng của bạn?",
+      "description": "So sánh toàn diện 3 loại cảm biến rung công nghiệp: IEPE, 4-20mA transmitter và MEMS accelerometer — ưu nhược điểm, chi phí và hướng dẫn chọn đúng cho từng ứng dụng.",
+      "url": "https://hansford.vn/blog/iepe-4-20ma-mems-so-sanh-cam-bien-rung/",
+      "datePublished": "2026-05-12",
+      "dateModified": "2026-06-02",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/Group-23480.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/iepe-4-20ma-mems-so-sanh-cam-bien-rung/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"So sánh","item":"https://hansford.vn/blog/iepe-4-20ma-mems-so-sanh-cam-bien-rung/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Có thể dùng cảm biến MEMS thay IEPE trong nhà máy công nghiệp không?","acceptedAnswer":{"@type":"Answer","text":"Cho giám sát cơ bản và ứng dụng IoT, MEMS ngày càng khả thi. Tuy nhiên với phân tích phổ FFT nghiêm túc, chẩn đoán lỗi ổ bi tần số cao, và môi trường nhiệt độ rộng, IEPE vẫn vượt trội về noise floor và dải tần."}},
+        {"@type":"Question","name":"4-20mA transmitter có thể phát hiện lỗi ổ bi không?","acceptedAnswer":{"@type":"Answer","text":"Gián tiếp — khi ổ bi đã hỏng nhiều, overall vibration level tăng, 4-20mA sẽ báo động. Nhưng để phát hiện sớm lỗi ổ bi khi biên độ còn nhỏ, cần IEPE + phân tích phổ tại tần số đặc trưng (BPFO, BPFI, BSF, FTF)."}},
+        {"@type":"Question","name":"Chi phí tổng thể (TCO) loại nào thấp nhất?","acceptedAnswer":{"@type":"Answer","text":"Cho giám sát overall level đơn giản, 4-20mA transmitter thường có TCO thấp nhất: cảm biến + đấu vào card AI sẵn có, không cần hardware phụ trợ. IEPE có chi phí cảm biến thấp hơn nhưng cần module điều hòa tín hiệu thêm."}},
+        {"@type":"Question","name":"Hansford Sensors có cung cấp cả ba loại không?","acceptedAnswer":{"@type":"Answer","text":"Hansford Sensors chuyên về IEPE (dòng HS-100, HS-150, HS-173...) và 4-20mA transmitter (dòng HS-420, HS-421...). Không sản xuất MEMS. Fast Group Engineering tư vấn giải pháp tổng thể phù hợp nhất cho ứng dụng cụ thể của khách hàng."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › So sánh
+    </div>
+    <span class="badge-cat">So sánh</span>
+    <h1>IEPE vs 4-20mA vs MEMS: So sánh 3 loại cảm biến rung phổ biến — Chọn loại nào cho ứng dụng của bạn?</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 5, 2026 · 8 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Ba loại cảm biến rung phổ biến nhất trong công nghiệp — <strong>IEPE, 4-20mA transmitter và MEMS</strong> — mỗi loại có triết lý thiết kế và use case khác nhau. Không có loại nào "tốt hơn" tuyệt đối; câu hỏi đúng là "loại nào phù hợp nhất với ứng dụng, hệ thống và ngân sách của tôi?"</p>
+
+<h2>So sánh toàn diện 3 loại cảm biến</h2>
+<table class="info-table">
+  <thead><tr><th>Tiêu chí</th><th>IEPE (ICP)</th><th>4-20mA Transmitter</th><th>MEMS Digital</th></tr></thead>
+  <tr><td>Nguyên lý</td><td>Áp điện + mạch JFET tích hợp, cần nguồn dòng không đổi</td><td>IEPE hoặc MEMS + ADC + vi xử lý + DAC 4-20mA</td><td>Silicon MEMS, ADC số, output digital (SPI/I2C/CAN)</td></tr>
+  <tr><td>Dải tần</td><td>0.5 Hz – 15+ kHz (rộng nhất)</td><td>Thường 2 Hz – 1 kHz (dải hẹp hơn)</td><td>DC – vài kHz (tùy chip)</td></tr>
+  <tr><td>Tích hợp PLC/DCS</td><td>Cần bộ điều hòa tín hiệu + card AI</td><td>Trực tiếp vào card AI 4-20mA — đơn giản nhất</td><td>Cần converter hoặc gateway số, phức tạp hơn</td></tr>
+  <tr><td>Chi phí hệ thống</td><td>Cảm biến thấp, phần cứng phụ trợ cao hơn</td><td>Trung bình — tổng chi phí thường thấp nhất</td><td>Chip rẻ, nhưng thiếu robustness công nghiệp</td></tr>
+  <tr><td>Phân tích phổ</td><td>Tốt nhất — băng tần rộng, noise thấp</td><td>Chỉ overall level (không phổ)</td><td>Hạn chế — tần số sampling thấp hơn IEPE</td></tr>
+  <tr><td>Độ bền công nghiệp</td><td>Xuất sắc (IP67/IP68, -40°C đến +150°C)</td><td>Xuất sắc (IP67/IP68, chuẩn công nghiệp)</td><td>Thường dùng cho IoT, độ bền thấp hơn</td></tr>
+  <tr><td>ATEX cho khu vực nguy hiểm</td><td>Có (HS-100IS, HS-150IS...)</td><td>Có (HS-421I, HS-420I...)</td><td>Hiếm có, ít model ATEX</td></tr>
+</table>
+
+<h2>Khi nào chọn IEPE?</h2>
+<p>IEPE là lựa chọn tốt nhất khi cần <strong>phân tích phổ rung (FFT)</strong> để chẩn đoán lỗi cụ thể (bearing fault frequencies, unbalance, misalignment, resonance). Băng tần rộng cho phép phát hiện lỗi ổ bi ở tần số cao — điều mà 4-20mA transmitter không làm được. Phù hợp cho: hệ thống CMS (Continuous Monitoring System) chuyên dụng, máy quan trọng nhất cần chẩn đoán sâu.</p>
+
+<h2>Khi nào chọn 4-20mA Transmitter?</h2>
+<p>Chọn 4-20mA khi: hệ thống điều khiển PLC/DCS sẵn có, cần tích hợp nhanh với card AI tiêu chuẩn, và mục tiêu là <strong>giám sát mức rung tổng, cảnh báo và trip tự động</strong> theo ISO 10816 — không cần phân tích phổ. Đây là lựa chọn của hầu hết ứng dụng bơm, quạt, motor trong nhà máy thông thường. Hansford HS-420 và HS-421I là các model hàng đầu phân khúc này.</p>
+
+<h2>Khi nào xem xét MEMS?</h2>
+<p>MEMS phù hợp hơn cho: <strong>ứng dụng IoT wireless</strong> (khi không muốn kéo cáp), giám sát thiết bị di động, hay vị trí khó tiếp cận. Với máy công nghiệp cố định quan trọng, IEPE hoặc 4-20mA truyền thống vẫn đáng tin cậy hơn về độ bền và hiệu suất dài hạn. Công nghệ MEMS công nghiệp đang tiến bộ nhanh nhưng chưa thay thế IEPE trong ứng dụng phân tích phổ nghiêm túc.</p>
+<div class="callout"><strong>Hướng dẫn chọn nhanh:</strong> (1) Có PLC/DCS với card 4-20mA + chỉ cần cảnh báo/trip? → <strong>HS-420 / HS-421I</strong>. (2) Cần phân tích phổ, chẩn đoán lỗi? → <strong>HS-100 IEPE</strong> + module. (3) Cần cả hai từ một điểm? → Dùng cả HS-100 (phân tích) và HS-420 (alarm/trip) tại máy quan trọng nhất.</div>
+
+
+<p class="kw-note">Để mua Hansford Sensors chính hãng tại Việt Nam (không qua trung gian), liên hệ <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — đại lý được Hansford Sensors UK cấp Authorization Letter chính thức, sẵn kho nội địa, xuất VAT hóa đơn đỏ.</p>
+
+<div class="callout"><strong>Lưu ý khi mua tại Việt Nam:</strong> Fast Group Engineering là nhà phân phối chính thức và duy nhất được Hansford Sensors Ltd (Anh Quốc) ủy quyền tại Việt Nam. Không qua trung gian — nhập khẩu trực tiếp, đủ chứng từ gốc. Liên hệ Fast Group Engineering: văn phòng TPHCM tại 150/41 Nguyễn Cư Trinh, P. Cầu Ông Lãnh, Q.1, TP.HCM · Kho Vũng Tàu tại 41 Lê Văn Lộc, TP. Vũng Tàu, BR-VT · Hotline <a href="tel:+84938888958">0938 888 958</a> · <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Có thể dùng cảm biến MEMS thay IEPE trong nhà máy công nghiệp không?</h3><p>Cho giám sát cơ bản và ứng dụng IoT, MEMS ngày càng khả thi. Tuy nhiên với phân tích phổ FFT nghiêm túc, chẩn đoán lỗi ổ bi tần số cao, và môi trường nhiệt độ rộng, IEPE vẫn vượt trội về noise floor và dải tần.</p></div>
+  <div class="faq-item"><h3>4-20mA transmitter có thể phát hiện lỗi ổ bi không?</h3><p>Gián tiếp — khi ổ bi đã hỏng nhiều, overall vibration level tăng, 4-20mA sẽ báo động. Nhưng để phát hiện sớm lỗi ổ bi khi biên độ còn nhỏ, cần IEPE + phân tích phổ tại tần số đặc trưng (BPFO, BPFI, BSF, FTF).</p></div>
+  <div class="faq-item"><h3>Chi phí tổng thể (TCO) loại nào thấp nhất?</h3><p>Cho giám sát overall level đơn giản, 4-20mA transmitter thường có TCO thấp nhất: cảm biến + đấu vào card AI sẵn có, không cần hardware phụ trợ. IEPE có chi phí cảm biến thấp hơn nhưng cần module điều hòa tín hiệu thêm.</p></div>
+  <div class="faq-item"><h3>Hansford Sensors có cung cấp cả ba loại không?</h3><p>Hansford Sensors chuyên về IEPE (dòng HS-100, HS-150, HS-173...) và 4-20mA transmitter (dòng HS-420, HS-421...). Không sản xuất MEMS. Fast Group Engineering tư vấn giải pháp tổng thể phù hợp nhất cho ứng dụng cụ thể của khách hàng.</p></div>
+  <div class="faq-item"><h3>Mua cảm biến Hansford Sensors chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering – Fast Group Co., Ltd (MST: 0315555189) là nhà phân phối chính thức và duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Kho sẵn tại TPHCM (150/41 Nguyễn Cư Trinh, Q.1) và Vũng Tàu (41 Lê Văn Lộc). Giao hàng trong ngày tại TPHCM và Vũng Tàu, 2–3 ngày toàn quốc. Đầy đủ C/O Anh Quốc, C/Q, ATEX cert, hóa đơn VAT đỏ. Hotline: 0938 888 958 · Email: sales@hansford.vn</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series – Cảm biến IEPE tiêu chuẩn</a>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA</a>
+  <a href="/blog/cam-bien-rung-4-20ma-huong-dan-chon-hs-420-hs-421i/">Cảm biến rung 4-20mA: hướng dẫn chọn HS-420 / HS-421I</a>
+  <a href="/blog/ket-noi-cam-bien-rung-iepe-plc-siemens-allen-bradley/">Kết nối cảm biến IEPE với PLC Siemens / Allen-Bradley</a>
+  <a href="/blog/cam-bien-gia-toc-3-truc-triaxial-hs-173-giam-sat-may-moc/">Cảm biến gia tốc 3 trục HS-173: ứng dụng thực tế</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

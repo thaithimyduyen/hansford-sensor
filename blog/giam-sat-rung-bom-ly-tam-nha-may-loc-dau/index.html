@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Giám sát rung bơm ly tâm nhà máy lọc dầu – Hansford Sensors</title>
+    <meta name="description" content="Hướng dẫn giám sát rung động bơm ly tâm trong nhà máy lọc dầu: chế độ hỏng hóc, vị trí đặt cảm biến, ngưỡng ISO 10816-7, HS-420 và HS-421I cho O&amp;G Việt Nam." />
+    <meta name="keywords" content="giám sát rung bơm ly tâm, pump vibration monitoring, cảm biến rung nhà máy lọc dầu, HS-420, HS-421I" />
+    <link rel="canonical" href="https://hansford.vn/blog/giam-sat-rung-bom-ly-tam-nha-may-loc-dau/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Giám sát rung bơm ly tâm nhà máy lọc dầu – Hansford Sensors" />
+    <meta property="og:description" content="Hướng dẫn giám sát rung động bơm ly tâm trong nhà máy lọc dầu: chế độ hỏng hóc, vị trí đặt cảm biến, ngưỡng ISO 10816-7, HS-420 và HS-421I cho O&amp;G Việt Nam." />
+    <meta property="og:url" content="https://hansford.vn/blog/giam-sat-rung-bom-ly-tam-nha-may-loc-dau/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/oil.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Giám sát rung động bơm ly tâm trong nhà máy lọc dầu: Giải pháp phòng ngừa sự cố với Hansford Sensors",
+      "description": "Hướng dẫn giám sát rung động bơm ly tâm trong nhà máy lọc dầu: chế độ hỏng hóc, vị trí đặt cảm biến, ngưỡng ISO 10816-7, HS-420 và HS-421I cho O&G Việt Nam.",
+      "url": "https://hansford.vn/blog/giam-sat-rung-bom-ly-tam-nha-may-loc-dau/",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-06-02",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/oil.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/giam-sat-rung-bom-ly-tam-nha-may-loc-dau/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"Industry","item":"https://hansford.vn/blog/giam-sat-rung-bom-ly-tam-nha-may-loc-dau/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Cần bao nhiêu cảm biến cho một bơm ly tâm tiêu chuẩn?","acceptedAnswer":{"@type":"Answer","text":"Tối thiểu 2-4 cảm biến: 1 tại ổ bi cánh bơm hướng radial, 1 tại ổ bi động cơ hướng radial. Hệ thống đầy đủ thêm hướng axial và đôi khi tại gối đỡ trung gian, tổng 4-8 điểm đo."}},
+        {"@type":"Question","name":"HS-420 có đo được xâm thực (cavitation) không?","acceptedAnswer":{"@type":"Answer","text":"HS-420 đo vận tốc rung tổng (overall mm/s). Cavitation tạo ra tiếng ồn băng rộng tần số cao — để chẩn đoán chính xác cavitation cần cảm biến IEPE HS-100 + phân tích phổ FFT, không phải chỉ đo overall level."}},
+        {"@type":"Question","name":"Khoảng cách từ cảm biến đến tủ điều khiển DCS tối đa bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Với HS-420 (4-20mA), thông thường ổn định đến 500 mét cáp đồng tiêu chuẩn với nguồn cấp 24VDC. Tín hiệu dòng kháng suy hao theo điện trở dây tốt hơn nhiều so với IEPE."}},
+        {"@type":"Question","name":"Vì sao lắp đặt cảm biến tại ổ bi thay vì thân bơm?","acceptedAnswer":{"@type":"Answer","text":"Ổ bi là bộ phận hỏng sớm nhất và truyền rung động từ rôtor ra ngoài qua đường ngắn nhất. Gắn tại bearing housing cho tín hiệu sớm và rõ nhất về lỗi ổ bi, mất cân bằng và lệch tâm."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › Industry
+    </div>
+    <span class="badge-cat">Industry</span>
+    <h1>Giám sát rung động bơm ly tâm trong nhà máy lọc dầu: Giải pháp phòng ngừa sự cố với Hansford Sensors</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 4, 2026 · 8 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Bơm ly tâm là trái tim của nhà máy lọc dầu và hóa chất. Một bơm quan trọng dừng đột ngột không chỉ tạo ra thiệt hại trực tiếp mà còn có thể gây hậu quả dây chuyền cho toàn bộ quy trình. Giám sát rung động liên tục là biện pháp bảo vệ hiệu quả nhất — phát hiện sự cố trước khi xảy ra.</p>
+
+<h2>Các chế độ hỏng hóc bơm ly tâm phát hiện qua rung động</h2>
+<table class="info-table">
+  <thead><tr><th>Chế độ hỏng</th><th>Dấu hiệu rung đặc trưng</th><th>Tần số điển hình</th></tr></thead>
+  <tr><td>Mất cân bằng (Unbalance)</td><td>Rung xuyên tâm cao, đồng bộ 1x RPM</td><td>1x tốc độ quay</td></tr>
+  <tr><td>Lệch tâm (Misalignment)</td><td>Rung 2x RPM hoặc hướng axial cao</td><td>1x, 2x tốc độ quay</td></tr>
+  <tr><td>Mòn ổ bi (Bearing fault)</td><td>Rung tần số cao đặc trưng BPFO/BPFI</td><td>Tần số hỏng ổ bi (BPF)</td></tr>
+  <tr><td>Xâm thực (Cavitation)</td><td>Tiếng ồn rung băng rộng, rung không đều</td><td>Băng rộng 1–20 kHz</td></tr>
+  <tr><td>Cánh bơm hỏng (Vane pass)</td><td>Rung ở tần số (số cánh × RPM)</td><td>Vane pass frequency</td></tr>
+</table>
+
+<h2>Tiêu chuẩn ISO 10816-7 cho bơm ly tâm</h2>
+<p>ISO 10816-7 là phần dành riêng cho bơm ly tâm (rotodynamic pumps including pump units). Phân loại theo loại gá (stiff mounting/flexible mounting) và dải tốc độ. Ngưỡng điển hình cho bơm loại I (vận tốc thấp, nền cứng):</p>
+<table class="info-table">
+  <thead><tr><th>Vùng</th><th>Vận tốc rung (mm/s RMS)</th></tr></thead>
+  <tr><td>A (bình thường)</td><td>0 – 2.3</td></tr>
+  <tr><td>B (chấp nhận dài hạn)</td><td>2.3 – 4.5</td></tr>
+  <tr><td>C (sửa chữa gần)</td><td>4.5 – 7.1</td></tr>
+  <tr><td>D (dừng ngay)</td><td>&gt; 7.1</td></tr>
+</table>
+
+<h2>Vị trí gắn cảm biến tối ưu</h2>
+<p>Gắn cảm biến tại <strong>ổ bi gần phía cánh bơm (NDE)</strong> và <strong>ổ bi phía động cơ (DE)</strong>, theo hướng radial (xuyên tâm) và axial (dọc trục). Với ổ bi là điểm xuất phát của phần lớn lỗi bơm, đây là các điểm ưu tiên số một. Nếu ngân sách hạn chế và chỉ đặt được một cảm biến, ưu tiên NDE (phía cánh bơm).</p>
+
+<h2>Giải pháp Hansford Sensors cho bơm lọc dầu</h2>
+<p>Tùy vị trí bơm:</p>
+<ul>
+  <li><strong>Bơm trong vùng an toàn (safe area):</strong> HS-420 (4-20mA) — đấu thẳng vào DCS/PLC sẵn có của nhà máy, đặt ngưỡng cảnh báo và trip tự động theo ISO 10816-7.</li>
+  <li><strong>Bơm trong khu vực Zone 1/Zone 2 (ATEX):</strong> HS-421I — transmitter 4-20mA an toàn nội tại, kết hợp với safety barrier trước khi vào DCS.</li>
+  <li><strong>Bơm cần phân tích phổ (chẩn đoán sâu):</strong> HS-100IS (IEPE ATEX) + module HS-550/551 + phần mềm phân tích FFT.</li>
+</ul>
+<div class="callout"><strong>Kinh nghiệm từ dự án BSR (Dung Quất) và NSRP (Nghi Sơn):</strong> Các nhà máy lọc dầu lớn tại Việt Nam yêu cầu đầy đủ ATEX cert, C/O và vendor qualification cho thiết bị đo lường. Hansford Sensors với Fast Group Engineering đáp ứng đầy đủ hồ sơ cho EPC và PMC.</div>
+
+
+<p class="kw-note">Tại Việt Nam, <a href="/products/hs-420-accelerometer/">HS-420</a> và toàn bộ dòng Hansford Sensors cho ứng dụng công nghiệp được cung cấp bởi <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — nhà phân phối chính hãng Hansford Sensors UK, sẵn kho TPHCM &amp; Vũng Tàu, đủ C/O và hồ sơ EPC/PMC.</p>
+
+<div class="callout"><strong>Kinh nghiệm cung ứng thực tế:</strong> Fast Group Engineering đã cung cấp cảm biến rung Hansford Sensors cho các đơn vị VSP (Vietsovpetro), PTSC, PV GAS, PVEP, EVN và EPC Contractor quốc tế — với đầy đủ hồ sơ C/O Anh Quốc · C/Q xuất xưởng · ATEX/IECEx cert · Hóa đơn VAT đỏ. Kho TPHCM (150/41 Nguyễn Cư Trinh, P. Cầu Ông Lãnh, Q.1, TP.HCM) và Vũng Tàu (41 Lê Văn Lộc, TP. Vũng Tàu, BR-VT) cho phép giao hàng trong ngày từ kho Vũng Tàu với các đơn gấp từ khu vực dầu khí và đóng tàu. Liên hệ: <a href="tel:+84938888958">0938 888 958</a> · <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Cần bao nhiêu cảm biến cho một bơm ly tâm tiêu chuẩn?</h3><p>Tối thiểu 2-4 cảm biến: 1 tại ổ bi cánh bơm hướng radial, 1 tại ổ bi động cơ hướng radial. Hệ thống đầy đủ thêm hướng axial và đôi khi tại gối đỡ trung gian, tổng 4-8 điểm đo.</p></div>
+  <div class="faq-item"><h3>HS-420 có đo được xâm thực (cavitation) không?</h3><p>HS-420 đo vận tốc rung tổng (overall mm/s). Cavitation tạo ra tiếng ồn băng rộng tần số cao — để chẩn đoán chính xác cavitation cần cảm biến IEPE HS-100 + phân tích phổ FFT, không phải chỉ đo overall level.</p></div>
+  <div class="faq-item"><h3>Khoảng cách từ cảm biến đến tủ điều khiển DCS tối đa bao nhiêu?</h3><p>Với HS-420 (4-20mA), thông thường ổn định đến 500 mét cáp đồng tiêu chuẩn với nguồn cấp 24VDC. Tín hiệu dòng kháng suy hao theo điện trở dây tốt hơn nhiều so với IEPE.</p></div>
+  <div class="faq-item"><h3>Vì sao lắp đặt cảm biến tại ổ bi thay vì thân bơm?</h3><p>Ổ bi là bộ phận hỏng sớm nhất và truyền rung động từ rôtor ra ngoài qua đường ngắn nhất. Gắn tại bearing housing cho tín hiệu sớm và rõ nhất về lỗi ổ bi, mất cân bằng và lệch tâm.</p></div>
+  <div class="faq-item"><h3>Mua cảm biến Hansford Sensors chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering – Fast Group Co., Ltd (MST: 0315555189) là nhà phân phối chính thức và duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Kho sẵn tại TPHCM (150/41 Nguyễn Cư Trinh, Q.1) và Vũng Tàu (41 Lê Văn Lộc). Giao hàng trong ngày tại TPHCM và Vũng Tàu, 2–3 ngày toàn quốc. Đầy đủ C/O Anh Quốc, C/Q, ATEX cert, hóa đơn VAT đỏ. Hotline: 0938 888 958 · Email: sales@hansford.vn</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter rung 4-20mA cho bơm</a>
+  <a href="/products/hs-421i-intrinsically-safe-accelerometer/">HS-421I – Transmitter 4-20mA ATEX cho bơm O&amp;G</a>
+  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 vs ISO 20816: tiêu chuẩn rung bơm</a>
+  <a href="/blog/atex-zone-1-zone-2-cam-bien-rung-an-toan-noi-tai/">ATEX Zone 1 Zone 2: chọn cảm biến đúng chuẩn</a>
+  <a href="/categories/process-control-lps-4-20ma/">Danh mục: Kiểm soát quy trình LPS 4-20mA</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

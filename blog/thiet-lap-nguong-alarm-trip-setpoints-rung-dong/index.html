@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Thiết lập ngưỡng Alarm Trip setpoints rung động ISO 10816 | Hansford</title>
+    <meta name="description" content="Hướng dẫn đặt ngưỡng Alarm và Trip rung động theo ISO 10816, baseline + bội số, 4-20mA scaling HS-420 và cách tránh false alarm trong nhà máy thực tế." />
+    <meta name="keywords" content="ngưỡng cảnh báo rung động alarm trip, vibration alarm setpoint ISO 10816, đặt ngưỡng rung HS-420 PLC, vibration alarm configuration vietnam" />
+    <link rel="canonical" href="https://hansford.vn/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Thiết lập ngưỡng Alarm Trip setpoints rung động ISO 10816 | Hansford" />
+    <meta property="og:description" content="Hướng dẫn đặt ngưỡng Alarm và Trip rung động theo ISO 10816, baseline + bội số, 4-20mA scaling HS-420 và cách tránh false alarm trong nhà máy thực tế." />
+    <meta property="og:url" content="https://hansford.vn/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/hs-550-vibration-module-image-2.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Thiết lập ngưỡng cảnh báo rung động (Alarm & Trip Setpoints): Không quá cao bỏ sót, không quá thấp gây false alarm",
+      "description": "Hướng dẫn đặt ngưỡng Alarm và Trip rung động theo ISO 10816, baseline + bội số, 4-20mA scaling HS-420 và cách tránh false alarm trong nhà máy thực tế.",
+      "url": "https://hansford.vn/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/",
+      "datePublished": "2026-08-25",
+      "dateModified": "2026-08-25",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/hs-550-vibration-module-image-2.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"How-To","item":"https://hansford.vn/blog/thiet-lap-nguong-alarm-trip-setpoints-rung-dong/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Khi máy mới lắp lần đầu, đặt ngưỡng nào trước khi có baseline?","acceptedAnswer":{"@type":"Answer","text":"Dùng ngưỡng ISO 10816 tuyệt đối làm tạm thời. Sau 2–4 tuần vận hành ổn định, xem baseline thực tế là bao nhiêu rồi điều chỉnh theo phương pháp baseline × hệ số nếu cần."}},
+        {"@type":"Question","name":"Alert và Alarm trong hệ thống HS-420 khác nhau như thế nào?","acceptedAnswer":{"@type":"Answer","text":"HS-420 chỉ xuất một tín hiệu 4-20mA liên tục. Alarm và trip logic được thực hiện trong PLC/DCS bằng cách so sánh giá trị đọc với ngưỡng. HS-SE là thiết bị khác — có relay tích hợp kích hoạt khi vượt ngưỡng cơ học đặt trước."}},
+        {"@type":"Question","name":"Máy bơm vừa đại tu xong rung 3.2 mm/s — alarm tại 4.5 mm/s có hợp lý không?","acceptedAnswer":{"@type":"Answer","text":"3.2 mm/s sau đại tu là khá cao. Trước tiên kiểm tra nguyên nhân: alignment chưa tốt? Cân bằng không đủ? Nếu sau alignment và chạy break-in (50 giờ vận hành), rung giảm xuống 1.5–2 mm/s thì dùng đó làm baseline. Không nên chấp nhận 3.2 mm/s làm baseline bình thường."}},
+        {"@type":"Question","name":"Có công thức nào tính ngưỡng trip cho cảm biến rung ATEX HS-421I không?","acceptedAnswer":{"@type":"Answer","text":"HS-421I và HS-420 có cùng scaling 4-20mA = 0-25 mm/s. Cách tính ngưỡng trip hoàn toàn như nhau. Sự khác biệt chỉ ở cài đặt safety barrier trong mạch vòng tín hiệu."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › How-To
+    </div>
+    <span class="badge-cat">How-To</span>
+    <h1>Thiết lập ngưỡng cảnh báo rung động (Alarm &amp; Trip Setpoints): Không quá cao bỏ sót, không quá thấp gây false alarm</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 8, 2026 · 8 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Ngưỡng cảnh báo quá thấp → false alarm liên tục → kỹ thuật viên mất tin tưởng vào hệ thống, bắt đầu bỏ qua alarm → hệ thống giám sát vô dụng. Ngưỡng quá cao → máy hỏng trước khi alarm kịp cảnh báo. Đây là sai lầm phổ biến nhất khi triển khai hệ thống giám sát rung. Bài này hướng dẫn cách đặt ngưỡng đúng ngay từ đầu.</p>
+
+<h2>Ba phương pháp đặt ngưỡng — Chọn theo tình huống</h2>
+<table class="info-table">
+  <thead><tr><th>Phương pháp</th><th>Khi nào dùng</th><th>Ưu điểm</th><th>Hạn chế</th></tr></thead>
+  <tr><td><strong>ISO 10816 tuyệt đối</strong></td><td>Máy mới, chưa có baseline</td><td>Tiêu chuẩn quốc tế, dễ áp dụng ngay</td><td>Không tính đặc thù từng máy cụ thể</td></tr>
+  <tr><td><strong>Baseline × hệ số</strong></td><td>Đã có baseline rõ ràng</td><td>Phù hợp đặc thù từng máy</td><td>Cần thời gian lấy baseline trước</td></tr>
+  <tr><td><strong>Statistical (mean + nσ)</strong></td><td>Đã có dữ liệu lịch sử dài (&gt; 3 tháng)</td><td>Tự động thích nghi, ít false alarm nhất</td><td>Cần hệ thống historian, phức tạp hơn</td></tr>
+</table>
+
+<h2>Phương pháp 1: ISO 10816 — Áp dụng ngay không cần baseline</h2>
+<p>Ngưỡng điển hình từ ISO 10816-3 cho máy công nghiệp 15 kW – 15 MW (Group 1 — nền cứng):</p>
+<table class="info-table">
+  <thead><tr><th>Ngưỡng</th><th>Giá trị (mm/s RMS)</th><th>Ý nghĩa</th></tr></thead>
+  <tr><td>Alert</td><td>4.5</td><td>Ranh giới vùng B/C — lên kế hoạch kiểm tra</td></tr>
+  <tr><td>Alarm</td><td>7.1</td><td>Ranh giới vùng C/D — lên kế hoạch sửa chữa gần</td></tr>
+  <tr><td>Trip</td><td>11.2</td><td>Vượt vùng D — dừng máy an toàn (nếu applicable)</td></tr>
+</table>
+<p>Lưu ý: tra đúng bảng theo công suất và loại máy. Máy nhỏ (&lt; 15 kW) có ngưỡng cao hơn; turbine lớn có ngưỡng thấp hơn nhiều.</p>
+
+<h2>Phương pháp 2: Baseline × hệ số — Linh hoạt và thực tế hơn</h2>
+<p>Sau khi đại tu hoặc lắp mới, đo baseline trong 2 tuần đầu (máy ổn định, chạy đúng tải). Giả sử baseline = 1.2 mm/s:</p>
+<ul>
+  <li><strong>Alert = baseline × 1.5 = 1.8 mm/s</strong> — nhưng không thấp hơn 2.3 mm/s (ISO vùng A/B)</li>
+  <li><strong>Alarm = baseline × 2.0 = 2.4 mm/s</strong> — không thấp hơn 4.5 mm/s (ISO vùng B/C)</li>
+  <li><strong>Trip = baseline × 3.0 = 3.6 mm/s</strong> — hoặc dùng ISO trip nếu cao hơn</li>
+</ul>
+<p>Quy tắc: Ngưỡng = Max(tính từ baseline; ngưỡng ISO tương ứng). Không đặt ngưỡng thấp hơn ISO vùng A/B — sẽ gây false alarm liên tục.</p>
+
+<h2>Scaling 4-20mA cho HS-420 — Tính ngưỡng trên PLC</h2>
+<p>HS-420 mặc định: 4 mA = 0 mm/s, 20 mA = 25 mm/s. Tại PLC (Siemens S7-1200, raw = 0–27648):</p>
+<p><code>Alert raw = 4.5 / 25 × 27648 + 0 = 4976</code></p>
+<p><code>Alarm raw = 7.1 / 25 × 27648 = 7851</code></p>
+<p>Hoặc scale về mm/s thực rồi so sánh với giá trị thực — cách này dễ kiểm tra hơn.</p>
+
+<h2>5 sai lầm phổ biến khi đặt ngưỡng</h2>
+<ol>
+  <li><strong>Copy ngưỡng từ nhà máy khác mà không kiểm tra</strong> — mỗi máy và nền móng khác nhau</li>
+  <li><strong>Không đặt alarm, chỉ đặt trip</strong> — mất cơ hội lên kế hoạch trước khi phải dừng gấp</li>
+  <li><strong>Ngưỡng quá gần baseline</strong> — startup sau bảo trì thường rung cao hơn 20–30% trong vài giờ đầu</li>
+  <li><strong>Không review ngưỡng sau khi máy đại tu</strong> — baseline mới cần cập nhật ngưỡng mới</li>
+  <li><strong>Đặt trip tại cùng mức alarm</strong> — không có thời gian phản ứng giữa cảnh báo và dừng máy</li>
+</ol>
+<div class="callout"><strong>Ngưỡng cho HS-SE (switching enclosure):</strong> Dòng HS-SE của Hansford Sensors tích hợp công tắc rung có thể đặt ngưỡng cơ học, kích hoạt relay trực tiếp không qua PLC. Phù hợp cho bảo vệ đơn giản tại các máy không kết nối SCADA. Fast Group Engineering — nhà phân phối chính thức Hansford Sensors tại Việt Nam — tư vấn lựa chọn ngưỡng và model HS-SE phù hợp ứng dụng.</div>
+
+
+<p class="kw-note">Kỹ sư tại Việt Nam có thể mua <a href="/products/hs-420-accelerometer/">HS-420</a> và phụ kiện Hansford Sensors trực tiếp từ <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — nhập khẩu từ nhà máy UK, không qua trung gian, giao hàng trong ngày tại TPHCM và Vũng Tàu.</p>
+
+<div class="callout"><strong>Hỗ trợ kỹ thuật từ Fast Group Engineering:</strong> Ngoài việc cung cấp thiết bị, Fast Group Engineering hỗ trợ tư vấn cấu hình hệ thống, troubleshooting tại hiện trường và hướng dẫn tích hợp với PLC/DCS sẵn có của nhà máy. Phản hồi trong 24 giờ làm việc — gọi <a href="tel:+84938888958">0938 888 958</a> hoặc email <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Khi máy mới lắp lần đầu, đặt ngưỡng nào trước khi có baseline?</h3><p>Dùng ngưỡng ISO 10816 tuyệt đối làm tạm thời. Sau 2–4 tuần vận hành ổn định, xem baseline thực tế là bao nhiêu rồi điều chỉnh theo phương pháp baseline × hệ số nếu cần.</p></div>
+  <div class="faq-item"><h3>Alert và Alarm trong hệ thống HS-420 khác nhau như thế nào?</h3><p>HS-420 chỉ xuất một tín hiệu 4-20mA liên tục. Alarm và trip logic được thực hiện trong PLC/DCS bằng cách so sánh giá trị đọc với ngưỡng. HS-SE là thiết bị khác — có relay tích hợp kích hoạt khi vượt ngưỡng cơ học đặt trước.</p></div>
+  <div class="faq-item"><h3>Máy bơm vừa đại tu xong rung 3.2 mm/s — alarm tại 4.5 mm/s có hợp lý không?</h3><p>3.2 mm/s sau đại tu là khá cao. Trước tiên kiểm tra nguyên nhân: alignment chưa tốt? Cân bằng không đủ? Nếu sau alignment và chạy break-in (50 giờ vận hành), rung giảm xuống 1.5–2 mm/s thì dùng đó làm baseline. Không nên chấp nhận 3.2 mm/s làm baseline bình thường.</p></div>
+  <div class="faq-item"><h3>Có công thức nào tính ngưỡng trip cho cảm biến rung ATEX HS-421I không?</h3><p>HS-421I và HS-420 có cùng scaling 4-20mA = 0-25 mm/s. Cách tính ngưỡng trip hoàn toàn như nhau. Sự khác biệt chỉ ở cài đặt safety barrier trong mạch vòng tín hiệu.</p></div>
+  <div class="faq-item"><h3>Mua cảm biến Hansford Sensors chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering – Fast Group Co., Ltd (MST: 0315555189) là nhà phân phối chính thức và duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Kho sẵn tại TPHCM (150/41 Nguyễn Cư Trinh, Q.1) và Vũng Tàu (41 Lê Văn Lộc). Giao hàng trong ngày tại TPHCM và Vũng Tàu, 2–3 ngày toàn quốc. Đầy đủ C/O Anh Quốc, C/Q, ATEX cert, hóa đơn VAT đỏ. Hotline: 0938 888 958 · Email: sales@hansford.vn</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA đặt ngưỡng trên PLC</a>
+  <a href="/products/hs-se-switching-enclosure/">HS-SE – Switching Enclosure với relay ngưỡng cơ học</a>
+  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 vs ISO 20816: ngưỡng tiêu chuẩn A/B/C/D</a>
+  <a href="/blog/ket-noi-cam-bien-rung-4-20ma-vao-scada-wonderware-ignition/">Kết nối 4-20mA vào SCADA Wonderware / Ignition</a>
+  <a href="/blog/xay-dung-chuong-trinh-cbm-7-buoc-nha-may-viet-nam/">Xây dựng CBM program 7 bước</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

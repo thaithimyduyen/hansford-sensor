@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Predictive Maintenance: xây hệ thống giám sát rung nhà máy | Hansford</title>
+    <meta name="description" content="Predictive Maintenance (bảo trì dự đoán) dựa trên rung động: so sánh 3 chiến lược bảo trì, cách xây dựng hệ thống CbM cơ bản cho nhà máy Việt Nam với Hansford Sensors." />
+    <meta name="keywords" content="predictive maintenance việt nam, hệ thống giám sát rung, bảo trì dự đoán nhà máy, condition based maintenance" />
+    <link rel="canonical" href="https://hansford.vn/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Predictive Maintenance: xây hệ thống giám sát rung nhà máy | Hansford" />
+    <meta property="og:description" content="Predictive Maintenance (bảo trì dự đoán) dựa trên rung động: so sánh 3 chiến lược bảo trì, cách xây dựng hệ thống CbM cơ bản cho nhà máy Việt Nam với Hansford Sensors." />
+    <meta property="og:url" content="https://hansford.vn/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/Group-23483.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Predictive Maintenance là gì? Xây dựng hệ thống giám sát rung động cơ bản cho nhà máy tại Việt Nam",
+      "description": "Predictive Maintenance (bảo trì dự đoán) dựa trên rung động: so sánh 3 chiến lược bảo trì, cách xây dựng hệ thống CbM cơ bản cho nhà máy Việt Nam với Hansford Sensors.",
+      "url": "https://hansford.vn/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/",
+      "datePublished": "2026-03-10",
+      "dateModified": "2026-06-02",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/Group-23483.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"How-To","item":"https://hansford.vn/blog/predictive-maintenance-he-thong-giam-sat-rung-viet-nam/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Chi phí đầu tư hệ thống giám sát rung cơ bản là bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"Phụ thuộc quy mô. Một điểm giám sát liên tục đơn giản (cảm biến HS-420 + đấu vào PLC sẵn có) có thể từ vài triệu đồng. Hệ thống walk-around với HS-620 dùng cho cả nhà máy cần ít đầu tư hơn nhiều so với lắp đặt cố định toàn bộ."}},
+        {"@type":"Question","name":"Nhà máy nhỏ có cần PdM không?","acceptedAnswer":{"@type":"Answer","text":"Có. PdM không chỉ cho nhà máy lớn. Ngay cả nhà máy nhỏ với 10-20 motor, một chiếc máy đo rung cầm tay HS-620 và quy trình kiểm tra hàng tuần đã là PdM cơ bản, tiết kiệm đáng kể so với sửa chữa khẩn cấp."}},
+        {"@type":"Question","name":"Mất bao lâu để thấy ROI từ PdM?","acceptedAnswer":{"@type":"Answer","text":"Kinh nghiệm quốc tế: trung bình 6-18 tháng để hoàn vốn đầu tư từ giảm downtime và chi phí bảo dưỡng. Nhà máy có máy móc lớn, đắt tiền (bơm cao áp, máy nén khí) thường hoàn vốn nhanh hơn."}},
+        {"@type":"Question","name":"Hansford Sensors có tư vấn thiết kế hệ thống CbM không?","acceptedAnswer":{"@type":"Answer","text":"Fast Group Engineering không chỉ cung cấp cảm biến mà còn tư vấn cấu hình hệ thống phù hợp với thiết bị điều khiển sẵn có của nhà máy. Liên hệ để được khảo sát và tư vấn miễn phí."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › How-To
+    </div>
+    <span class="badge-cat">How-To</span>
+    <h1>Predictive Maintenance là gì? Xây dựng hệ thống giám sát rung động cơ bản cho nhà máy tại Việt Nam</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 3, 2026 · 8 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Một động cơ 500 kW dừng đột ngột lúc 2 giờ sáng — chi phí sửa chữa khẩn cấp, downtime sản xuất, và rủi ro hỏng dây chuyền có thể lớn gấp 10-20 lần chi phí thay một vòng bi trước khi hỏng. <strong>Predictive Maintenance (PdM)</strong> — hay bảo trì dựa trên tình trạng thực tế — là giải pháp chuyển từ "hỏng rồi mới sửa" sang "sửa đúng lúc, đúng chỗ".</p>
+
+<h2>Ba chiến lược bảo trì — Tại sao PdM đang thắng thế?</h2>
+<table class="info-table">
+  <thead><tr><th>Chiến lược</th><th>Nguyên tắc</th><th>Chi phí vòng đời</th><th>Nhược điểm</th></tr></thead>
+  <tr><td><strong>Reactive (sửa khi hỏng)</strong></td><td>Chờ máy hỏng rồi sửa</td><td>Chi phí sửa chữa + downtime cao</td><td>Rủi ro dừng máy bất ngờ</td></tr>
+  <tr><td><strong>Preventive (định kỳ)</strong></td><td>Bảo dưỡng theo lịch cố định</td><td>Thay phụ tùng còn tốt, lãng phí</td><td>Vẫn có thể hỏng giữa 2 kỳ bảo dưỡng</td></tr>
+  <tr><td><strong>Predictive / CbM</strong></td><td>Theo dõi tình trạng thực tế</td><td>Thấp nhất — chỉ sửa khi cần</td><td>Đầu tư thiết bị, cần đào tạo nhân sự</td></tr>
+</table>
+
+<h2>Tại sao rung động là chỉ số PdM tốt nhất?</h2>
+<p>Rung động (vibration) là phương pháp CbM phổ biến nhất cho máy quay (motor, bơm, quạt, máy nén, hộp số) vì: xuất hiện sớm trước khi lỗi nhìn thấy được, đặc tính phổ tần số mang thông tin chẩn đoán rõ ràng (unbalance, misalignment, bearing fault, resonance), và thiết bị đo ngày càng rẻ và dễ tích hợp.</p>
+<p>Các chỉ số rung theo dõi: vận tốc rung RMS (mm/s) theo ISO 10816 để đánh giá tình trạng tổng thể, và phân tích phổ FFT để chẩn đoán nguyên nhân cụ thể.</p>
+
+<h2>Mô hình hệ thống CbM cơ bản cho nhà máy Việt Nam</h2>
+<p>Không cần đầu tư hệ thống CMS phức tạp ngay từ đầu. Mô hình đơn giản và hiệu quả:</p>
+<ul>
+  <li><strong>Cảm biến:</strong> HS-420 (4-20mA) hoặc HS-100 (IEPE) gắn cố định tại bearing housing các máy quan trọng nhất (critical assets)</li>
+  <li><strong>Xử lý tín hiệu:</strong> HS-420 vào trực tiếp card AI của PLC/SCADA đang có; HS-100 qua module HS-550/HS-551</li>
+  <li><strong>Lưu trữ &amp; hiển thị:</strong> SCADA hiện có hoặc phần mềm trend đơn giản</li>
+  <li><strong>Walk-around:</strong> HS-620/HS-630 cho máy không cần giám sát liên tục</li>
+</ul>
+
+<h2>Ngưỡng ISO 10816 — Đặt cảnh báo thực tế</h2>
+<p>Thay vì dựa vào linh cảm, đặt ngưỡng cảnh báo theo ISO 10816 tương ứng với loại máy. Ví dụ cho máy bơm ly tâm trung bình (Group 3, ISO 10816-7):</p>
+<table class="info-table">
+  <thead><tr><th>Vùng</th><th>Vận tốc rung (mm/s RMS)</th><th>Hành động</th></tr></thead>
+  <tr><td>A (tốt)</td><td>0 – 2.3</td><td>Tiếp tục vận hành bình thường</td></tr>
+  <tr><td>B (chấp nhận)</td><td>2.3 – 4.5</td><td>Theo dõi tần suất cao hơn</td></tr>
+  <tr><td>C (cảnh báo)</td><td>4.5 – 7.1</td><td>Lên kế hoạch sửa chữa gần</td></tr>
+  <tr><td>D (nguy hiểm)</td><td>> 7.1</td><td>Dừng máy ngay lập tức</td></tr>
+</table>
+<div class="callout"><strong>Bắt đầu nhỏ, mở rộng dần:</strong> Đừng cố gắng giám sát tất cả máy móc ngay từ đầu. Ưu tiên 20% máy "critical" gây 80% thiệt hại khi hỏng. Sau 6 tháng có dữ liệu baseline, mở rộng sang máy tiếp theo.</div>
+
+
+<p class="kw-note">Kỹ sư tại Việt Nam có thể mua <a href="/products/hs-420-accelerometer/">HS-420</a> và phụ kiện Hansford Sensors trực tiếp từ <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — nhập khẩu từ nhà máy UK, không qua trung gian, giao hàng trong ngày tại TPHCM và Vũng Tàu.</p>
+
+<div class="callout"><strong>Hỗ trợ kỹ thuật từ Fast Group Engineering:</strong> Ngoài việc cung cấp thiết bị, Fast Group Engineering hỗ trợ tư vấn cấu hình hệ thống, troubleshooting tại hiện trường và hướng dẫn tích hợp với PLC/DCS sẵn có của nhà máy. Phản hồi trong 24 giờ làm việc — gọi <a href="tel:+84938888958">0938 888 958</a> hoặc email <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Chi phí đầu tư hệ thống giám sát rung cơ bản là bao nhiêu?</h3><p>Phụ thuộc quy mô. Một điểm giám sát liên tục đơn giản (cảm biến HS-420 + đấu vào PLC sẵn có) có thể từ vài triệu đồng. Hệ thống walk-around với HS-620 dùng cho cả nhà máy cần ít đầu tư hơn nhiều so với lắp đặt cố định toàn bộ.</p></div>
+  <div class="faq-item"><h3>Nhà máy nhỏ có cần PdM không?</h3><p>Có. PdM không chỉ cho nhà máy lớn. Ngay cả nhà máy nhỏ với 10-20 motor, một chiếc máy đo rung cầm tay HS-620 và quy trình kiểm tra hàng tuần đã là PdM cơ bản, tiết kiệm đáng kể so với sửa chữa khẩn cấp.</p></div>
+  <div class="faq-item"><h3>Mất bao lâu để thấy ROI từ PdM?</h3><p>Kinh nghiệm quốc tế: trung bình 6-18 tháng để hoàn vốn đầu tư từ giảm downtime và chi phí bảo dưỡng. Nhà máy có máy móc lớn, đắt tiền (bơm cao áp, máy nén khí) thường hoàn vốn nhanh hơn.</p></div>
+  <div class="faq-item"><h3>Hansford Sensors có tư vấn thiết kế hệ thống CbM không?</h3><p>Fast Group Engineering không chỉ cung cấp cảm biến mà còn tư vấn cấu hình hệ thống phù hợp với thiết bị điều khiển sẵn có của nhà máy. Liên hệ để được khảo sát và tư vấn miễn phí.</p></div>
+  <div class="faq-item"><h3>Mua cảm biến Hansford Sensors chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering – Fast Group Co., Ltd (MST: 0315555189) là nhà phân phối chính thức và duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Kho sẵn tại TPHCM (150/41 Nguyễn Cư Trinh, Q.1) và Vũng Tàu (41 Lê Văn Lộc). Giao hàng trong ngày tại TPHCM và Vũng Tàu, 2–3 ngày toàn quốc. Đầy đủ C/O Anh Quốc, C/Q, ATEX cert, hóa đơn VAT đỏ. Hotline: 0938 888 958 · Email: sales@hansford.vn</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter rung 4-20mA tích hợp PLC</a>
+  <a href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo rung cầm tay walk-around</a>
+  <a href="/categories/vibration-systems-switches/">Danh mục: Hệ thống và module đo rung</a>
+  <a href="/blog/iso-10816-iso-20816-tieu-chuan-rung-dong-may-moc/">ISO 10816 vs ISO 20816: tiêu chuẩn đánh giá rung</a>
+  <a href="/blog/giam-sat-rung-bom-ly-tam-nha-may-loc-dau/">Giám sát rung bơm ly tâm trong nhà máy lọc dầu</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

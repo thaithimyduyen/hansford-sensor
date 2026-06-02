@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Sensitivity 100mV/g cảm biến gia tốc – giải thích kỹ thuật | Hansford</title>
+    <meta name="description" content="Giải thích độ nhạy (sensitivity) mV/g của cảm biến gia tốc IEPE: 100mV/g là gì, khi nào cần 10mV/g hay 500mV/g, và cách đọc đúng thông số datasheet." />
+    <meta name="keywords" content="cảm biến gia tốc 100mV/g, accelerometer sensitivity, thông số cảm biến rung, IEPE sensitivity" />
+    <link rel="canonical" href="https://hansford.vn/blog/sensitivity-100mv-g-cam-bien-gia-toc-thong-so-ky-thuat/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Sensitivity 100mV/g cảm biến gia tốc – giải thích kỹ thuật | Hansford" />
+    <meta property="og:description" content="Giải thích độ nhạy (sensitivity) mV/g của cảm biến gia tốc IEPE: 100mV/g là gì, khi nào cần 10mV/g hay 500mV/g, và cách đọc đúng thông số datasheet." />
+    <meta property="og:url" content="https://hansford.vn/blog/sensitivity-100mv-g-cam-bien-gia-toc-thong-so-ky-thuat/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/hs-100-series-4-core-hffr-cable-industrial-accelerometer-image-2.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Sensitivity 100mV/g là gì? Giải thích thông số kỹ thuật cảm biến gia tốc cho kỹ sư",
+      "description": "Giải thích độ nhạy (sensitivity) mV/g của cảm biến gia tốc IEPE: 100mV/g là gì, khi nào cần 10mV/g hay 500mV/g, và cách đọc đúng thông số datasheet.",
+      "url": "https://hansford.vn/blog/sensitivity-100mv-g-cam-bien-gia-toc-thong-so-ky-thuat/",
+      "datePublished": "2026-04-07",
+      "dateModified": "2026-06-02",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/hs-100-series-4-core-hffr-cable-industrial-accelerometer-image-2.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/sensitivity-100mv-g-cam-bien-gia-toc-thong-so-ky-thuat/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"Tiêu chuẩn","item":"https://hansford.vn/blog/sensitivity-100mv-g-cam-bien-gia-toc-thong-so-ky-thuat/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Sensitivity cao hơn có nghĩa là cảm biến tốt hơn không?","acceptedAnswer":{"@type":"Answer","text":"Không nhất thiết. Sensitivity cao (500 mV/g) tốt cho rung biên độ nhỏ nhưng dễ bị bão hòa với rung lớn. 100 mV/g là điểm cân bằng tốt nhất cho phần lớn máy công nghiệp."}},
+        {"@type":"Question","name":"HS-100 Series của Hansford có sensitivity bao nhiêu?","acceptedAnswer":{"@type":"Answer","text":"HS-100 Series tiêu chuẩn có sensitivity 100 mV/g, dải tần điển hình 0.5 Hz – 15 kHz (±3 dB), measurement range ±80g. Xem datasheet chính hãng để tra cứu thông số chính xác theo model."}},
+        {"@type":"Question","name":"Frequency response và sensitivity khác nhau thế nào?","acceptedAnswer":{"@type":"Answer","text":"Sensitivity là giá trị tại tần số tham chiếu. Frequency response mô tả sensitivity thay đổi theo tần số — biểu diễn dưới dạng đồ thị ±X dB so với giá trị tham chiếu. Chỉ trong dải tần flat (±3 dB) thì giá trị đo mới đáng tin."}},
+        {"@type":"Question","name":"Khi nào nên dùng sensitivity 500 mV/g?","acceptedAnswer":{"@type":"Answer","text":"Khi đo máy chạy tốc độ rất thấp (dưới 100 RPM) hoặc cấu kiện kết cấu có biên độ rung rất nhỏ (< 0.1g). Cần kết hợp với bộ điều hòa tín hiệu có gain thấp để không bị clipping."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › Tiêu chuẩn
+    </div>
+    <span class="badge-cat">Tiêu chuẩn</span>
+    <h1>Sensitivity 100mV/g là gì? Giải thích thông số kỹ thuật cảm biến gia tốc cho kỹ sư</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 4, 2026 · 7 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Khi chọn cảm biến gia tốc, một trong những thông số đầu tiên kỹ sư cần hiểu là <strong>sensitivity (độ nhạy)</strong> — thường ghi là 100 mV/g, 10 mV/g, hay 500 mV/g. Hiểu đúng con số này giúp tránh lỗi "chọn sai cảm biến" gây bão hòa tín hiệu (clipping) hoặc tỷ lệ tín hiệu/nhiễu (SNR) kém.</p>
+
+<h2>Sensitivity là gì?</h2>
+<p>Sensitivity của cảm biến IEPE là tỷ lệ điện áp ngõ ra trên mỗi đơn vị gia tốc đầu vào: <strong>mV/g</strong> (milli-volt trên mỗi g, với g = 9.81 m/s²) hoặc đôi khi mV/(m/s²). Một cảm biến 100 mV/g sẽ xuất ra 100 mV điện áp AC khi chịu gia tốc 1g.</p>
+<p>Đây là thông số tĩnh được hiệu chuẩn tại tần số tham chiếu (thường 159.15 Hz hoặc 100 Hz). Giá trị thực tế thay đổi theo tần số — đặc tính tần số (frequency response) trong datasheet mô tả mức biến thiên này.</p>
+
+<h2>So sánh các mức sensitivity phổ biến</h2>
+<table class="info-table">
+  <thead><tr><th>Sensitivity</th><th>Phù hợp với</th><th>Giới hạn đo (điển hình)</th><th>Ví dụ ứng dụng</th></tr></thead>
+  <tr><td><strong>10 mV/g</strong></td><td>Rung biên độ lớn</td><td>±500g hoặc hơn</td><td>Máy sốc, thử va đập, bộ rũ sàng</td></tr>
+  <tr><td><strong>100 mV/g</strong></td><td>Phần lớn máy công nghiệp</td><td>±50g (điển hình)</td><td>Motor, bơm, quạt, hộp số (tiêu chuẩn)</td></tr>
+  <tr><td><strong>500 mV/g</strong></td><td>Rung biên độ nhỏ, tần số thấp</td><td>±10g</td><td>Máy chạy tốc độ thấp, rung kết cấu nhỏ</td></tr>
+</table>
+
+<h2>Tại sao 100 mV/g là tiêu chuẩn công nghiệp?</h2>
+<p>100 mV/g là điểm cân bằng tối ưu giữa ba yếu tố cạnh tranh: <strong>độ nhạy đủ lớn</strong> để tạo tín hiệu đọc được với máy rung nhẹ; <strong>giới hạn đo đủ rộng</strong> không bị bão hòa khi máy rung mạnh; và <strong>noise floor thấp đủ</strong> để không che lấp tín hiệu nhỏ. Dòng HS-100 và HS-420 của Hansford đều thiết kế quanh sensitivity 100 mV/g.</p>
+
+<h2>Các thông số kỹ thuật liên quan cần đọc cùng</h2>
+<ul>
+  <li><strong>Frequency range (dải tần):</strong> Ví dụ 2 Hz – 10 kHz (±3 dB). Đây là dải tần mà sensitivity ổn định. Ngoài dải này, giá trị đo không đáng tin.</li>
+  <li><strong>Dynamic range / measurement range:</strong> Giới hạn gia tốc tối đa trước khi tín hiệu bị clipping. Ví dụ ±50g peak.</li>
+  <li><strong>Transverse sensitivity:</strong> Phần trăm độ nhạy theo hướng vuông góc (ideally &lt;5%). Cảm biến tốt có transverse sensitivity thấp.</li>
+  <li><strong>Resonant frequency:</strong> Tần số cộng hưởng tự nhiên của cảm biến. Đặc tính tần số flat đến khoảng 30-50% tần số cộng hưởng.</li>
+</ul>
+
+<h2>Tính toán thực tế</h2>
+<p>Nếu máy rung với gia tốc ước tính 5g peak và cảm biến 100 mV/g, tín hiệu ra sẽ là 500 mV peak. Nếu bộ điều hòa/ADC có dải đầu vào ±1V, tín hiệu 500 mV peak phù hợp, không bị clipping. Nếu máy rung đến 30g peak và dùng cảm biến 100 mV/g thì tín hiệu ra 3V peak — có thể vượt ngưỡng bộ điều hòa, cần hạ xuống sensitivity 10 mV/g.</p>
+<div class="callout"><strong>Thực tế:</strong> Phần lớn kỹ sư mắc lỗi chọn sensitivity quá cao (500 mV/g) với hy vọng đo chính xác hơn, dẫn đến clipping khi máy rung bất ngờ mạnh. Với motor và bơm công nghiệp bình thường, 100 mV/g (như toàn bộ dòng HS-100) là lựa chọn an toàn và đúng đắn.</div>
+
+
+<p class="kw-note">Để mua <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series</a> đáp ứng tiêu chuẩn này, liên hệ <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — nhà phân phối Hansford Sensors Việt Nam cung cấp đủ: C/O Anh Quốc, ATEX cert, datasheet gốc và bộ hồ sơ vendor qualification trong 24–48 giờ làm việc.</p>
+
+<div class="callout"><strong>Hồ sơ dự án đầy đủ:</strong> Fast Group Engineering cung cấp đủ bộ chứng từ cho mọi dự án EPC, PMC và vendor qualification: C/O Anh Quốc · C/Q xuất xưởng · ATEX/IECEx cert · Hóa đơn VAT đỏ. Authorization Letter từ Hansford Sensors UK xác nhận tư cách đại lý chính thức. Bộ hồ sơ VQ cơ bản gửi trong 24–48 giờ làm việc theo yêu cầu. Email: <a href="mailto:sales@hansford.vn">sales@hansford.vn</a> · Hotline: <a href="tel:+84938888958">0938 888 958</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Sensitivity cao hơn có nghĩa là cảm biến tốt hơn không?</h3><p>Không nhất thiết. Sensitivity cao (500 mV/g) tốt cho rung biên độ nhỏ nhưng dễ bị bão hòa với rung lớn. 100 mV/g là điểm cân bằng tốt nhất cho phần lớn máy công nghiệp.</p></div>
+  <div class="faq-item"><h3>HS-100 Series của Hansford có sensitivity bao nhiêu?</h3><p>HS-100 Series tiêu chuẩn có sensitivity 100 mV/g, dải tần điển hình 0.5 Hz – 15 kHz (±3 dB), measurement range ±80g. Xem datasheet chính hãng để tra cứu thông số chính xác theo model.</p></div>
+  <div class="faq-item"><h3>Frequency response và sensitivity khác nhau thế nào?</h3><p>Sensitivity là giá trị tại tần số tham chiếu. Frequency response mô tả sensitivity thay đổi theo tần số — biểu diễn dưới dạng đồ thị ±X dB so với giá trị tham chiếu. Chỉ trong dải tần flat (±3 dB) thì giá trị đo mới đáng tin.</p></div>
+  <div class="faq-item"><h3>Khi nào nên dùng sensitivity 500 mV/g?</h3><p>Khi đo máy chạy tốc độ rất thấp (dưới 100 RPM) hoặc cấu kiện kết cấu có biên độ rung rất nhỏ (< 0.1g). Cần kết hợp với bộ điều hòa tín hiệu có gain thấp để không bị clipping.</p></div>
+  <div class="faq-item"><h3>Mua cảm biến Hansford Sensors chính hãng tại Việt Nam ở đâu?</h3><p>Fast Group Engineering – Fast Group Co., Ltd (MST: 0315555189) là nhà phân phối chính thức và duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Kho sẵn tại TPHCM (150/41 Nguyễn Cư Trinh, Q.1) và Vũng Tàu (41 Lê Văn Lộc). Giao hàng trong ngày tại TPHCM và Vũng Tàu, 2–3 ngày toàn quốc. Đầy đủ C/O Anh Quốc, C/Q, ATEX cert, hóa đơn VAT đỏ. Hotline: 0938 888 958 · Email: sales@hansford.vn</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series – IEPE 100mV/g công nghiệp tiêu chuẩn</a>
+  <a href="/products/hs-173-premium-triaxial-accelerometer/">HS-173 – Triaxial 100mV/g cho 3 trục</a>
+  <a href="/categories/industrial-accelerometers/">Danh mục: Cảm biến gia tốc công nghiệp</a>
+  <a href="/blog/ket-noi-cam-bien-rung-iepe-plc-siemens-allen-bradley/">Kết nối cảm biến IEPE với PLC Siemens / Allen-Bradley</a>
+  <a href="/blog/iepe-4-20ma-mems-so-sanh-cam-bien-rung/">IEPE vs 4-20mA vs MEMS: so sánh để chọn đúng</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

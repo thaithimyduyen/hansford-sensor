@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <title>Giám sát rung động cơ điện: lỗi rotor stator | Hansford Sensors VN</title>
+    <meta name="description" content="Giám sát rung motor điện: failure modes rotor/stator/bearing, tần số điện từ 2f_line, ảnh hưởng biến tần VFD và vị trí gắn cảm biến HS-420 HS-100." />
+    <meta name="keywords" content="giám sát rung động cơ điện, electric motor vibration monitoring, motor vibration fault detection vietnam, cảm biến rung motor điện" />
+    <link rel="canonical" href="https://hansford.vn/blog/giam-sat-rung-dong-co-dien-phat-hien-loi-rotor-stator/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Giám sát rung động cơ điện: lỗi rotor stator | Hansford Sensors VN" />
+    <meta property="og:description" content="Giám sát rung motor điện: failure modes rotor/stator/bearing, tần số điện từ 2f_line, ảnh hưởng biến tần VFD và vị trí gắn cảm biến HS-420 HS-100." />
+    <meta property="og:url" content="https://hansford.vn/blog/giam-sat-rung-dong-co-dien-phat-hien-loi-rotor-stator/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/products/hs-420-accelerometer-5-image-2.jpg" />
+    <meta property="og:site_name" content="Hansford Sensors Việt Nam" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+      .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
+      .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
+      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
+      .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
+      .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
+      .blog-body { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; font-size: 1rem; line-height: 1.8; color: #1e293b; }
+      .blog-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2.2rem 0 .75rem; color: #0f2040; }
+      .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 .5rem; color: #1a4fdb; }
+      .blog-body p { margin-bottom: 1.1rem; }
+      .blog-body ul, .blog-body ol { margin: .5rem 0 1.1rem 1.25rem; }
+      .blog-body li { margin-bottom: .4rem; }
+      .blog-body strong { color: #1a4fdb; }
+      .lead { font-size: 1.06rem; color:#334155; }
+      .cta-box { background: linear-gradient(135deg, #0f2040, #1a4fdb); color: #fff; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+      .cta-box h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; color:#fff; }
+      .cta-box p { font-size: .88rem; color: rgba(255,255,255,.8); margin-bottom: 1.25rem; }
+      .cta-box .btn-cta { background: #fff; color: #1a4fdb; font-weight: 700; font-size: .9rem; padding: .65rem 1.75rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .cta-box .btn-cta-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); font-weight: 600; font-size: .9rem; padding: .6rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: .25rem; }
+      .trust-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; }
+      .trust-strip span { background: #f0f7ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: .3rem .75rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+      .info-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .86rem; }
+      .info-table th, .info-table td { padding: .6rem .9rem; border: 1px solid #e2e8f0; vertical-align: top; text-align:left; }
+      .info-table thead th { background:#0f2040; color:#fff; font-weight:600; }
+      .info-table td:first-child { background: #f8fafc; font-weight: 600; color: #334155; }
+      .info-table.cmp td:first-child { background:#f8fafc; }
+      .callout { background:#f0f7ff; border-left:3px solid #1a4fdb; border-radius:6px; padding:1rem 1.1rem; margin:1.25rem 0; font-size:.9rem; color:#1e293b; }
+      .callout strong { color:#0f2040; }
+      .kw-note { font-size:.875rem; color:#475569; background:rgba(26,79,219,.04); border:1px solid rgba(26,79,219,.12); border-radius:6px; padding:.65rem 1rem; margin:1.75rem 0 .5rem; line-height:1.65; }
+      .kw-note strong { color:#1a4fdb; font-weight:600; }
+      .kw-note a { color:#1a4fdb; text-decoration:none; }
+      .kw-note a:hover { text-decoration:underline; }
+      .faq-block { margin: 2rem 0; }
+      .faq-block h2 { font-size:1.3rem; font-weight:700; color:#0f2040; margin-bottom:1rem; }
+      .faq-item { border:1px solid #e2e8f0; border-radius:8px; padding:1rem 1.1rem; margin-bottom:.75rem; background:#fff; }
+      .faq-item h3 { font-size:.95rem; font-weight:700; color:#0f2040; margin:0 0 .4rem; }
+      .faq-item p { font-size:.88rem; color:#475569; margin:0; line-height:1.7; }
+      .internal-links { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; margin: 2rem 0; }
+      .internal-links h4 { font-size: .85rem; font-weight: 700; color: #0f2040; margin-bottom: .75rem; }
+      .internal-links a { display: block; font-size: .83rem; color: #1a4fdb; text-decoration: none; padding: .3rem 0; border-bottom: 1px solid #e2e8f0; }
+      .internal-links a:last-child { border-bottom: none; }
+      .internal-links a:hover { color: #0f2040; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Giám sát rung động cơ điện: Phát hiện sớm lỗi rotor, stator và lệch tâm từ tín hiệu rung",
+      "description": "Giám sát rung motor điện: failure modes rotor/stator/bearing, tần số điện từ 2f_line, ảnh hưởng biến tần VFD và vị trí gắn cảm biến HS-420 HS-100.",
+      "url": "https://hansford.vn/blog/giam-sat-rung-dong-co-dien-phat-hien-loi-rotor-stator/",
+      "datePublished": "2026-08-04",
+      "dateModified": "2026-08-04",
+      "author": {"@type": "Organization", "name": "Fast Group Engineering"},
+      "publisher": {"@type": "Organization", "name": "Hansford Sensors Việt Nam – Fast Group Engineering",
+        "logo": {"@type": "ImageObject", "url": "https://hansford.vn/assets/images/logo/logo.svg"}},
+      "image": "https://hansford.vn/assets/images/products/hs-420-accelerometer-5-image-2.jpg",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://hansford.vn/blog/giam-sat-rung-dong-co-dien-phat-hien-loi-rotor-stator/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hansford.vn/"},
+        {"@type":"ListItem","position":2,"name":"Blog","item":"https://hansford.vn/blog/"},
+        {"@type":"ListItem","position":3,"name":"Industry","item":"https://hansford.vn/blog/giam-sat-rung-dong-co-dien-phat-hien-loi-rotor-stator/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Motor 4-pole 50 Hz có tần số điện từ tại mấy Hz?","acceptedAnswer":{"@type":"Answer","text":"Tần số lưới f_line = 50 Hz. Tần số điện từ chính = 2 × 50 = 100 Hz. Motor 4-pole chạy ở tốc độ danh nghĩa 1500 RPM = 25 Hz. Hai tần số này (25 Hz và 100 Hz) khác nhau rõ ràng trong phổ FFT."}},
+        {"@type":"Question","name":"HS-420 4-20mA có phát hiện được lỗi điện từ motor không?","acceptedAnswer":{"@type":"Answer","text":"Gián tiếp và hạn chế. HS-420 đo overall level — nếu lệch tâm điện từ đủ mạnh sẽ tăng tổng mức rung. Để phân biệt rõ nguồn gốc điện từ hay cơ học cần phổ FFT với cảm biến IEPE HS-100 để thấy peak tại 100 Hz riêng biệt."}},
+        {"@type":"Question","name":"Cảm biến gắn ở đâu tốt nhất trên motor điện?","acceptedAnswer":{"@type":"Answer","text":"Drive End (DE) bearing housing — phía gắn với shaft drive, chịu tải trọng lớn hơn, thường hỏng trước. Non-Drive End (NDE) là điểm đo thứ hai. Hướng radial và axial tại mỗi ổ bi. Không gắn trên terminal box hay fan cover vì tín hiệu kém."}},
+        {"@type":"Question","name":"Motor chạy VFD cần loại cảm biến đặc biệt không?","acceptedAnswer":{"@type":"Answer","text":"Bản thân cảm biến (HS-100 hay HS-420) không cần đặc biệt. Quan trọng là cáp: dùng loại braided shielded để chống nhiễu EMI từ VFD, tiếp đất đúng một phía cáp. Ngoài ra nên lọc kỹ thuật số (digital filter) tại tần số switching VFD khi phân tích phổ."}}
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
+  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="breadcrumb-blog">
+      <a href="/">Trang chủ</a> › <a href="/blog/">Blog</a> › Industry
+    </div>
+    <span class="badge-cat">Industry</span>
+    <h1>Giám sát rung động cơ điện: Phát hiện sớm lỗi rotor, stator và lệch tâm từ tín hiệu rung</h1>
+    <div class="meta">Fast Group Engineering · Cập nhật: Tháng 8, 2026 · 8 phút đọc</div>
+  </div>
+</section>
+
+<main>
+<div class="blog-body">
+
+<div class="trust-strip">
+  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
+  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
+  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
+  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
+  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
+</div>
+
+
+<p class="lead">Động cơ điện là thiết bị phổ biến nhất trong nhà máy — từ motor 0.37 kW bơm nhỏ đến motor 5 MW máy nghiền. Hơn 40% sự cố motor xuất phát từ ổ bi, nhưng 20% khác đến từ các nguyên nhân điện từ và cơ học phức tạp hơn: lỏng rotor bar, lệch tâm điện từ, stator eccentricity. Giám sát rung đúng cách giúp phân biệt nguyên nhân cơ học và điện từ — quyết định là sửa cơ hay sửa điện.</p>
+
+<h2>Tần số đặc trưng của motor điện</h2>
+<table class="info-table">
+  <thead><tr><th>Nguồn rung</th><th>Tần số đặc trưng</th><th>Loại lỗi</th></tr></thead>
+  <tr><td>Tốc độ quay rotor</td><td>1x RPM (25 Hz ở 1500 RPM)</td><td>Imbalance rotor, shaft bow</td></tr>
+  <tr><td>Điện từ — lưới điện</td><td>2 × f_line = 100 Hz (lưới 50 Hz)</td><td>Lệch tâm điện từ, stator eccentricity</td></tr>
+  <tr><td>Rotor bars</td><td>2 × f_line ± (số thanh rotor × slip × f_line)</td><td>Broken rotor bar</td></tr>
+  <tr><td>Vấu cực (pole pass)</td><td>Rất thấp (thường &lt; 5 Hz)</td><td>Rotor eccentricity</td></tr>
+  <tr><td>Ổ bi</td><td>BPFO, BPFI, BSF, FTF</td><td>Bearing fault</td></tr>
+  <tr><td>Điều hòa bậc cao</td><td>100 Hz, 200 Hz, 300 Hz...</td><td>Lỏng stator, resonance khung máy</td></tr>
+</table>
+
+<h2>Lệch tâm điện từ (Electromagnetic Eccentricity) — Phân biệt với imbalance cơ học</h2>
+<p>Lệch tâm điện từ xảy ra khi khe hở giữa rotor và stator không đều (dynamic eccentricity). Tạo ra lực kéo điện từ không cân bằng — rung tại <strong>2 × f_line = 100 Hz</strong> (lưới 50 Hz). Phân biệt với imbalance:</p>
+<ul>
+  <li><strong>Imbalance:</strong> Peak tại 1x RPM — biến mất khi tắt điện motor vẫn quay (coast down)</li>
+  <li><strong>EM Eccentricity:</strong> Peak tại 100 Hz — <em>biến mất ngay khi tắt điện</em>, ngay cả khi rotor vẫn quay</li>
+</ul>
+<p>Test đơn giản: quan sát phổ trong vài giây trước và sau khi cắt điện. Nếu 100 Hz mất ngay → nguyên nhân điện từ, không phải cơ học.</p>
+
+<h2>Ảnh hưởng của biến tần VFD đến đo rung</h2>
+<p>Motor chạy biến tần VFD tạo ra điều kiện đo rung phức tạp hơn:</p>
+<ul>
+  <li>Tần số cơ bản thay đổi theo setpoint VFD — 1x RPM không cố định</li>
+  <li>Harmonic từ VFD (switching frequency thường 2–16 kHz) tạo noise điện trong cáp cảm biến</li>
+  <li>Tần số "cogging" xuất hiện ở tốc độ thấp — có thể nhầm với bearing fault</li>
+  <li>Hiện tượng bearing electrical fluting do dòng điện rò qua ổ bi — đặc trưng riêng với VFD</li>
+</ul>
+<p>Giải pháp: dùng cáp bện (braided shield) hoặc HS-AC cable loại Braided để giảm EMI từ VFD; tiếp đất đúng một đầu cáp.</p>
+
+<h2>Soft Foot — Nguyên nhân ẩn thường bị bỏ sót</h2>
+<p>Soft foot xảy ra khi một hoặc nhiều chân motor không tiếp xúc hoàn toàn với nền — gây biến dạng khung motor khi siết bu-lông. Soft foot làm cho alignment không ổn định và rung thay đổi ngẫu nhiên. Kiểm tra: lần lượt nới lỏng từng bu-lông chân, nếu rung thay đổi đáng kể khi nới bu-lông đó → soft foot tại vị trí đó. Khắc phục bằng shim phù hợp trước khi alignment.</p>
+<div class="callout"><strong>Giám sát motor trong nhà máy:</strong> Fast Group Engineering cung cấp HS-420 và HS-100 Series của Hansford Sensors — nhập khẩu trực tiếp từ UK — cho giám sát motor điện tại các nhà máy xi măng, thép, hóa chất và dầu khí tại Việt Nam. Tư vấn miễn phí lựa chọn model phù hợp từng ứng dụng: <a href="tel:+84938888958">0938 888 958</a>.</div>
+
+
+<p class="kw-note">Tại Việt Nam, <a href="/products/hs-420-accelerometer/">HS-420</a> và toàn bộ dòng Hansford Sensors cho ứng dụng công nghiệp được cung cấp bởi <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — nhà phân phối chính hãng Hansford Sensors UK, sẵn kho TPHCM &amp; Vũng Tàu, đủ C/O và hồ sơ EPC/PMC.</p>
+
+<div class="callout"><strong>Kinh nghiệm cung ứng thực tế:</strong> Fast Group Engineering đã cung cấp cảm biến rung Hansford Sensors cho các đơn vị VSP (Vietsovpetro), PTSC, PV GAS, PVEP, EVN và EPC Contractor quốc tế — với đầy đủ hồ sơ C/O Anh Quốc · C/Q xuất xưởng · ATEX/IECEx cert · Hóa đơn VAT đỏ. Kho TPHCM (150/41 Nguyễn Cư Trinh, P. Cầu Ông Lãnh, Q.1, TP.HCM) và Vũng Tàu (41 Lê Văn Lộc, TP. Vũng Tàu, BR-VT) cho phép giao hàng trong ngày từ kho Vũng Tàu với các đơn gấp từ khu vực dầu khí và đóng tàu. Liên hệ: <a href="tel:+84938888958">0938 888 958</a> · <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+
+<div class="cta-box">
+  <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
+  <p><strong>Fast Group Engineering – Fast Group Co., Ltd</strong> — Nhà phân phối chính thức Hansford Sensors tại Việt Nam (MST: 0315555189).<br>
+  Kho TPHCM &amp; Vũng Tàu · Báo giá trong 24 giờ · C/O Anh Quốc · ATEX cert · Hóa đơn VAT đỏ</p>
+  <a href="/contact/" class="btn-cta">Yêu cầu báo giá ngay</a>
+  <a href="tel:+84938888958" class="btn-cta-outline"><i class="ti ti-phone"></i> 0938 888 958</a>
+  <a href="mailto:sales@hansford.vn" class="btn-cta-outline"><i class="ti ti-mail"></i> sales@hansford.vn</a>
+</div>
+
+<div class="faq-block">
+  <h2>Câu hỏi thường gặp</h2>
+  <div class="faq-item"><h3>Motor 4-pole 50 Hz có tần số điện từ tại mấy Hz?</h3><p>Tần số lưới f_line = 50 Hz. Tần số điện từ chính = 2 × 50 = 100 Hz. Motor 4-pole chạy ở tốc độ danh nghĩa 1500 RPM = 25 Hz. Hai tần số này (25 Hz và 100 Hz) khác nhau rõ ràng trong phổ FFT.</p></div>
+  <div class="faq-item"><h3>HS-420 4-20mA có phát hiện được lỗi điện từ motor không?</h3><p>Gián tiếp và hạn chế. HS-420 đo overall level — nếu lệch tâm điện từ đủ mạnh sẽ tăng tổng mức rung. Để phân biệt rõ nguồn gốc điện từ hay cơ học cần phổ FFT với cảm biến IEPE HS-100 để thấy peak tại 100 Hz riêng biệt.</p></div>
+  <div class="faq-item"><h3>Cảm biến gắn ở đâu tốt nhất trên motor điện?</h3><p>Drive End (DE) bearing housing — phía gắn với shaft drive, chịu tải trọng lớn hơn, thường hỏng trước. Non-Drive End (NDE) là điểm đo thứ hai. Hướng radial và axial tại mỗi ổ bi. Không gắn trên terminal box hay fan cover vì tín hiệu kém.</p></div>
+  <div class="faq-item"><h3>Motor chạy VFD cần loại cảm biến đặc biệt không?</h3><p>Bản thân cảm biến (HS-100 hay HS-420) không cần đặc biệt. Quan trọng là cáp: dùng loại braided shielded để chống nhiễu EMI từ VFD, tiếp đất đúng một phía cáp. Ngoài ra nên lọc kỹ thuật số (digital filter) tại tần số switching VFD khi phân tích phổ.</p></div>
+</div>
+
+<div class="internal-links">
+  <h4><i class="ti ti-link"></i> Sản phẩm &amp; bài viết liên quan</h4>
+  <a href="/products/hs-420-accelerometer/">HS-420 – Transmitter 4-20mA cho giám sát motor</a>
+  <a href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 Series – IEPE cho phân tích FFT motor</a>
+  <a href="/blog/bearing-fault-detection-bpfi-bpfo-bsf-ftf-phat-hien-loi-o-bi/">Bearing Fault Detection: BPFI BPFO trong motor</a>
+  <a href="/blog/imbalance-misalignment-looseness-chan-doan-rung-dong/">Imbalance vs Misalignment: chẩn đoán motor</a>
+  <a href="/blog/chon-cap-cam-bien-rung-fep-hffr-pur-braided/">Chọn cáp cảm biến: Braided chống EMI VFD</a>
+</div>
+
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div id="footer"></div>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
