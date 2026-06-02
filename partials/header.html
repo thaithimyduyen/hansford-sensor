@@ -1,780 +1,242 @@
-<header>
-    <!-- navbar -->
-    <div class="border-b">
-        <div class="bg-gray-100 py-1">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="md:w-1/2 w-full md:text-left flex flex-wrap gap-4 items-center">
+<!-- ============================================================
+     HEADER — hansford.vn  |  v4.0 FINAL
+     Palette: #02255D · #0C326F · #255498 · #FFFFFF · #5F6B7A
+     Gradient: linear-gradient(135deg, #02255D, #0C326F 45%, #255498)
+     Brand: Fast Group Engineering
+     Stack: Bootstrap 5.3 CDN + Tailwind theme.css + Tabler Icons
+     ============================================================ -->
 
-                        <!-- EMAIL -->
-                        <span class="flex items-center gap-2">
-                            <i class="ti ti-mail text-blue-600"></i>
-                            <a href="mailto:sales@hansford.vn" class="hover:text-blue-600">
-                                sales@hansford.vn
-                            </a>
-                        </span>
+<style>
+/* === HEADER DESIGN SYSTEM === */
+:root {
+  --hs-navy:     #02255D;
+  --hs-navy-mid: #0C326F;
+  --hs-blue:     #255498;
+  --hs-white:    #FFFFFF;
+  --hs-gray:     #5F6B7A;
+  --hs-gray-bg:  #F5F7FA;
+  --hs-grad:     linear-gradient(135deg, #02255D 0%, #0C326F 45%, #255498 100%);
+}
 
-                        <!-- PHONE -->
-                        <span class="flex items-center gap-2">
-                            <i class="ti ti-phone text-blue-600"></i>
-                            <a href="tel:+84938888958" class="hover:text-blue-600">
-                                +84 938 888 958
-                            </a>
-                        </span>
+/* Top bar */
+.hs-topbar { background: var(--hs-grad); }
+.hs-topbar a { color: rgba(255,255,255,.72); text-decoration: none; transition: color .2s; font-size: 12px; }
+.hs-topbar a:hover { color: #fff; }
 
-                    </div>
-                    
-            </div>
+/* Logo bar */
+.hs-logobar { background: var(--hs-white); border-bottom: 1px solid #E8ECF0; }
+
+/* CTA button */
+.hs-cta {
+  background: var(--hs-grad); color: #fff; border: none; border-radius: 8px;
+  padding: 10px 24px; font-weight: 600; font-size: 13px;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  transition: box-shadow .25s, transform .15s; white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(2,37,93,.15);
+}
+.hs-cta:hover { box-shadow: 0 6px 20px rgba(2,37,93,.3); transform: translateY(-1px); color: #fff; }
+.hs-cta:active { transform: translateY(0); }
+
+/* Nav bar */
+.hs-nav { background: var(--hs-white); border-bottom: 1px solid #E8ECF0; }
+.hs-nav .nav-link {
+  font-size: 13.5px; font-weight: 500; color: #3A4553 !important;
+  padding: 14px 16px !important; transition: color .2s; position: relative;
+}
+.hs-nav .nav-link:hover { color: var(--hs-navy) !important; }
+.hs-nav .dropdown-toggle::after { color: #9CA5B0; font-size: 11px; }
+
+/* Active underline on desktop */
+@media(min-width:992px){
+  .hs-nav .nav-item>.nav-link::before {
+    content:''; position:absolute; bottom:0; left:16px; right:16px;
+    height:2px; background:transparent; border-radius:2px; transition:background .2s;
+  }
+  .hs-nav .nav-item:hover>.nav-link::before { background: var(--hs-blue); }
+  .hs-nav .dropdown-toggle::after {
+    content:'\ea5f'; font-family:tabler-icons; border:none;
+    position:static; height:auto; background:none!important;
+  }
+}
+
+/* Dropdown */
+.hs-nav .dropdown-menu {
+  border: 1px solid #E8ECF0; border-radius: 10px; padding: 10px;
+  box-shadow: 0 16px 40px rgba(2,37,93,.1), 0 2px 8px rgba(2,37,93,.06);
+}
+.hs-nav .dropdown-item {
+  border-radius: 6px; padding: 7px 10px; font-size: 13px;
+  color: #3A4553; transition: all .15s; display: flex; align-items: center; gap: 8px;
+}
+.hs-nav .dropdown-item:hover { background: rgba(2,37,93,.04); color: var(--hs-navy); }
+.hs-nav .dropdown-item i { width: 16px; text-align: center; color: var(--hs-blue); font-size: 15px; flex-shrink:0; }
+
+.hs-mega-label {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: #9CA5B0; padding: 4px 10px 8px; display:block;
+}
+</style>
+
+<div class="hs-header">
+
+  <!-- ① TOP BAR -->
+  <div class="hs-topbar" style="padding:6px 0;">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+84938888958" class="d-flex align-items-center gap-1">
+          <i class="ti ti-phone-call" style="font-size:13px;"></i> +84 938 888 958
+        </a>
+        <span class="d-none d-sm-inline" style="color:rgba(255,255,255,.2);">|</span>
+        <a href="mailto:sales@hansford.vn" class="d-none d-sm-flex align-items-center gap-1">
+          <i class="ti ti-mail" style="font-size:13px;"></i> sales@hansford.vn
+        </a>
+      </div>
+      <div class="d-none d-md-block" style="color:rgba(255,255,255,.5); font-size:11px;">
+        Authorized Distributor — <strong style="color:rgba(255,255,255,.8);">Fast Group Engineering</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② LOGO BAR -->
+  <div class="hs-logobar" style="padding:14px 0;">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="/" style="flex-shrink:0; text-decoration:none;">
+        <img src="/assets/images/logo/logo.svg"
+             alt="Hansford Sensors Việt Nam – Fast Group Engineering"
+             style="height:40px; width:auto;" width="180" height="40">
+      </a>
+      <div class="d-none d-md-flex align-items-center gap-4">
+        <div style="text-align:right; line-height:1.35;">
+          <div style="font-size:13px; font-weight:600; color:var(--hs-navy);">Cảm biến rung công nghiệp chính hãng</div>
+          <div style="font-size:11px; color:var(--hs-gray);">Sẵn kho TP.HCM &amp; Vũng Tàu · C/O, C/Q đầy đủ</div>
         </div>
-        <div class="pt-5">
-            <div class="container">
-                <div class="flex flex-wrap w-full items-center justify-between">
-                    <div class="lg:w-1/6 md:w-1/2 w-2/5">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="/assets/images/logo/logo.svg" alt="TailwindCSS eCommerce HTML Template" />
-                        </a>
-                    </div>
-                    <div class="lg:w-2/5 hidden lg:block">
-                        <form action="#">
-                            <div class="relative">
-                                <label for="searchProducts" class="invisible hidden">Search</label>
-                                <input
-                                    class="border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
-                                    type="search" placeholder="Tìm kiếm sản phẩm" id="searchProducts" />
-                                <button class="absolute right-0 top-0 p-3" type="button">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search"
-                                        width="16" height="16" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                        <path d="M21 21l-6 -6" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+        <a href="/contact.html" class="hs-cta">
+          <i class="ti ti-file-description" style="font-size:15px;"></i> Yêu cầu báo giá
+        </a>
+      </div>
+      <a href="/contact.html" class="d-md-none hs-cta" style="padding:8px 14px; font-size:12px;">Báo giá</a>
+    </div>
+  </div>
+
+  <!-- ③ NAV BAR — sticky -->
+  <nav class="hs-nav navbar navbar-expand-lg navbar-default" style="position:sticky; top:0; z-index:1030;">
+    <div class="container">
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMain"
+              aria-controls="navMain" aria-expanded="false" aria-label="Menu"
+              style="padding:8px; color:var(--hs-navy);">
+        <i class="ti ti-menu-2" style="font-size:22px;"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav align-items-lg-center">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">Trang chủ</a>
+          </li>
+
+          <!-- ▼ SẢN PHẨM -->
+          <li class="nav-item dropdown dropdown-fullwidth">
+            <a class="nav-link dropdown-toggle" href="/categories/" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Sản phẩm</a>
+            <div class="dropdown-menu" style="min-width:540px;">
+              <div class="row g-0">
+                <div class="col-12 col-md-7" style="border-right:1px solid #E8ECF0; padding-right:10px;">
+                  <span class="hs-mega-label">Danh mục sản phẩm</span>
+                  <a class="dropdown-item" href="/categories/process-control-lps-4-20ma/"><i class="ti ti-gauge"></i> Kiểm Soát Quy Trình – LPS 4-20mA</a>
+                  <a class="dropdown-item" href="/categories/industrial-accelerometers/"><i class="ti ti-activity"></i> Cảm biến Gia tốc Công nghiệp</a>
+                  <a class="dropdown-item" href="/categories/enclosures/"><i class="ti ti-box"></i> Vỏ Bảo Vệ Công Nghiệp</a>
+                  <a class="dropdown-item" href="/categories/vibration-systems-switches/"><i class="ti ti-circuit-switchboard"></i> Hệ thống &amp; Công tắc Đo Rung</a>
+                  <a class="dropdown-item" href="/categories/vibration-meter-kits/"><i class="ti ti-tool"></i> Bộ Thiết Bị Đo Rung Cầm Tay</a>
+                  <a class="dropdown-item" href="/categories/cables-connectors/"><i class="ti ti-plug"></i> Dây Cáp &amp; Đầu Kết Nối</a>
+                  <a class="dropdown-item" href="/categories/mounting/"><i class="ti ti-adjustments-horizontal"></i> Phụ kiện Lắp Đặt</a>
+                  <a class="dropdown-item" href="/categories/installation-products/"><i class="ti ti-package"></i> Sản phẩm Lắp đặt</a>
                 </div>
-            </div>
-        </div>
-        <nav class="navbar relative navbar-expand-lg lg:flex lg:flex-wrap items-center content-between text-black navbar-default"
-            aria-label="Offcanvas navbar large">
-            <div class="container max-w-7xl mx-auto w-full xl:px-4 lg:px-0">
-                <div class="offcanvas offcanvas-left lg:visible" tabindex="-1" id="navbar-default">
-                    <div class="offcanvas-header pb-1">
-                        <a href="index.html"><img src="/assets/images/logo/freshcart-logo.svg"
-                                alt="TailwindCSS eCommerce HTML Template" /></a>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x text-gray-700"
-                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M18 6l-12 12" />
-                                <path d="M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="offcanvas-body lg:flex lg:items-center">
-                        <div class="block lg:hidden mb-4">
-                            <form action="#">
-                                <div class="relative">
-                                    <label for="searhNavbar" class="invisible hidden">Search</label>
-                                    <input
-                                        class="border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
-                                        type="search" placeholder="Tìm kiếm sản phẩm" id="searhNavbar" />
-                                    <button class="absolute right-0 top-0 p-3" type="button">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-search" width="16" height="16"
-                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                            <path d="M21 21l-6 -6" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="block lg:hidden mb-4">
-                            <a class="btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 justify-center"
-                                data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
-                                aria-controls="collapseExample">
-                                <span class="mr-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-layout-grid" width="16" height="16"
-                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path
-                                            d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                        <path
-                                            d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                        <path
-                                            d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                        <path
-                                            d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                    </svg>
-                                </span>
-                                Tất cả danh mục
-                            </a>
-                            <div class="collapse mt-2" id="collapseExample">
-                                <div class="card card-body">
-                                    <ul class="list-unstyled">
-                                        
-           <li><a class="dropdown-item" href="/categories/process-control-lps-4-20ma/">Kiểm Soát Quy Trình 'LPS 4-20mA</a></li>
-
-           <li><a class="dropdown-item" href="/categories/industrial-accelerometers/">Cảm biến Gia tốc Công nghiệp</a></li>
-
-           <li><a class="dropdown-item" href="/categories/enclosures/">Vỏ Bảo Vệ Công Nghiệp</a></li>
-
-           <li><a class="dropdown-item" href="/categories/vibration-systems-switches/">Hệ thống và Công tắc Đo Lường Rung</a></li>
-
-           <li><a class="dropdown-item" href="/categories/vibration-meter-kits/">Bộ Thiết Bị Đo Rung</a></li>
-
-           <li><a class="dropdown-item" href="/categories/cables-connectors/">Dây Cáp & Kết Nối</a></li>
-
-           <li><a class="dropdown-item" href="/categories/mounting/">Cách Lắp Đặt Cảm Biến Rung</a></li>
-
-           <li><a class="dropdown-item" href="/categories/installation-products/">Sản phẩm Lắp đặt</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown hidden lg:block">
-                            <button
-                                class="mr-4 btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300"
-                                type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-layout-grid" width="16" height="16"
-                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path
-                                            d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                        <path
-                                            d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                        <path
-                                            d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                        <path
-                                            d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                                    </svg>
-                                </span>
-                                Tất cả danh mục
-                            </button>
-                            <ul class="dropdown-menu">
-                                
-           <li><a class="dropdown-item" href="/categories/process-control-lps-4-20ma/">Kiểm Soát Quy Trình 'LPS 4-20mA</a></li>
-
-           <li><a class="dropdown-item" href="/categories/industrial-accelerometers/">Cảm biến Gia tốc Công nghiệp</a></li>
-
-           <li><a class="dropdown-item" href="/categories/enclosures/">Vỏ Bảo Vệ Công Nghiệp</a></li>
-
-           <li><a class="dropdown-item" href="/categories/vibration-systems-switches/">Hệ thống và Công tắc Đo Lường Rung</a></li>
-
-           <li><a class="dropdown-item" href="/categories/vibration-meter-kits/">Bộ Thiết Bị Đo Rung</a></li>
-
-           <li><a class="dropdown-item" href="/categories/cables-connectors/">Dây Cáp & Kết Nối</a></li>
-
-           <li><a class="dropdown-item" href="/categories/mounting/">Cách Lắp Đặt Cảm Biến Rung</a></li>
-
-           <li><a class="dropdown-item" href="/categories/installation-products/">Sản phẩm Lắp đặt</a></li>
-
-                            </ul>
-                        </div>
-                        <div>
-                            <ul class="navbar-nav lg:flex gap-3 lg:items-center fs-6 fw-bold">
-                                <li class="nav-item dropdown w-full lg:w-auto">
-                                    <a class="nav-link " href="/index.html" role="button">Trang chủ</a>
-
-                                </li>
-                                <li class="nav-item dropdown w-full lg:w-auto">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">Ứng dụng công nghiệp</a>
-                                    <ul class="dropdown-menu">
-                                        
-    <li>
-        <a class="dropdown-item" href="/industries/metals-industry/">
-            Ngành Công Nghiệp Kim Loại
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/cement-industry/">
-            Giải Pháp Giám Sát Rung Động Trong Ngành Xi Măng
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/marine-industry/">
-            Cảm Biến và Giám Sát Rung Biển
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/paper-pulp-industry/">
-            Tăng Cường Hiệu Suất và Độ Tin Cậy Ngành Giấy và Bột Giấy Qua Giám Sát Rung
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/mining-and-quarrying-industry/">
-            Cảm Biến Rung và Giám Sát Trong Ngành Khai Thác Mỏ
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/wind-industry/">
-            Cảm Biến & Giám Sát Rung Turbine Gió
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/food-and-drink-processing/">
-            Cảm Biến & Giám Sát Rung Trong Sản Xuất Thực Phẩm & Đồ Uống
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/pharmaceutical-industry/">
-            Cảm Biến Rung Trong Ngành Dược Phẩm
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/rail-industry/">
-            Cảm Biến Rung Trong Vận Hành Đường Sắt
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/oil-gas-industry/">
-            Cảm Biến Rung Dầu Khí
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/power-industry/">
-            Cảm Biến Rung Ngành Điện Năng
-        </a>
-    </li>
-
-    <li>
-        <a class="dropdown-item" href="/industries/other-industries/">
-            "Các Ngành Công Nghiệp Khác"
-        </a>
-    </li>
-
-                                    </ul>
-                                </li>
-
-                                
-                                <li class="nav-item dropdown w-full lg:w-auto">
-                                    <a class="nav-link dropdown-toggle" href="/blog/" role="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="ti ti-pencil me-1"></i>Blog
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><h6 class="dropdown-header text-xs text-muted fw-bold py-1 px-3">Thương mại</h6></li>
-                                        <li><a class="dropdown-item" href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/">Nhà phân phối chính thức tại Việt Nam</a></li>
-                                        <li><a class="dropdown-item" href="/blog/mua-hansford-sensors-chinh-hang-viet-nam/">Mua chính hãng ở đâu?</a></li>
-                                        <li><a class="dropdown-item" href="/blog/cam-bien-rung-san-kho-tphcm-vung-tau/">Sẵn kho TPHCM & Vũng Tàu</a></li>
-                                        <li><a class="dropdown-item" href="/blog/hansford-sensors-co-cq-chung-tu-du-an/">C/O & C/Q – Đủ chứng từ dự án</a></li>
-                                        <li><a class="dropdown-item" href="/blog/bang-gia-cam-bien-rung-hansford-sensors-viet-nam/">Bảng giá tham khảo 2026</a></li>
-                                        <li><hr class="dropdown-divider" /></li>
-                                        <li><h6 class="dropdown-header text-xs text-muted fw-bold py-1 px-3">Kỹ thuật & Dự án</h6></li>
-                                        <li><a class="dropdown-item" href="/blog/cam-bien-rung-atex-du-an-dau-khi-vsp-ptsc/">ATEX cho dự án dầu khí VSP/PTSC</a></li>
-                                        <li><a class="dropdown-item" href="/blog/hansford-sensors-vendor-approval-viet-nam/">Vendor Approval & AVL</a></li>
-                                        <li><a class="dropdown-item" href="/blog/hansford-sensors-vs-hang-gia-re-so-sanh/">Hansford UK vs hàng giá rẻ</a></li>
-                                        <li><a class="dropdown-item" href="/blog/hansford-sensors-san-pham-ban-chay-san-kho/">Top 10 sản phẩm sẵn kho</a></li>
-                                        <li><hr class="dropdown-divider" /></li>
-                                        <li><a class="dropdown-item fw-bold text-blue-600" href="/blog/">Xem tất cả bài viết →</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item dropdown w-full lg:w-auto dropdown-fullwidth">
-                                    <a class="nav-link " href="/about/">Về chúng tôi
-                                    </a>
-
-                                </li>
-
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/contact/">Liên hệ</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-12 col-md-5" style="padding-left:10px;">
+                  <span class="hs-mega-label">Sản phẩm nổi bật</span>
+                  <a class="dropdown-item" href="/products/hs-420-accelerometer/">HS-420 – Velocity 4-20mA</a>
+                  <a class="dropdown-item" href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 – IEPE Accelerometer</a>
+                  <a class="dropdown-item" href="/products/hs-173-premium-triaxial-accelerometer/">HS-173 – Triaxial Premium</a>
+                  <a class="dropdown-item" href="/products/hs-421i-intrinsically-safe-accelerometer-5/">HS-421I – ATEX / IS</a>
+                  <a class="dropdown-item" href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo cầm tay</a>
+                  <a class="dropdown-item" href="/products/hs-550-vibration-module/">HS-550 – Vibration Module</a>
+                  <div style="border-top:1px solid #E8ECF0; margin:6px 0;"></div>
+                  <a class="dropdown-item" href="/categories/" style="color:var(--hs-navy); font-weight:600;">
+                    <i class="ti ti-arrow-right"></i> Xem tất cả sản phẩm
+                  </a>
                 </div>
+              </div>
             </div>
-        </nav>
-    </div>
-</header>
-<!-- Modal -->
-<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-8">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="font-bold text-gray-800" id="userModalLabel">Sign Up</h3>
+          </li>
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x text-gray-700"
-                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M18 6l-12 12" />
-                        <path d="M6 6l12 12" />
-                    </svg>
-                </button>
+          <!-- ▼ ỨNG DỤNG -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/industries/" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Ứng dụng</a>
+            <div class="dropdown-menu" style="min-width:400px;">
+              <span class="hs-mega-label">Ứng dụng theo ngành</span>
+              <div class="row g-0">
+                <div class="col-6">
+                  <a class="dropdown-item" href="/industries/oil-gas-industry/"><i class="ti ti-droplet"></i> Dầu khí &amp; Hóa dầu</a>
+                  <a class="dropdown-item" href="/industries/power-industry/"><i class="ti ti-bolt"></i> Điện năng</a>
+                  <a class="dropdown-item" href="/industries/metals-industry/"><i class="ti ti-flame"></i> Kim loại &amp; Thép</a>
+                  <a class="dropdown-item" href="/industries/cement-industry/"><i class="ti ti-building-factory-2"></i> Xi măng</a>
+                  <a class="dropdown-item" href="/industries/wind-industry/"><i class="ti ti-wind"></i> Điện gió</a>
+                  <a class="dropdown-item" href="/industries/marine-industry/"><i class="ti ti-anchor"></i> Hàng hải</a>
+                </div>
+                <div class="col-6">
+                  <a class="dropdown-item" href="/industries/mining-and-quarrying-industry/"><i class="ti ti-pickaxe"></i> Khai thác mỏ</a>
+                  <a class="dropdown-item" href="/industries/paper-pulp-industry/"><i class="ti ti-file-text"></i> Giấy &amp; Bột giấy</a>
+                  <a class="dropdown-item" href="/industries/food-and-drink-processing/"><i class="ti ti-cup"></i> Thực phẩm</a>
+                  <a class="dropdown-item" href="/industries/pharmaceutical-industry/"><i class="ti ti-pill"></i> Dược phẩm</a>
+                  <a class="dropdown-item" href="/industries/rail-industry/"><i class="ti ti-train"></i> Đường sắt</a>
+                  <a class="dropdown-item" href="/industries/other-industries/"><i class="ti ti-settings"></i> Ngành khác</a>
+                </div>
+              </div>
+              <div style="border-top:1px solid #E8ECF0; margin:8px 0 4px;"></div>
+              <a class="dropdown-item" href="/industries/" style="color:var(--hs-navy); font-weight:600;">
+                <i class="ti ti-arrow-right"></i> Xem tất cả ứng dụng
+              </a>
             </div>
-            <div class="modal-body">
-                <form class="needs-validation" novalidate>
-                    <div class="mb-3">
-                        <label for="fullName" class="mb-2 block text-gray-800">Name</label>
-                        <input type="text"
-                            class="form-control border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
-                            id="fullName" placeholder="Enter Your Name" required />
-                        <div class="invalid-feedback">Please enter name.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="mb-2 block text-gray-800">Email address</label>
-                        <input type="email"
-                            class="form-control border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
-                            id="email" placeholder="Enter Email address" autocomplete="email" required />
-                        <div class="invalid-feedback">Please enter email.</div>
-                    </div>
-                    <div class="mb-5">
-                        <label for="password" class="mb-2 block text-gray-800">Password</label>
-                        <input type="password"
-                            class="form-control border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
-                            id="password" placeholder="Enter Password" required />
-                        <div class="invalid-feedback">Please enter password.</div>
-                        <span class="block mt-1 text-sm text-gray-500">
-                            By Signup, you agree to our
-                            <a href="#!" class="text-blue-600">Terms of Service</a>
-                            &
-                            <a href="#!" class="text-blue-600">Privacy Policy</a>
-                        </span>
-                    </div>
+          </li>
 
-                    <button type="submit"
-                        class="btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 justify-center">
-                        Sign Up
-                    </button>
-                </form>
-            </div>
-            <div class="modal-footer flex border-0 justify-center mt-3">
-                Already have an account?
-                <a href="#" class="text-blue-600 ml-1">Sign in</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Shop Cart -->
-
-<div class="offcanvas offcanvas-right" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header border-b">
-        <div>
-            <h5 id="offcanvasRightLabel">Shop Cart</h5>
-            <span>Location in 382480</span>
-        </div>
-        <button type="button" class="btn-close text-inherit" data-bs-dismiss="offcanvas" aria-label="Close">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x text-gray-700" width="24"
-                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M18 6l-12 12" />
-                <path d="M6 6l12 12" />
-            </svg>
-        </button>
-    </div>
-    <div class="offcanvas-body p-4">
-        <div>
-            <!-- alert -->
-            <div class="bg-red-500 bg-opacity-25 text-red-800 mb-3 rounded-lg p-4" role="alert">
-                You’ve got FREE delivery. Start
-                <a href="#!" class="alert-link">checkout now!</a>
-            </div>
-            <ul class="list-none">
-                <!-- list group -->
-                <li class="py-3 border-t">
-                    <div class="flex items-center">
-                        <div class="w-1/2 md:w-1/2 lg:w-3/5">
-                            <div class="flex">
-                                <img src="/assets/images/products/product-img-1.jpg" alt="Ecommerce"
-                                    class="w-16 h-16" />
-                                <div class="ml-3">
-                                    <!-- title -->
-                                    <a href="#!" class="text-inherit">
-                                        <h6>Haldiram's Sev Bhujia</h6>
-                                    </a>
-                                    <span><small class="text-gray-500">.98 / lb</small></span>
-                                    <!-- text -->
-                                    <div class="mt-2 small leading-none">
-                                        <a href="#!" class="text-blue-600 flex items-center">
-                                            <span class="mr-1 align-text-bottom">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-trash" width="14" height="14"
-                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 7l16 0" />
-                                                    <path d="M10 11l0 6" />
-                                                    <path d="M14 11l0 6" />
-                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                </svg>
-                                            </span>
-                                            <span class="text-gray-500 text-sm">Remove</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- input group -->
-                        <div class="w-1/3 md:w-1/4 lg:w-1/5">
-                            <!-- input -->
-                            <div class="input-group input-spinner rounded-lg flex justify-between items-center">
-                                <input type="button" value="-"
-                                    class="button-minus w-8 py-1 border-r cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                                <input type="number" step="1" max="10" value="1" name="quantity"
-                                    class="quantity-field w-9 px-2 text-center h-7 border-0 bg-transparent" />
-                                <input type="button" value="+"
-                                    class="button-plus w-8 py-1 border-l cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                            </div>
-                        </div>
-                        <!-- price -->
-                        <div class="w-1/5 text-center md:w-1/5">
-                            <span class="font-bold text-gray-800">$5.00</span>
-                        </div>
-                    </div>
-                </li>
-                <!-- list group -->
-                <li class="py-3 border-t">
-                    <div class="flex items-center">
-                        <div class="w-1/2 md:w-1/2 lg:w-3/5">
-                            <div class="flex">
-                                <img src="/assets/images/products/product-img-2.jpg" alt="Ecommerce"
-                                    class="w-16 h-16" />
-                                <div class="ml-3">
-                                    <a href="#!" class="text-inherit">
-                                        <h6>NutriChoice Digestive</h6>
-                                    </a>
-                                    <span><small class="text-gray-500">250g</small></span>
-                                    <!-- text -->
-                                    <div class="mt-2 small leading-none">
-                                        <a href="#!" class="text-blue-600 flex items-center">
-                                            <span class="mr-1 align-text-bottom">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-trash" width="14" height="14"
-                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 7l16 0" />
-                                                    <path d="M10 11l0 6" />
-                                                    <path d="M14 11l0 6" />
-                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                </svg>
-                                            </span>
-                                            <span class="text-gray-500 text-sm">Remove</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- input group -->
-                        <div class="w-1/3 md:w-1/4 lg:w-1/5">
-                            <!-- input -->
-                            <div class="input-group input-spinner rounded-lg flex justify-between items-center">
-                                <input type="button" value="-"
-                                    class="button-minus w-8 py-1 border-r cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                                <input type="number" step="1" max="10" value="1" name="quantity"
-                                    class="quantity-field w-9 px-2 text-center h-7 border-0 bg-transparent" />
-                                <input type="button" value="+"
-                                    class="button-plus w-8 py-1 border-l cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                            </div>
-                        </div>
-                        <!-- price -->
-                        <div class="w-1/5 text-center md:w-1/5">
-                            <span class="font-bold text-red-600">$20.00</span>
-                            <div class="line-through text-gray-500 small">$26.00</div>
-                        </div>
-                    </div>
-                </li>
-                <!-- list group -->
-                <li class="py-3 border-t">
-                    <div class="flex items-center">
-                        <div class="w-1/2 md:w-1/2 lg:w-3/5">
-                            <div class="flex">
-                                <img src="/assets/images/products/product-img-3.jpg" alt="Ecommerce"
-                                    class="w-16 h-16" />
-                                <div class="ml-3">
-                                    <!-- title -->
-                                    <a href="#!" class="text-inherit">
-                                        <h6>Cadbury 5 Star Chocolate</h6>
-                                    </a>
-                                    <span><small class="text-gray-500">1 kg</small></span>
-                                    <!-- text -->
-                                    <div class="mt-2 small leading-none">
-                                        <a href="#!" class="text-blue-600 flex items-center">
-                                            <span class="mr-1 align-text-bottom">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-trash" width="14" height="14"
-                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 7l16 0" />
-                                                    <path d="M10 11l0 6" />
-                                                    <path d="M14 11l0 6" />
-                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                </svg>
-                                            </span>
-                                            <span class="text-gray-500 text-sm">Remove</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- input group -->
-                        <div class="w-1/3 md:w-1/4 lg:w-1/5">
-                            <!-- input -->
-                            <div class="input-group input-spinner rounded-lg flex justify-between items-center">
-                                <input type="button" value="-"
-                                    class="button-minus w-8 py-1 border-r cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                                <input type="number" step="1" max="10" value="1" name="quantity"
-                                    class="quantity-field w-9 px-2 text-center h-7 border-0 bg-transparent" />
-                                <input type="button" value="+"
-                                    class="button-plus w-8 py-1 border-l cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                            </div>
-                        </div>
-                        <!-- price -->
-                        <div class="w-1/5 text-center md:w-1/5">
-                            <span class="font-bold text-gray-800">$15.00</span>
-                            <div class="line-through text-gray-500 small">$20.00</div>
-                        </div>
-                    </div>
-                </li>
-                <!-- list group -->
-                <li class="py-3 border-t">
-                    <div class="flex items-center">
-                        <div class="w-1/2 md:w-1/2 lg:w-3/5">
-                            <div class="flex">
-                                <img src="/assets/images/products/product-img-4.jpg" alt="Ecommerce"
-                                    class="w-16 h-16" />
-                                <div class="ml-3">
-                                    <!-- title -->
-                                    <!-- title -->
-                                    <a href="#!" class="text-inherit">
-                                        <h6>Onion Flavour Potato</h6>
-                                    </a>
-                                    <span><small class="text-gray-500">250g</small></span>
-                                    <!-- text -->
-                                    <div class="mt-2 small leading-none">
-                                        <a href="#!" class="text-blue-600 flex items-center">
-                                            <span class="mr-1 align-text-bottom">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-trash" width="14" height="14"
-                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 7l16 0" />
-                                                    <path d="M10 11l0 6" />
-                                                    <path d="M14 11l0 6" />
-                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                </svg>
-                                            </span>
-                                            <span class="text-gray-500 text-sm">Remove</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- input group -->
-                        <div class="w-1/3 md:w-1/4 lg:w-1/5">
-                            <!-- input -->
-                            <div class="input-group input-spinner rounded-lg flex justify-between items-center">
-                                <input type="button" value="-"
-                                    class="button-minus w-8 py-1 border-r cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                                <input type="number" step="1" max="10" value="1" name="quantity"
-                                    class="quantity-field w-9 px-2 text-center h-7 border-0 bg-transparent" />
-                                <input type="button" value="+"
-                                    class="button-plus w-8 py-1 border-l cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                            </div>
-                        </div>
-                        <!-- price -->
-                        <div class="w-1/5 text-center md:w-1/5">
-                            <span class="font-bold text-gray-800">$15.00</span>
-                            <div class="line-through text-gray-500 small">$20.00</div>
-                        </div>
-                    </div>
-                </li>
-                <!-- list group -->
-                <li class="py-3 border-t border-b">
-                    <div class="flex items-center">
-                        <div class="w-1/2 md:w-1/2 lg:w-3/5">
-                            <div class="flex">
-                                <img src="/assets/images/products/product-img-5.jpg" alt="Ecommerce"
-                                    class="w-16 h-16" />
-                                <div class="ml-3">
-                                    <!-- title -->
-                                    <a href="#!" class="text-inherit">
-                                        <h6>Salted Instant Popcorn</h6>
-                                    </a>
-                                    <span><small class="text-gray-500">100g</small></span>
-                                    <!-- text -->
-                                    <div class="mt-2 small leading-none">
-                                        <a href="#!" class="text-blue-600 flex items-center">
-                                            <span class="mr-1 align-text-bottom">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-trash" width="14" height="14"
-                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 7l16 0" />
-                                                    <path d="M10 11l0 6" />
-                                                    <path d="M14 11l0 6" />
-                                                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                                </svg>
-                                            </span>
-                                            <span class="text-gray-500 text-sm">Remove</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- input group -->
-                        <div class="w-1/3 md:w-1/4 lg:w-1/5">
-                            <!-- input -->
-                            <div class="input-group input-spinner rounded-lg flex justify-between items-center">
-                                <input type="button" value="-"
-                                    class="button-minus w-8 py-1 border-r cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                                <input type="number" step="1" max="10" value="1" name="quantity"
-                                    class="quantity-field w-9 px-2 text-center h-7 border-0 bg-transparent" />
-                                <input type="button" value="+"
-                                    class="button-plus w-8 py-1 border-l cursor-pointer border-gray-300"
-                                    data-field="quantity" />
-                            </div>
-                        </div>
-                        <!-- price -->
-                        <div class="w-1/5 text-center md:w-1/5">
-                            <span class="font-bold text-gray-800">$15.00</span>
-                            <div class="line-through text-gray-500 small">$25.00</div>
-                        </div>
-                    </div>
-                </li>
+          <!-- ▼ BLOG -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/blog/" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+            <ul class="dropdown-menu" style="min-width:280px;">
+              <li><span class="hs-mega-label" style="padding:6px 10px 4px;">Thương mại</span></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/">Nhà phân phối chính thức tại Việt Nam</a></li>
+              <li><a class="dropdown-item" href="/blog/mua-hansford-sensors-chinh-hang-viet-nam/">Mua chính hãng ở đâu?</a></li>
+              <li><a class="dropdown-item" href="/blog/cam-bien-rung-san-kho-tphcm-vung-tau/">Sẵn kho TPHCM &amp; Vũng Tàu</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-co-cq-chung-tu-du-an/">C/O &amp; C/Q – Đủ chứng từ dự án</a></li>
+              <li><a class="dropdown-item" href="/blog/bang-gia-cam-bien-rung-hansford-sensors-viet-nam/">Bảng giá tham khảo 2026</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><span class="hs-mega-label" style="padding:6px 10px 4px;">Kỹ thuật &amp; Dự án</span></li>
+              <li><a class="dropdown-item" href="/blog/cam-bien-rung-atex-du-an-dau-khi-vsp-ptsc/">ATEX cho dự án dầu khí VSP/PTSC</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-vendor-approval-viet-nam/">Vendor Approval &amp; AVL</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-vs-hang-gia-re-so-sanh/">Hansford UK vs hàng giá rẻ</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-san-pham-ban-chay-san-kho/">Top 10 sản phẩm sẵn kho</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/blog/" style="color:var(--hs-navy); font-weight:600;">
+                <i class="ti ti-arrow-right" style="font-size:14px;"></i> Xem tất cả bài viết
+              </a></li>
             </ul>
-            <!-- btn -->
-            <div class="flex justify-between mt-4">
-                <a href="#!"
-                    class="btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300">
-                    Continue Shopping
-                </a>
-                <a href="#!"
-                    class="btn inline-flex items-center gap-x-2 bg-gray-800 text-white border-gray-800 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-900 hover:border-gray-900 active:bg-gray-900 active:border-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300">
-                    Update Cart
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+          </li>
 
-<!-- Modal -->
-<div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body p-6">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h5 class="mb-1" id="locationModalLabel">Choose your Delivery Location</h5>
-                        <p class="text-sm">Enter your address and we will specify the offer you area.</p>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x text-gray-700"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M18 6l-12 12" />
-                            <path d="M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="my-5">
-                    <label for="searhNavbarSecond" class="invisible hidden">Search</label>
-                    <input
-                        class="border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
-                        type="search" placeholder="Tìm kiếm sản phẩm" id="searhNavbarSecond" />
-                </div>
-                <div class="flex justify-between items-center mb-2">
-                    <h6>Select Location</h6>
-                    <a href="#" class="btn btn-outline-gray-400 text-gray-500 btn-sm">Clear All</a>
-                </div>
-                <div>
-                    <div data-simplebar style="height: 300px">
-                        <div class="list-none">
-                            <a href="#"
-                                class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3 active active:bg-gray-100 bg-gray-100">
-                                <span>Alabama</span>
-                                <span>Min:$20</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>Alaska</span>
-                                <span>Min:$30</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>Arizona</span>
-                                <span>Min:$50</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>California</span>
-                                <span>Min:$29</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>Colorado</span>
-                                <span>Min:$80</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>Florida</span>
-                                <span>Min:$90</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>Arizona</span>
-                                <span>Min:$50</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>California</span>
-                                <span>Min:$29</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>Colorado</span>
-                                <span>Min:$80</span>
-                            </a>
-                            <a href="#" class="border-b hover:bg-gray-100 flex justify-between items-center px-2 py-3">
-                                <span>Florida</span>
-                                <span>Min:$90</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Liên hệ</a>
+          </li>
+        </ul>
+
+        <!-- Mobile CTA -->
+        <div class="d-lg-none" style="border-top:1px solid #E8ECF0; margin-top:8px; padding-top:12px; padding-bottom:8px;">
+          <a href="/contact.html" class="hs-cta" style="width:100%; justify-content:center; padding:12px;">
+            <i class="ti ti-file-description" style="font-size:15px;"></i> Yêu cầu báo giá
+          </a>
         </div>
+      </div>
     </div>
+  </nav>
+
 </div>
