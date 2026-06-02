@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog Kỹ Thuật Hansford Sensors | Fast Group Engineering Việt Nam</title>
+    <meta name="description" content="Blog kỹ thuật và thương mại Hansford Sensors tại Việt Nam. Hướng dẫn mua hàng chính hãng, tư vấn lựa chọn cảm biến rung, ứng dụng O&G, nhiệt điện, đóng tàu. Fast Group Engineering." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://hansford.vn/blog/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog Kỹ Thuật Hansford Sensors | Fast Group Engineering" />
+    <meta property="og:description" content="Bài viết kỹ thuật và thương mại về cảm biến rung Hansford Sensors tại Việt Nam. Fast Group Engineering – nhà phân phối chính thức." />
+    <meta property="og:url" content="https://hansford.vn/blog/" />
+    <meta property="og:image" content="https://hansford.vn/assets/images/og-image.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.46.0/tabler-icons.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
+      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
+      .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
+      .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
+      .lang-pill a { color:rgba(244,241,222,.7); }
+      .lang-active { background:#c8102e; color:#fff; cursor:default; }
+      .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
+
+      .page-hero { background: linear-gradient(135deg, #0f2040, #1a4fdb); color:#fff; padding:3rem 0 2.5rem; }
+      .page-hero h1 { font-size:2rem; font-weight:800; margin-bottom:.5rem; letter-spacing:-.02em; }
+      .page-hero p { color:rgba(255,255,255,.7); font-size:.92rem; }
+
+      .filter-bar { padding:1.25rem 0; border-bottom:1px solid #e2e8f0; background:#f8fafc; }
+      .filter-btn { font-size:.78rem; font-weight:600; padding:.35rem 1rem; border-radius:20px; border:1px solid #e2e8f0; background:#fff; color:#475569; cursor:pointer; text-decoration:none; transition:all .15s; }
+      .filter-btn:hover, .filter-btn.active { background:#1a4fdb; border-color:#1a4fdb; color:#fff; }
+
+      .blog-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:1.5rem; padding:2.5rem 0 4rem; }
+
+      .post-card { background:#fff; border:1px solid #e2e8f0; border-radius:12px; overflow:hidden; transition:box-shadow .2s, transform .2s; display:flex; flex-direction:column; }
+      .post-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.1); transform:translateY(-3px); }
+      .post-card-img { height:200px; overflow:hidden; position:relative; background:#f1f5f9; }
+      .post-card-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+      .post-card:hover .post-card-img img { transform:scale(1.04); }
+      .post-card-img .cat-badge { position:absolute; top:.75rem; left:.75rem; background:rgba(26,79,219,.9); color:#fff; font-size:.65rem; font-weight:700; padding:.25rem .65rem; border-radius:4px; letter-spacing:.04em; text-transform:uppercase; }
+      .post-card-body { padding:1.25rem; flex:1; display:flex; flex-direction:column; }
+      .post-meta { font-size:.72rem; color:#94a3b8; margin-bottom:.6rem; display:flex; align-items:center; gap:.6rem; }
+      .post-meta .dot { width:3px; height:3px; background:#cbd5e1; border-radius:50%; }
+      .post-card-body h2 { font-size:.975rem; font-weight:700; color:#0f2040; line-height:1.45; margin-bottom:.6rem; }
+      .post-card-body h2 a { text-decoration:none; color:inherit; }
+      .post-card-body h2 a:hover { color:#1a4fdb; }
+      .post-excerpt { font-size:.82rem; color:#64748b; line-height:1.65; flex:1; margin-bottom:1rem; }
+      .post-card-footer { display:flex; align-items:center; justify-content:space-between; padding-top:.75rem; border-top:1px solid #f1f5f9; }
+      .read-more { font-size:.78rem; font-weight:700; color:#1a4fdb; text-decoration:none; display:flex; align-items:center; gap:.3rem; }
+      .read-more:hover { color:#0f2040; }
+
+      .featured-card { grid-column:1/-1; display:grid; grid-template-columns:1.2fr 1fr; border-radius:14px; overflow:hidden; }
+      .featured-card .post-card-img { height:100%; min-height:280px; }
+      .featured-card .post-card-body { padding:2rem; justify-content:center; }
+      .featured-card h2 { font-size:1.3rem; }
+      @media(max-width:640px) {
+        .featured-card { grid-template-columns:1fr; }
+        .featured-card .post-card-img { min-height:200px; }
+      }
+
+      .sidebar-cta { background:linear-gradient(135deg,#0f2040,#1a4fdb); color:#fff; border-radius:12px; padding:1.75rem; text-align:center; }
+      .sidebar-cta h3 { font-size:1.05rem; font-weight:700; margin-bottom:.5rem; }
+      .sidebar-cta p { font-size:.82rem; color:rgba(255,255,255,.75); margin-bottom:1.25rem; }
+      .sidebar-cta a { display:block; background:#fff; color:#1a4fdb; font-weight:700; font-size:.85rem; padding:.6rem 1rem; border-radius:8px; text-decoration:none; margin-bottom:.5rem; }
+      .sidebar-cta a.outline { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.4); }
+    </style>
+</head>
+<body>
+<div id="header"></div>
+<div class="trust-bar">
+  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
+  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
+  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
+  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật WPS</div>
+  <div class="lang-pill" id="header-lang-pill">
+    <span class="lang-active" aria-current="true">VI</span>
+    <div class="lang-pill-sep"></div>
+    <a id="header-lang-en" href="#">EN</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:.75rem">
+      <a href="/" style="color:rgba(255,255,255,.6);text-decoration:none">Trang chủ</a> &rsaquo; Blog kỹ thuật
+    </div>
+    <h1><i class="ti ti-pencil me-2"></i>Blog Kỹ Thuật & Thương Mại</h1>
+    <p>Tài nguyên kỹ thuật về cảm biến rung Hansford Sensors · Fast Group Engineering – Nhà phân phối chính thức tại Việt Nam</p>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container d-flex flex-wrap gap-2">
+    <a href="/blog/" class="filter-btn active">Tất cả</a>
+    <a href="#thuong-mai" class="filter-btn">Mua hàng &amp; Thương mại</a>
+    <a href="#ky-thuat" class="filter-btn">Kỹ thuật &amp; Dự án</a>
+    <a href="#so-sanh" class="filter-btn">So sánh &amp; Phân tích</a>
+  </div>
+</div>
+
+<main>
+<div class="container">
+  <div class="row g-4" style="padding:2.5rem 0 4rem">
+
+    <!-- Main posts grid -->
+    <div class="col-lg-8">
+
+      <!-- Featured post -->
+      <div class="post-card featured-card mb-4" id="thuong-mai">
+        <div class="post-card-img">
+          <img src="/assets/images/products/Group-23480.jpg" alt="Hansford Sensors nhà phân phối chính thức Việt Nam" loading="eager"/>
+          <span class="cat-badge">Giới thiệu</span>
+        </div>
+        <div class="post-card-body">
+          <div class="post-meta">
+            <i class="ti ti-calendar" style="font-size:.85rem"></i> Tháng 9, 2025
+            <span class="dot"></span> 6 phút đọc
+            <span class="dot"></span> Fast Group Engineering
+          </div>
+          <h2 style="font-size:1.3rem"><a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/">Hansford Sensors tại Việt Nam: Fast Group Engineering – Nhà phân phối chính thức được ủy quyền từ Anh Quốc</a></h2>
+          <p class="post-excerpt">Tìm hiểu về Fast Group Co., Ltd – đại lý duy nhất được Hansford Sensors UK ủy quyền tại Việt Nam. Có C/O, C/Q, ATEX cert, kho TPHCM và Vũng Tàu, hỗ trợ kỹ thuật chuyên sâu.</p>
+          <div class="post-card-footer">
+            <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post grid -->
+      <div class="blog-grid" style="padding:0 0 2rem">
+
+        <div class="post-card">
+          <div class="post-card-img">
+            <img src="/assets/images/products/hs-100-series-braided-cable-industrial-accelerometer-image-2.jpg" alt="Mua Hansford Sensors chính hãng Việt Nam" loading="lazy"/>
+            <span class="cat-badge">Mua hàng</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 10, 2025 <span class="dot"></span> 6 phút</div>
+            <h2><a href="/blog/mua-hansford-sensors-chinh-hang-viet-nam/">Mua Hansford Sensors chính hãng ở đâu tại Việt Nam?</a></h2>
+            <p class="post-excerpt">Phân biệt hàng thật, tránh rủi ro mua sai nguồn. Chỉ Fast Group Engineering có authorization letter từ Hansford UK.</p>
+            <div class="post-card-footer"><a href="/blog/mua-hansford-sensors-chinh-hang-viet-nam/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-card-img">
+            <img src="/assets/images/products/hs-420-accelerometer-image-2.jpg" alt="Cảm biến rung sẵn kho TPHCM Vũng Tàu" loading="lazy"/>
+            <span class="cat-badge">Kho hàng</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 11, 2025 <span class="dot"></span> 5 phút</div>
+            <h2><a href="/blog/cam-bien-rung-san-kho-tphcm-vung-tau/">Cảm biến rung sẵn kho TPHCM & Vũng Tàu – Giao hàng trong ngày</a></h2>
+            <p class="post-excerpt">Danh sách SKU thường xuyên có sẵn, thời gian giao hàng theo khu vực và lý do kho Vũng Tàu quan trọng với dự án O&G.</p>
+            <div class="post-card-footer"><a href="/blog/cam-bien-rung-san-kho-tphcm-vung-tau/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-card-img">
+            <img src="/assets/images/products/hs-421i-intrinsically-safe-accelerometer-5-image-2.jpg" alt="Hansford Sensors C/O C/Q chứng từ dự án" loading="lazy"/>
+            <span class="cat-badge">Chứng từ</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 11, 2025 <span class="dot"></span> 6 phút</div>
+            <h2><a href="/blog/hansford-sensors-co-cq-chung-tu-du-an/">Hansford Sensors có C/O và C/Q không? Đủ hồ sơ cho dự án lớn</a></h2>
+            <p class="post-excerpt">Bảng đầy đủ các loại chứng từ: C/O UK, C/Q, ATEX cert, CE, UKCA, datasheet gốc và VAT invoice theo từng loại dự án.</p>
+            <div class="post-card-footer"><a href="/blog/hansford-sensors-co-cq-chung-tu-du-an/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card" id="so-sanh">
+          <div class="post-card-img">
+            <img src="/assets/images/products/hs-150-series-oil-resistant-submersible-cable-pur-industrial-accelerometer-image-3.jpg" alt="So sánh Hansford Sensors UK vs cảm biến giá rẻ" loading="lazy"/>
+            <span class="cat-badge">So sánh</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 12, 2025 <span class="dot"></span> 7 phút</div>
+            <h2><a href="/blog/hansford-sensors-vs-hang-gia-re-so-sanh/">Hansford Sensors UK vs cảm biến giá rẻ – Phân tích TCO 5 năm</a></h2>
+            <p class="post-excerpt">Tại sao cảm biến Made in UK tổng chi phí vòng đời thấp hơn 30–50%? So sánh IP rating, MTBF, bảo hành và rủi ro ATEX.</p>
+            <div class="post-card-footer"><a href="/blog/hansford-sensors-vs-hang-gia-re-so-sanh/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-card-img">
+            <img src="/assets/images/products/Group-23483.jpg" alt="Quy trình đặt hàng Hansford Sensors Fast Group" loading="lazy"/>
+            <span class="cat-badge">Hướng dẫn</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 1, 2026 <span class="dot"></span> 5 phút</div>
+            <h2><a href="/blog/quy-trinh-dat-hang-hansford-sensors-fast-group/">Quy trình đặt hàng tại Fast Group Engineering – Báo giá 24h</a></h2>
+            <p class="post-excerpt">5 bước đặt hàng đơn giản, điều kiện thương mại, MOQ và thông tin cần cung cấp để nhận báo giá nhanh nhất.</p>
+            <div class="post-card-footer"><a href="/blog/quy-trinh-dat-hang-hansford-sensors-fast-group/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-card-img">
+            <img src="/assets/images/products/hs-420-accelerometer-5-image-2.jpg" alt="Giá cảm biến rung Hansford Sensors Việt Nam 2026" loading="lazy"/>
+            <span class="cat-badge">Báo giá</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 2, 2026 <span class="dot"></span> 5 phút</div>
+            <h2><a href="/blog/bang-gia-cam-bien-rung-hansford-sensors-viet-nam/">Giá cảm biến rung Hansford Sensors 2026 – Yếu tố ảnh hưởng và cách nhận báo giá</a></h2>
+            <p class="post-excerpt">Các yếu tố ảnh hưởng giá: model, cấu hình cáp, ATEX/Standard, số lượng, tỷ giá. Cách nhận báo giá chính xác trong 24h.</p>
+            <div class="post-card-footer"><a href="/blog/bang-gia-cam-bien-rung-hansford-sensors-viet-nam/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card" id="ky-thuat">
+          <div class="post-card-img">
+            <img src="/assets/images/products/oil.jpg" alt="Cảm biến rung ATEX dự án dầu khí VSP PTSC" loading="lazy"/>
+            <span class="cat-badge">Dầu khí</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 3, 2026 <span class="dot"></span> 7 phút</div>
+            <h2><a href="/blog/cam-bien-rung-atex-du-an-dau-khi-vsp-ptsc/">Cảm biến rung ATEX cho dự án dầu khí VSP, PTSC, PV GAS</a></h2>
+            <p class="post-excerpt">Yêu cầu ATEX trong O&G, sản phẩm phù hợp (HS-421I, HS-100IS), hồ sơ vendor qualification và lợi thế kho Vũng Tàu.</p>
+            <div class="post-card-footer"><a href="/blog/cam-bien-rung-atex-du-an-dau-khi-vsp-ptsc/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-card-img">
+            <img src="/assets/images/products/power.jpg" alt="Vendor Approval Hansford Sensors AVL EPC Vietnam" loading="lazy"/>
+            <span class="cat-badge">B2B Dự án</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 4, 2026 <span class="dot"></span> 6 phút</div>
+            <h2><a href="/blog/hansford-sensors-vendor-approval-viet-nam/">Vendor Approval & Approved Vendor List – Hồ sơ đầy đủ từ Fast Group</a></h2>
+            <p class="post-excerpt">Bộ hồ sơ VQ đầy đủ: ISO 9001, ATEX cert, authorization letter, quy trình hỗ trợ và thời gian xử lý theo từng chủ đầu tư.</p>
+            <div class="post-card-footer"><a href="/blog/hansford-sensors-vendor-approval-viet-nam/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+        <div class="post-card">
+          <div class="post-card-img">
+            <img src="/assets/images/products/banner.png" alt="Top 10 sản phẩm Hansford Sensors sẵn kho Việt Nam" loading="lazy"/>
+            <span class="cat-badge">Sản phẩm</span>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta"><i class="ti ti-calendar"></i> Tháng 5, 2026 <span class="dot"></span> 6 phút</div>
+            <h2><a href="/blog/hansford-sensors-san-pham-ban-chay-san-kho/">Top 10 sản phẩm Hansford Sensors bán chạy nhất – Sẵn kho giao ngay</a></h2>
+            <p class="post-excerpt">HS-100, HS-420, HS-421I, HS-100IS, HS-173, HS-620 và 4 model nữa – thường xuyên có kho tại TPHCM và Vũng Tàu.</p>
+            <div class="post-card-footer"><a href="/blog/hansford-sensors-san-pham-ban-chay-san-kho/" class="read-more">Đọc tiếp <i class="ti ti-arrow-right"></i></a></div>
+          </div>
+        </div>
+
+      </div><!-- /blog-grid -->
+    </div><!-- /col-lg-8 -->
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <div class="sticky-top" style="top:1.5rem">
+
+        <div class="sidebar-cta mb-4">
+          <h3><i class="ti ti-send me-1"></i> Cần báo giá ngay?</h3>
+          <p>Fast Group Engineering phản hồi trong 24 giờ làm việc. Đầy đủ C/O, VAT, giao hàng toàn quốc.</p>
+          <a href="/contact/"><i class="ti ti-mail me-1"></i> Gửi yêu cầu báo giá</a>
+          <a href="tel:+84938888958" class="outline"><i class="ti ti-phone me-1"></i> 0938 888 958</a>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3" style="font-size:.9rem;color:#0f2040"><i class="ti ti-packages me-2 text-primary"></i>Danh mục sản phẩm</h5>
+            <ul class="list-unstyled mb-0" style="font-size:.83rem">
+              <li class="py-1 border-bottom"><a href="/categories/industrial-accelerometers/" class="text-decoration-none text-primary">Cảm biến Gia tốc Công nghiệp</a></li>
+              <li class="py-1 border-bottom"><a href="/categories/process-control-lps-4-20ma/" class="text-decoration-none text-primary">Transmitter 4-20mA</a></li>
+              <li class="py-1 border-bottom"><a href="/categories/vibration-meter-kits/" class="text-decoration-none text-primary">Thiết bị đo rung cầm tay</a></li>
+              <li class="py-1 border-bottom"><a href="/categories/enclosures/" class="text-decoration-none text-primary">Vỏ bảo vệ công nghiệp</a></li>
+              <li class="py-1 border-bottom"><a href="/categories/vibration-systems-switches/" class="text-decoration-none text-primary">Hệ thống & Module đo rung</a></li>
+              <li class="py-1"><a href="/categories/mounting/" class="text-decoration-none text-primary">Phụ kiện lắp đặt</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3" style="font-size:.9rem;color:#0f2040"><i class="ti ti-building-factory-2 me-2 text-primary"></i>Fast Group Engineering</h5>
+            <p style="font-size:.8rem;color:#64748b;margin-bottom:.75rem">Nhà phân phối chính thức Hansford Sensors tại Việt Nam</p>
+            <ul class="list-unstyled mb-0" style="font-size:.8rem">
+              <li class="mb-1"><i class="ti ti-map-pin text-primary me-1"></i> TPHCM & Vũng Tàu</li>
+              <li class="mb-1"><i class="ti ti-phone text-primary me-1"></i> <a href="tel:+84938888958" class="text-decoration-none text-dark">0938 888 958</a></li>
+              <li class="mb-1"><i class="ti ti-mail text-primary me-1"></i> <a href="mailto:sales@hansford.vn" class="text-decoration-none text-dark">sales@hansford.vn</a></li>
+              <li><i class="ti ti-globe text-primary me-1"></i> hansford.vn</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /sidebar -->
+
+  </div><!-- /row -->
+</div><!-- /container -->
+</main>
+
+<div id="footer"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
