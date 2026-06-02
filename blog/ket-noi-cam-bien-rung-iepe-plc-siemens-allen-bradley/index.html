@@ -36,7 +36,7 @@
       .lang-pill-sep { width:1px; background:rgba(255,255,255,.15); align-self:stretch; }
       .blog-hero { background: linear-gradient(135deg, #0f2040 0%, #1a4fdb 100%); color: #fff; padding: 3.5rem 0 2.5rem; }
       .blog-hero .badge-cat { background: rgba(255,255,255,0.15); color: #fff; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .8rem; border-radius: 4px; display: inline-block; margin-bottom: 1rem; }
-      .blog-hero h1 { font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
+      .blog-hero h1 { color: #fff; font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; line-height: 1.25; margin-bottom: .75rem; }
       .blog-hero .meta { font-size: .82rem; color: rgba(255,255,255,.6); }
       .breadcrumb-blog { font-size: .78rem; color: rgba(255,255,255,.55); margin-bottom: 1rem; }
       .breadcrumb-blog a { color: rgba(255,255,255,.7); text-decoration: none; }
@@ -120,9 +120,251 @@
     </script>
 </head>
 <body>
-<div id="header"></div>
-<div class="trust-bar">
-  <div class="trust-item"><div class="icon">✓</div> Nhập khẩu chính hãng từ UK</div>
+<div id="header">
+<!-- ============================================================
+     HEADER — hansford.vn  |  v4.0 FINAL
+     Palette: #02255D · #0C326F · #255498 · #FFFFFF · #5F6B7A
+     Gradient: linear-gradient(135deg, #02255D, #0C326F 45%, #255498)
+     Brand: Fast Group Engineering
+     Stack: Bootstrap 5.3 CDN + Tailwind theme.css + Tabler Icons
+     ============================================================ -->
+
+<style>
+/* === HEADER DESIGN SYSTEM === */
+:root {
+  --hs-navy:     #02255D;
+  --hs-navy-mid: #0C326F;
+  --hs-blue:     #255498;
+  --hs-white:    #FFFFFF;
+  --hs-gray:     #5F6B7A;
+  --hs-gray-bg:  #F5F7FA;
+  --hs-grad:     linear-gradient(135deg, #02255D 0%, #0C326F 45%, #255498 100%);
+}
+
+/* Top bar */
+.hs-topbar { background: var(--hs-grad); }
+.hs-topbar a { color: rgba(255,255,255,.72); text-decoration: none; transition: color .2s; font-size: 12px; }
+.hs-topbar a:hover { color: #fff; }
+
+/* Logo bar */
+.hs-logobar { background: var(--hs-white); border-bottom: 1px solid #E8ECF0; }
+
+/* CTA button */
+.hs-cta {
+  background: var(--hs-grad); color: #fff; border: none; border-radius: 8px;
+  padding: 10px 24px; font-weight: 600; font-size: 13px;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  transition: box-shadow .25s, transform .15s; white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(2,37,93,.15);
+}
+.hs-cta:hover { box-shadow: 0 6px 20px rgba(2,37,93,.3); transform: translateY(-1px); color: #fff; }
+.hs-cta:active { transform: translateY(0); }
+
+/* Nav bar */
+.hs-nav { background: var(--hs-white); border-bottom: 1px solid #E8ECF0; }
+.hs-nav .nav-link {
+  font-size: 13.5px; font-weight: 500; color: #3A4553 !important;
+  padding: 14px 16px !important; transition: color .2s; position: relative;
+}
+.hs-nav .nav-link:hover { color: var(--hs-navy) !important; }
+.hs-nav .dropdown-toggle::after { color: #9CA5B0; font-size: 11px; }
+
+/* Active underline on desktop */
+@media(min-width:992px){
+  .hs-nav .nav-item>.nav-link::before {
+    content:''; position:absolute; bottom:0; left:16px; right:16px;
+    height:2px; background:transparent; border-radius:2px; transition:background .2s;
+  }
+  .hs-nav .nav-item:hover>.nav-link::before { background: var(--hs-blue); }
+  .hs-nav .dropdown-toggle::after {
+    content:'\ea5f'; font-family:tabler-icons; border:none;
+    position:static; height:auto; background:none!important;
+  }
+}
+
+/* Dropdown */
+.hs-nav .dropdown-menu {
+  border: 1px solid #E8ECF0; border-radius: 10px; padding: 10px;
+  box-shadow: 0 16px 40px rgba(2,37,93,.1), 0 2px 8px rgba(2,37,93,.06);
+}
+.hs-nav .dropdown-item {
+  border-radius: 6px; padding: 7px 10px; font-size: 13px;
+  color: #3A4553; transition: all .15s; display: flex; align-items: center; gap: 8px;
+}
+.hs-nav .dropdown-item:hover { background: rgba(2,37,93,.04); color: var(--hs-navy); }
+.hs-nav .dropdown-item i { width: 16px; text-align: center; color: var(--hs-blue); font-size: 15px; flex-shrink:0; }
+
+.hs-mega-label {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: #9CA5B0; padding: 4px 10px 8px; display:block;
+}
+</style>
+
+<div class="hs-header">
+
+  <!-- ① TOP BAR -->
+  <div class="hs-topbar" style="padding:6px 0;">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+84938888958" class="d-flex align-items-center gap-1">
+          <i class="ti ti-phone-call" style="font-size:13px;"></i> +84 938 888 958
+        </a>
+        <span class="d-none d-sm-inline" style="color:rgba(255,255,255,.2);">|</span>
+        <a href="mailto:sales@hansford.vn" class="d-none d-sm-flex align-items-center gap-1">
+          <i class="ti ti-mail" style="font-size:13px;"></i> sales@hansford.vn
+        </a>
+      </div>
+      <div class="d-none d-md-block" style="color:rgba(255,255,255,.5); font-size:11px;">
+        Authorized Distributor — <strong style="color:rgba(255,255,255,.8);">Fast Group Engineering</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② LOGO BAR -->
+  <div class="hs-logobar" style="padding:14px 0;">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="/" style="flex-shrink:0; text-decoration:none;">
+        <img src="/assets/images/logo/logo.svg"
+             alt="Hansford Sensors Việt Nam – Fast Group Engineering"
+             style="height:40px; width:auto;" width="180" height="40">
+      </a>
+      <div class="d-none d-md-flex align-items-center gap-4">
+        <div style="text-align:right; line-height:1.35;">
+          <div style="font-size:13px; font-weight:600; color:var(--hs-navy);">Cảm biến rung công nghiệp chính hãng</div>
+          <div style="font-size:11px; color:var(--hs-gray);">Sẵn kho TP.HCM &amp; Vũng Tàu · C/O, C/Q đầy đủ</div>
+        </div>
+        <a href="/contact.html" class="hs-cta">
+          <i class="ti ti-file-description" style="font-size:15px;"></i> Yêu cầu báo giá
+        </a>
+      </div>
+      <a href="/contact.html" class="d-md-none hs-cta" style="padding:8px 14px; font-size:12px;">Báo giá</a>
+    </div>
+  </div>
+
+  <!-- ③ NAV BAR — sticky -->
+  <nav class="hs-nav navbar navbar-expand-lg navbar-default" style="position:sticky; top:0; z-index:1030;">
+    <div class="container">
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMain"
+              aria-controls="navMain" aria-expanded="false" aria-label="Menu"
+              style="padding:8px; color:var(--hs-navy);">
+        <i class="ti ti-menu-2" style="font-size:22px;"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav align-items-lg-center">
+
+          <li class="nav-item">
+            <a class="nav-link" href="/">Trang chủ</a>
+          </li>
+
+          <!-- ▼ SẢN PHẨM -->
+          <li class="nav-item dropdown dropdown-fullwidth">
+            <a class="nav-link dropdown-toggle" href="/categories/" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Sản phẩm</a>
+            <div class="dropdown-menu" style="min-width:540px;">
+              <div class="row g-0">
+                <div class="col-12 col-md-7" style="border-right:1px solid #E8ECF0; padding-right:10px;">
+                  <span class="hs-mega-label">Danh mục sản phẩm</span>
+                  <a class="dropdown-item" href="/categories/process-control-lps-4-20ma/"><i class="ti ti-gauge"></i> Kiểm Soát Quy Trình – LPS 4-20mA</a>
+                  <a class="dropdown-item" href="/categories/industrial-accelerometers/"><i class="ti ti-activity"></i> Cảm biến Gia tốc Công nghiệp</a>
+                  <a class="dropdown-item" href="/categories/enclosures/"><i class="ti ti-box"></i> Vỏ Bảo Vệ Công Nghiệp</a>
+                  <a class="dropdown-item" href="/categories/vibration-systems-switches/"><i class="ti ti-circuit-switchboard"></i> Hệ thống &amp; Công tắc Đo Rung</a>
+                  <a class="dropdown-item" href="/categories/vibration-meter-kits/"><i class="ti ti-tool"></i> Bộ Thiết Bị Đo Rung Cầm Tay</a>
+                  <a class="dropdown-item" href="/categories/cables-connectors/"><i class="ti ti-plug"></i> Dây Cáp &amp; Đầu Kết Nối</a>
+                  <a class="dropdown-item" href="/categories/mounting/"><i class="ti ti-adjustments-horizontal"></i> Phụ kiện Lắp Đặt</a>
+                  <a class="dropdown-item" href="/categories/installation-products/"><i class="ti ti-package"></i> Sản phẩm Lắp đặt</a>
+                </div>
+                <div class="col-12 col-md-5" style="padding-left:10px;">
+                  <span class="hs-mega-label">Sản phẩm nổi bật</span>
+                  <a class="dropdown-item" href="/products/hs-420-accelerometer/">HS-420 – Velocity 4-20mA</a>
+                  <a class="dropdown-item" href="/products/hs-100-series-m12-connector-industrial-accelerometer/">HS-100 – IEPE Accelerometer</a>
+                  <a class="dropdown-item" href="/products/hs-173-premium-triaxial-accelerometer/">HS-173 – Triaxial Premium</a>
+                  <a class="dropdown-item" href="/products/hs-421i-intrinsically-safe-accelerometer-5/">HS-421I – ATEX / IS</a>
+                  <a class="dropdown-item" href="/products/hs-620-compact-and-portable-meter/">HS-620 – Máy đo cầm tay</a>
+                  <a class="dropdown-item" href="/products/hs-550-vibration-module/">HS-550 – Vibration Module</a>
+                  <div style="border-top:1px solid #E8ECF0; margin:6px 0;"></div>
+                  <a class="dropdown-item" href="/categories/" style="color:var(--hs-navy); font-weight:600;">
+                    <i class="ti ti-arrow-right"></i> Xem tất cả sản phẩm
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- ▼ ỨNG DỤNG -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/industries/" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Ứng dụng</a>
+            <div class="dropdown-menu" style="min-width:400px;">
+              <span class="hs-mega-label">Ứng dụng theo ngành</span>
+              <div class="row g-0">
+                <div class="col-6">
+                  <a class="dropdown-item" href="/industries/oil-gas-industry/"><i class="ti ti-droplet"></i> Dầu khí &amp; Hóa dầu</a>
+                  <a class="dropdown-item" href="/industries/power-industry/"><i class="ti ti-bolt"></i> Điện năng</a>
+                  <a class="dropdown-item" href="/industries/metals-industry/"><i class="ti ti-flame"></i> Kim loại &amp; Thép</a>
+                  <a class="dropdown-item" href="/industries/cement-industry/"><i class="ti ti-building-factory-2"></i> Xi măng</a>
+                  <a class="dropdown-item" href="/industries/wind-industry/"><i class="ti ti-wind"></i> Điện gió</a>
+                  <a class="dropdown-item" href="/industries/marine-industry/"><i class="ti ti-anchor"></i> Hàng hải</a>
+                </div>
+                <div class="col-6">
+                  <a class="dropdown-item" href="/industries/mining-and-quarrying-industry/"><i class="ti ti-pickaxe"></i> Khai thác mỏ</a>
+                  <a class="dropdown-item" href="/industries/paper-pulp-industry/"><i class="ti ti-file-text"></i> Giấy &amp; Bột giấy</a>
+                  <a class="dropdown-item" href="/industries/food-and-drink-processing/"><i class="ti ti-cup"></i> Thực phẩm</a>
+                  <a class="dropdown-item" href="/industries/pharmaceutical-industry/"><i class="ti ti-pill"></i> Dược phẩm</a>
+                  <a class="dropdown-item" href="/industries/rail-industry/"><i class="ti ti-train"></i> Đường sắt</a>
+                  <a class="dropdown-item" href="/industries/other-industries/"><i class="ti ti-settings"></i> Ngành khác</a>
+                </div>
+              </div>
+              <div style="border-top:1px solid #E8ECF0; margin:8px 0 4px;"></div>
+              <a class="dropdown-item" href="/industries/" style="color:var(--hs-navy); font-weight:600;">
+                <i class="ti ti-arrow-right"></i> Xem tất cả ứng dụng
+              </a>
+            </div>
+          </li>
+
+          <!-- ▼ BLOG -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/blog/" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+            <ul class="dropdown-menu" style="min-width:280px;">
+              <li><span class="hs-mega-label" style="padding:6px 10px 4px;">Thương mại</span></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/">Nhà phân phối chính thức tại Việt Nam</a></li>
+              <li><a class="dropdown-item" href="/blog/mua-hansford-sensors-chinh-hang-viet-nam/">Mua chính hãng ở đâu?</a></li>
+              <li><a class="dropdown-item" href="/blog/cam-bien-rung-san-kho-tphcm-vung-tau/">Sẵn kho TPHCM &amp; Vũng Tàu</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-co-cq-chung-tu-du-an/">C/O &amp; C/Q – Đủ chứng từ dự án</a></li>
+              <li><a class="dropdown-item" href="/blog/bang-gia-cam-bien-rung-hansford-sensors-viet-nam/">Bảng giá tham khảo 2026</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><span class="hs-mega-label" style="padding:6px 10px 4px;">Kỹ thuật &amp; Dự án</span></li>
+              <li><a class="dropdown-item" href="/blog/cam-bien-rung-atex-du-an-dau-khi-vsp-ptsc/">ATEX cho dự án dầu khí VSP/PTSC</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-vendor-approval-viet-nam/">Vendor Approval &amp; AVL</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-vs-hang-gia-re-so-sanh/">Hansford UK vs hàng giá rẻ</a></li>
+              <li><a class="dropdown-item" href="/blog/hansford-sensors-san-pham-ban-chay-san-kho/">Top 10 sản phẩm sẵn kho</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/blog/" style="color:var(--hs-navy); font-weight:600;">
+                <i class="ti ti-arrow-right" style="font-size:14px;"></i> Xem tất cả bài viết
+              </a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">Liên hệ</a>
+          </li>
+        </ul>
+
+        <!-- Mobile CTA -->
+        <div class="d-lg-none" style="border-top:1px solid #E8ECF0; margin-top:8px; padding-top:12px; padding-bottom:8px;">
+          <a href="/contact.html" class="hs-cta" style="width:100%; justify-content:center; padding:12px;">
+            <i class="ti ti-file-description" style="font-size:15px;"></i> Yêu cầu báo giá
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</div>
+
+</div>
   <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
   <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
   <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
@@ -226,7 +468,182 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<div id="footer"></div>
+<div id="footer">
+<!-- ============================================================
+     FOOTER — hansford.vn  |  v4.0 FINAL
+     Palette: #02255D · #0C326F · #255498 · #FFFFFF · #5F6B7A
+     Brand: Fast Group Engineering / Fast Group Co., Ltd / MST 0315555189
+     Stack: Bootstrap 5.3 CDN + Tailwind theme.css + Tabler Icons
+     ============================================================ -->
+
+<style>
+/* === FOOTER DESIGN SYSTEM === */
+.hs-footer {
+  background: radial-gradient(ellipse at top right, #255498 0%, #0C326F 45%, #02255D 100%);
+  color: #fff;
+}
+.hs-footer a { color: rgba(255,255,255,.65); text-decoration: none; transition: color .2s; }
+.hs-footer a:hover { color: #fff; }
+
+.hs-ft-heading {
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .12em; color: rgba(255,255,255,.35);
+  margin-bottom: 18px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.hs-ft-link {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; padding: 4.5px 0; line-height: 1.5;
+  color: rgba(255,255,255,.6); transition: color .2s, transform .15s;
+}
+.hs-ft-link:hover { color: #fff; transform: translateX(2px); }
+.hs-ft-link i { font-size: 14px; color: rgba(255,255,255,.3); width: 16px; text-align: center; flex-shrink: 0; }
+
+.hs-ft-desc { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,.55); }
+
+.hs-ft-contact { font-size: 13px; color: rgba(255,255,255,.65); }
+.hs-ft-contact-icon { font-size: 15px; color: rgba(255,255,255,.3); width: 18px; text-align: center; flex-shrink:0; margin-top:2px; }
+.hs-ft-contact-label { font-size: 10.5px; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 1px; }
+
+.hs-ft-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.85); border-radius: 8px; padding: 10px 20px;
+  font-weight: 600; font-size: 13px; text-decoration: none; transition: all .25s;
+}
+.hs-ft-cta:hover { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.3); color: #fff; }
+
+.hs-cert {
+  display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 4px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .03em;
+  color: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.03); transition: all .2s;
+}
+.hs-cert:hover { border-color: rgba(255,255,255,.25); color: rgba(255,255,255,.8); background: rgba(255,255,255,.06); }
+
+.hs-ft-bottom { background: rgba(0,0,0,.15); }
+</style>
+
+<footer class="hs-footer">
+
+  <!-- ═══ MAIN ═══ -->
+  <div class="container" style="padding-top:48px; padding-bottom:40px;">
+    <div class="row g-4 g-lg-5">
+
+      <!-- COL 1 — BRAND -->
+      <div class="col-12 col-lg-4">
+        <a href="/" style="display:inline-block; margin-bottom:14px;">
+          <img src="/assets/images/logo/logo.svg" alt="Hansford Sensors Việt Nam"
+               style="height:34px; width:auto; filter:brightness(0) invert(1); opacity:.85;">
+        </a>
+        <p class="hs-ft-desc" style="margin-bottom:14px;">
+          Nhà phân phối ủy quyền <strong style="color:rgba(255,255,255,.8);">Hansford Sensors</strong>
+          tại Việt Nam. Chuyên cung cấp cảm biến rung, thiết bị giám sát tình trạng máy móc
+          cho ngành công nghiệp nặng, dầu khí, xi măng, điện năng.
+        </p>
+        <div style="font-size:12px; color:rgba(255,255,255,.3); line-height:1.6; margin-bottom:20px;">
+          <strong style="color:rgba(255,255,255,.45);">Fast Group Engineering</strong><br>
+          Sẵn kho TP.HCM &amp; Vũng Tàu · Giao hàng toàn quốc
+        </div>
+        <a href="/contact.html" class="hs-ft-cta">
+          <i class="ti ti-file-description" style="font-size:15px;"></i> Yêu cầu báo giá
+        </a>
+      </div>
+
+      <!-- COL 2 — SẢN PHẨM -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="hs-ft-heading">Sản phẩm</div>
+        <a class="hs-ft-link" href="/categories/process-control-lps-4-20ma/">Transmitter 4-20mA</a>
+        <a class="hs-ft-link" href="/categories/industrial-accelerometers/">Accelerometer IEPE</a>
+        <a class="hs-ft-link" href="/categories/vibration-systems-switches/">Hệ thống đo rung</a>
+        <a class="hs-ft-link" href="/categories/vibration-meter-kits/">Máy đo cầm tay</a>
+        <a class="hs-ft-link" href="/categories/enclosures/">Vỏ bảo vệ</a>
+        <a class="hs-ft-link" href="/categories/cables-connectors/">Cáp &amp; Đầu nối</a>
+        <a class="hs-ft-link" href="/categories/mounting/">Phụ kiện lắp đặt</a>
+        <a class="hs-ft-link" href="/categories/" style="color:rgba(255,255,255,.85); font-weight:600; margin-top:6px;">
+          <i class="ti ti-arrow-right"></i> Tất cả sản phẩm
+        </a>
+      </div>
+
+      <!-- COL 3 — ỨNG DỤNG -->
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="hs-ft-heading">Ứng dụng</div>
+        <a class="hs-ft-link" href="/industries/oil-gas-industry/">Dầu khí &amp; Hóa dầu</a>
+        <a class="hs-ft-link" href="/industries/power-industry/">Nhà máy điện</a>
+        <a class="hs-ft-link" href="/industries/metals-industry/">Luyện thép &amp; Kim loại</a>
+        <a class="hs-ft-link" href="/industries/cement-industry/">Xi măng</a>
+        <a class="hs-ft-link" href="/industries/wind-industry/">Điện gió</a>
+        <a class="hs-ft-link" href="/industries/marine-industry/">Hàng hải &amp; Đóng tàu</a>
+        <a class="hs-ft-link" href="/industries/mining-and-quarrying-industry/">Khai thác mỏ</a>
+        <a class="hs-ft-link" href="/industries/" style="color:rgba(255,255,255,.85); font-weight:600; margin-top:6px;">
+          <i class="ti ti-arrow-right"></i> Tất cả ngành
+        </a>
+      </div>
+
+      <!-- COL 4 — LIÊN HỆ -->
+      <div class="col-12 col-md-4 col-lg-4">
+        <div class="hs-ft-heading">Liên hệ</div>
+        <div class="hs-ft-contact d-flex flex-column gap-3">
+          <div class="d-flex gap-2">
+            <i class="ti ti-map-pin hs-ft-contact-icon"></i>
+            <div>
+              <div class="hs-ft-contact-label">VP Hồ Chí Minh</div>
+              150/41 Nguyễn Cư Trinh, P. Cầu Ông Lãnh, Q.1, TP.HCM
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="ti ti-map-pin hs-ft-contact-icon"></i>
+            <div>
+              <div class="hs-ft-contact-label">CN Vũng Tàu</div>
+              41 Lê Văn Lộc, TP. Vũng Tàu
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="ti ti-phone hs-ft-contact-icon"></i>
+            <a href="tel:+84938888958" style="font-weight:600; color:rgba(255,255,255,.85);">(+84) 938 888 958</a>
+          </div>
+          <div class="d-flex gap-2">
+            <i class="ti ti-mail hs-ft-contact-icon"></i>
+            <a href="mailto:sales@hansford.vn" style="font-weight:600; color:rgba(255,255,255,.85);">sales@hansford.vn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ CERTIFICATIONS ═══ -->
+  <div style="border-top:1px solid rgba(255,255,255,.06);">
+    <div class="container" style="padding:14px 0;">
+      <div class="d-flex flex-wrap align-items-center justify-content-center gap-2">
+        <span style="font-size:10.5px; color:rgba(255,255,255,.25); margin-right:4px;">Certifications:</span>
+        <span class="hs-cert">ATEX</span>
+        <span class="hs-cert">IECEx</span>
+        <span class="hs-cert">CE</span>
+        <span class="hs-cert">IP68</span>
+        <span class="hs-cert">ISO 9001</span>
+        <span class="hs-cert">UKCA</span>
+        <span class="hs-cert">SIL 2</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ BOTTOM BAR — Legal ═══ -->
+  <div class="hs-ft-bottom">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2"
+         style="padding:12px 0; font-size:11px; color:rgba(255,255,255,.35);">
+      <span>
+        &copy; 2026 <strong style="color:rgba(255,255,255,.5);">Fast Group Co., Ltd</strong>
+        · MST 0315555189
+        · Hansford Sensors Authorized Distributor
+      </span>
+      <span class="d-none d-md-block">Industrial Vibration Monitoring &amp; Condition Monitoring Solutions</span>
+    </div>
+  </div>
+
+</footer>
+
+</div>
 <script src="/assets/js/main.js"></script>
 </body>
 </html>
