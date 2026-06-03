@@ -27,7 +27,7 @@
     <style>
       body { font-family: 'Inter', sans-serif; }
       .trust-bar { background:#1a0a0a; padding:.75rem 2rem; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; border-bottom:1px solid rgba(200,16,46,.3); }
-      .trust-item { display:flex; align-items:center; gap:.5rem; color:#f4f1de; font-size:.82rem; font-weight:600; }
+      
       .trust-item .icon { width:22px; height:22px; background:#c8102e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.7rem; }
       .lang-pill { display:inline-flex; align-items:center; gap:0; margin-left:auto; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:6px; overflow:hidden; }
       .lang-pill a, .lang-pill span { display:inline-block; padding:4px 11px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-decoration:none; line-height:1.5; }
@@ -122,77 +122,71 @@
 <body>
 <div id="header">
 <!-- ============================================================
-     HEADER — hansford.vn  |  v4.0 FINAL
+     HEADER — hansford.vn  |  v5.0 COMPACT
      Palette: #02255D · #0C326F · #255498 · #FFFFFF · #5F6B7A
-     Gradient: linear-gradient(135deg, #02255D, #0C326F 45%, #255498)
      Brand: Fast Group Engineering
      Stack: Bootstrap 5.3 CDN + Tailwind theme.css + Tabler Icons
      ============================================================ -->
 
 <style>
-/* === HEADER DESIGN SYSTEM === */
 :root {
   --hs-navy:     #02255D;
   --hs-navy-mid: #0C326F;
   --hs-blue:     #255498;
   --hs-white:    #FFFFFF;
   --hs-gray:     #5F6B7A;
-  --hs-gray-bg:  #F5F7FA;
   --hs-grad:     linear-gradient(135deg, #02255D 0%, #0C326F 45%, #255498 100%);
 }
 
 /* Top bar */
 .hs-topbar { background: var(--hs-grad); }
-.hs-topbar a { color: rgba(255,255,255,.72); text-decoration: none; transition: color .2s; font-size: 12px; }
+.hs-topbar a, .hs-topbar span.hs-tb-item { color: rgba(255,255,255,.72); text-decoration: none; transition: color .2s; font-size: 12px; }
 .hs-topbar a:hover { color: #fff; }
+.hs-topbar .hs-tb-sep { color: rgba(255,255,255,.2); }
 
-/* Logo bar */
-.hs-logobar { background: var(--hs-white); border-bottom: 1px solid #E8ECF0; }
+/* Main bar — logo + nav + CTA in one row */
+.hs-mainbar { background: var(--hs-white); border-bottom: 1px solid #E8ECF0; }
 
-/* CTA button */
 .hs-cta {
   background: var(--hs-grad); color: #fff; border: none; border-radius: 8px;
-  padding: 10px 24px; font-weight: 600; font-size: 13px;
+  padding: 9px 22px; font-weight: 600; font-size: 13px;
   text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
   transition: box-shadow .25s, transform .15s; white-space: nowrap;
   box-shadow: 0 2px 8px rgba(2,37,93,.15);
 }
 .hs-cta:hover { box-shadow: 0 6px 20px rgba(2,37,93,.3); transform: translateY(-1px); color: #fff; }
-.hs-cta:active { transform: translateY(0); }
 
-/* Nav bar */
-.hs-nav { background: var(--hs-white); border-bottom: 1px solid #E8ECF0; }
-.hs-nav .nav-link {
+/* Nav links */
+.hs-mainbar .nav-link {
   font-size: 13.5px; font-weight: 500; color: #3A4553 !important;
-  padding: 14px 16px !important; transition: color .2s; position: relative;
+  padding: 10px 14px !important; transition: color .2s; position: relative;
 }
-.hs-nav .nav-link:hover { color: var(--hs-navy) !important; }
-.hs-nav .dropdown-toggle::after { color: #9CA5B0; font-size: 11px; }
+.hs-mainbar .nav-link:hover { color: var(--hs-navy) !important; }
+.hs-mainbar .dropdown-toggle::after { color: #9CA5B0; font-size: 11px; }
 
-/* Active underline on desktop */
 @media(min-width:992px){
-  .hs-nav .nav-item>.nav-link::before {
-    content:''; position:absolute; bottom:0; left:16px; right:16px;
+  .hs-mainbar .nav-item>.nav-link::before {
+    content:''; position:absolute; bottom:0; left:14px; right:14px;
     height:2px; background:transparent; border-radius:2px; transition:background .2s;
   }
-  .hs-nav .nav-item:hover>.nav-link::before { background: var(--hs-blue); }
-  .hs-nav .dropdown-toggle::after {
+  .hs-mainbar .nav-item:hover>.nav-link::before { background: var(--hs-blue); }
+  .hs-mainbar .dropdown-toggle::after {
     content:'\ea5f'; font-family:tabler-icons; border:none;
     position:static; height:auto; background:none!important;
   }
 }
 
 /* Dropdown */
-.hs-nav .dropdown-menu {
+.hs-mainbar .dropdown-menu {
   border: 1px solid #E8ECF0; border-radius: 10px; padding: 10px;
   box-shadow: 0 16px 40px rgba(2,37,93,.1), 0 2px 8px rgba(2,37,93,.06);
 }
-.hs-nav .dropdown-item {
+.hs-mainbar .dropdown-item {
   border-radius: 6px; padding: 7px 10px; font-size: 13px;
   color: #3A4553; transition: all .15s; display: flex; align-items: center; gap: 8px;
 }
-.hs-nav .dropdown-item:hover { background: rgba(2,37,93,.04); color: var(--hs-navy); }
-.hs-nav .dropdown-item i { width: 16px; text-align: center; color: var(--hs-blue); font-size: 15px; flex-shrink:0; }
+.hs-mainbar .dropdown-item:hover { background: rgba(2,37,93,.04); color: var(--hs-navy); }
+.hs-mainbar .dropdown-item i { width: 16px; text-align: center; color: var(--hs-blue); font-size: 15px; flex-shrink:0; }
 
 .hs-mega-label {
   font-size: 10.5px; font-weight: 700; text-transform: uppercase;
@@ -209,9 +203,18 @@
         <a href="tel:+84938888958" class="d-flex align-items-center gap-1">
           <i class="ti ti-phone-call" style="font-size:13px;"></i> +84 938 888 958
         </a>
-        <span class="d-none d-sm-inline" style="color:rgba(255,255,255,.2);">|</span>
+        <span class="hs-tb-sep d-none d-sm-inline">|</span>
         <a href="mailto:sales@hansford.vn" class="d-none d-sm-flex align-items-center gap-1">
           <i class="ti ti-mail" style="font-size:13px;"></i> sales@hansford.vn
+        </a>
+        <span class="hs-tb-sep d-none d-md-inline">|</span>
+        <a href="https://zalo.me/84938888958" target="_blank" rel="noopener" class="d-none d-md-flex align-items-center gap-1">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="opacity:.85;"><path d="M12 0C5.373 0 0 5.037 0 11.25c0 3.525 1.65 6.675 4.238 8.738-.075 1.35-.375 3.262-.375 3.262s2.85-1.05 4.012-1.762c1.275.375 2.663.562 4.125.562 6.627 0 12-5.037 12-11.25S18.627 0 12 0z"/></svg>
+          Zalo
+        </a>
+        <span class="hs-tb-sep d-none d-md-inline">|</span>
+        <a href="https://wa.me/84938888958" target="_blank" rel="noopener" class="d-none d-md-flex align-items-center gap-1">
+          <i class="ti ti-brand-whatsapp" style="font-size:14px;"></i> WhatsApp
         </a>
       </div>
       <div class="d-none d-md-block" style="color:rgba(255,255,255,.5); font-size:11px;">
@@ -220,37 +223,29 @@
     </div>
   </div>
 
-  <!-- ② LOGO BAR -->
-  <div class="hs-logobar" style="padding:14px 0;">
-    <div class="container d-flex align-items-center justify-content-between">
-      <a href="/" style="flex-shrink:0; text-decoration:none;">
+  <!-- ② MAIN BAR — Logo + Nav + CTA in one row -->
+  <nav class="hs-mainbar navbar navbar-expand-lg navbar-default" style="padding:10px 0; position:sticky; top:0; z-index:1030;">
+    <div class="container d-flex align-items-center">
+
+      <!-- Logo -->
+      <a href="/" style="flex-shrink:0; text-decoration:none; margin-right:24px;">
         <img src="/assets/images/logo/logo.svg"
              alt="Hansford Sensors Việt Nam – Fast Group Engineering"
-             style="height:40px; width:auto;" width="180" height="40">
+             style="height:52px; width:auto;" width="234" height="52">
       </a>
-      <div class="d-none d-md-flex align-items-center gap-4">
-        <div style="text-align:right; line-height:1.35;">
-          <div style="font-size:13px; font-weight:600; color:var(--hs-navy);">Cảm biến rung công nghiệp chính hãng</div>
-          <div style="font-size:11px; color:var(--hs-gray);">Sẵn kho TP.HCM &amp; Vũng Tàu · C/O, C/Q đầy đủ</div>
-        </div>
-        <a href="/contact.html" class="hs-cta">
-          <i class="ti ti-file-description" style="font-size:15px;"></i> Yêu cầu báo giá
-        </a>
-      </div>
-      <a href="/contact.html" class="d-md-none hs-cta" style="padding:8px 14px; font-size:12px;">Báo giá</a>
-    </div>
-  </div>
 
-  <!-- ③ NAV BAR — sticky -->
-  <nav class="hs-nav navbar navbar-expand-lg navbar-default" style="position:sticky; top:0; z-index:1030;">
-    <div class="container">
-      <button class="navbar-toggler border-0" type="button"
+      <!-- Mobile toggle -->
+      <button class="navbar-toggler border-0 ms-auto" type="button"
               data-bs-toggle="collapse" data-bs-target="#navMain"
               aria-controls="navMain" aria-expanded="false" aria-label="Menu"
               style="padding:8px; color:var(--hs-navy);">
         <i class="ti ti-menu-2" style="font-size:22px;"></i>
       </button>
 
+      <!-- Mobile CTA -->
+      <a href="/contact.html" class="d-lg-none hs-cta ms-2" style="padding:7px 12px; font-size:12px;">Báo giá</a>
+
+      <!-- Nav collapse -->
       <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav align-items-lg-center">
 
@@ -258,7 +253,7 @@
             <a class="nav-link" href="/">Trang chủ</a>
           </li>
 
-          <!-- ▼ SẢN PHẨM -->
+          <!-- SẢN PHẨM -->
           <li class="nav-item dropdown dropdown-fullwidth">
             <a class="nav-link dropdown-toggle" href="/categories/" role="button"
                data-bs-toggle="dropdown" aria-expanded="false">Sản phẩm</a>
@@ -292,7 +287,7 @@
             </div>
           </li>
 
-          <!-- ▼ ỨNG DỤNG -->
+          <!-- ỨNG DỤNG -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="/industries/" role="button"
                data-bs-toggle="dropdown" aria-expanded="false">Ứng dụng</a>
@@ -323,7 +318,7 @@
             </div>
           </li>
 
-          <!-- ▼ BLOG -->
+          <!-- BLOG -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="/blog/" role="button"
                data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
@@ -352,6 +347,13 @@
           </li>
         </ul>
 
+        <!-- Desktop CTA — pushed to right -->
+        <div class="d-none d-lg-block ms-auto">
+          <a href="/contact.html" class="hs-cta">
+            <i class="ti ti-file-description" style="font-size:15px;"></i> Yêu cầu báo giá
+          </a>
+        </div>
+
         <!-- Mobile CTA -->
         <div class="d-lg-none" style="border-top:1px solid #E8ECF0; margin-top:8px; padding-top:12px; padding-bottom:8px;">
           <a href="/contact.html" class="hs-cta" style="width:100%; justify-content:center; padding:12px;">
@@ -364,16 +366,6 @@
 
 </div>
 
-</div>
-  <div class="trust-item"><div class="icon">✓</div> Có C/O &amp; C/Q</div>
-  <div class="trust-item"><div class="icon">✓</div> Xuất VAT đầy đủ</div>
-  <div class="trust-item"><div class="icon">✓</div> Sẵn kho TPHCM &amp; Vũng Tàu</div>
-  <div class="trust-item"><div class="icon">✓</div> Hỗ trợ kỹ thuật chuyên sâu</div>
-  <div class="lang-pill" id="header-lang-pill" aria-label="Language selector">
-    <span class="lang-active" aria-current="true">VI</span>
-    <div class="lang-pill-sep"></div>
-    <a id="header-lang-en" href="#" aria-label="Switch to English">EN</a>
-  </div>
 </div>
 
 <section class="blog-hero">
@@ -389,16 +381,6 @@
 
 <main>
 <div class="blog-body">
-
-<div class="trust-strip">
-  <span><i class="ti ti-circle-check"></i> Nhập khẩu chính hãng từ Anh</span>
-  <span><i class="ti ti-file-certificate"></i> Có C/O &amp; C/Q</span>
-  <span><i class="ti ti-receipt"></i> Xuất VAT đầy đủ</span>
-  <span><i class="ti ti-map-pin"></i> Kho TPHCM &amp; Vũng Tàu</span>
-  <span><i class="ti ti-headset"></i> Hỗ trợ kỹ thuật</span>
-</div>
-
-
 <p class="lead">Khi mua cảm biến rung cho dự án công nghiệp tại Việt Nam, ba tên tuổi thường xuất hiện trong RFQ: <strong>Hansford Sensors</strong> (Anh Quốc), <strong>SKF</strong> (Thụy Điển) và <strong>PCB Piezotronics</strong> (Mỹ). Cả ba đều là nhà sản xuất uy tín với lịch sử lâu dài. Nhưng với điều kiện thị trường Việt Nam — logistics, giá, support kỹ thuật, hồ sơ dự án — mỗi hãng có lợi thế và hạn chế khác nhau.</p>
 
 <h2>So sánh kỹ thuật — Nền tảng tương đương</h2>
@@ -439,10 +421,9 @@
 <p>Thị trường Việt Nam có tình trạng cảm biến giả mạo nhãn hiệu SKF, PCB và thậm chí Hansford. Nhận biết hàng thật: C/O từ nước xuất xứ đúng, số serial có thể tra cứu với nhà sản xuất, và mua từ đại lý có authorization letter. Fast Group Engineering là đại lý được Hansford Sensors UK ủy quyền chính thức — không qua trung gian.</p>
 <div class="callout"><strong>Khuyến nghị thực tế:</strong> Với ngân sách dự án tiêu chuẩn, Hansford Sensors qua Fast Group Engineering thường cho ROI tốt nhất: hiệu năng tương đương, giá cạnh tranh 20-40% so với SKF/PCB cùng spec, sẵn kho tại Việt Nam, hỗ trợ kỹ thuật tiếng Việt và đầy đủ hồ sơ cho dự án EPC.</div>
 
-
 <p class="kw-note">Để mua Hansford Sensors chính hãng tại Việt Nam (không qua trung gian), liên hệ <a href="/blog/hansford-sensors-viet-nam-nha-phan-phoi-chinh-thuc/"><strong>Fast Group Engineering</strong></a> — đại lý được Hansford Sensors UK cấp Authorization Letter chính thức, sẵn kho nội địa, xuất VAT hóa đơn đỏ.</p>
 
-<div class="callout"><strong>Lưu ý khi mua tại Việt Nam:</strong> Fast Group Engineering là nhà phân phối chính thức và duy nhất được Hansford Sensors Ltd (Anh Quốc) ủy quyền tại Việt Nam. Không qua trung gian — nhập khẩu trực tiếp, đủ chứng từ gốc. Liên hệ Fast Group Engineering: văn phòng TPHCM tại 150/41 Nguyễn Cư Trinh, P. Cầu Ông Lãnh, Q.1, TP.HCM · Kho Vũng Tàu tại 41 Lê Văn Lộc, TP. Vũng Tàu, BR-VT · Hotline <a href="tel:+84938888958">0938 888 958</a> · <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
+<div class="callout"><strong>Lưu ý khi mua tại Việt Nam:</strong> Fast Group Engineering là nhà phân phối chính thức và duy nhất được Hansford Sensors Ltd (Anh Quốc) ủy quyền tại Việt Nam. Không qua trung gian — nhập khẩu trực tiếp, đủ chứng từ gốc. Liên hệ Fast Group Engineering: văn phòng TPHCM tại 150/41 Nguyễn Cư Trinh, P. Cầu Ông Lãnh, Q.1, TP.HCM · Kho Vũng Tàu tại 51 Lê Văn Lộc, TP. Vũng Tàu, BR-VT · Hotline <a href="tel:+84938888958">0938 888 958</a> · <a href="mailto:sales@hansford.vn">sales@hansford.vn</a></div>
 
 <div class="cta-box">
   <h3>Cần báo giá hoặc tư vấn kỹ thuật?</h3>
@@ -540,7 +521,7 @@
       <div class="col-12 col-lg-4">
         <a href="/" style="display:inline-block; margin-bottom:14px;">
           <img src="/assets/images/logo/logo.svg" alt="Hansford Sensors Việt Nam"
-               style="height:34px; width:auto; filter:brightness(0) invert(1); opacity:.85;">
+               style="height:52px; width:auto;">
         </a>
         <p class="hs-ft-desc" style="margin-bottom:14px;">
           Nhà phân phối ủy quyền <strong style="color:rgba(255,255,255,.8);">Hansford Sensors</strong>
@@ -601,7 +582,7 @@
             <i class="ti ti-map-pin hs-ft-contact-icon"></i>
             <div>
               <div class="hs-ft-contact-label">CN Vũng Tàu</div>
-              41 Lê Văn Lộc, TP. Vũng Tàu
+              51 Lê Văn Lộc, TP. Vũng Tàu
             </div>
           </div>
           <div class="d-flex gap-2">
